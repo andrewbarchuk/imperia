@@ -9,12 +9,12 @@
     "Theme"
   ],
   "devDependencies": {
-    "@babel/core": "^7.12.17",
-    "@babel/preset-env": "^7.12.17",
-    "@wordpress/scripts": "^13.0.3",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@wordpress/scripts": "^14.0.1",
     "babel-polyfill": "^6.26.0",
     "browser-sync": "^2.26.14",
-    "dir-archiver": "^1.1.2",
+    "dir-archiver": "^1.2.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
@@ -37,10 +37,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
-    "basicscroll": "^3.0.4",
     "bootstrap": "4.6.0",
-    "glightbox": "^3.0.7",
-    "imagesloaded": "^4.1.4",
-    "isotope-layout": "^3.0.6"
+    "glightbox": "^3.0.7"
   }
 }

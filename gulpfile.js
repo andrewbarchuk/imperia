@@ -9,7 +9,7 @@
 /* SETTINGS
 /===================================================== */
 // local domain used by browsersync
-var browsersync_proxy = "localhost:8888/gloss";
+var browsersync_proxy = "localhost:8888/imperia";
 
 // default asset paths
 var assets = {

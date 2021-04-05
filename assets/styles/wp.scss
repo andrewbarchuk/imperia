@@ -530,3 +530,106 @@ object {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/* Other
+--------------------------------------------- */
+table {
+	border-collapse: collapse;
+	line-height: 160%;
+	
+	td {
+	  padding: 15px;
+	  border: 1px solid $c-accent-light;
+	  background: $c-white;
+	}
+  
+	th {
+	  font-family: $f-title;
+	  font-size: 22px;
+	  padding: 15px;
+	  border: 1px solid $c-accent-light;
+	  color: $c-title;
+	  background: $c-white;
+	}
+  }
+  
+  .wp-block-table {
+	padding: 0 5px;
+	margin: 0 0 40px;
+  
+	figcaption {
+	  text-align: center;
+	  margin: 5px 0 0;
+	  font-family: $f-title;
+	  
+	  em {
+		font-style: normal;
+	  }
+	}
+  }
+  
+  .wp-block-image {
+	img {
+	  height: auto;
+	}
+  }
+  
+  /* quote
+  /––––––––––––––––––––––––*/
+  .wp-block-quote:not(.is-style-large) {
+	margin: 30px 0 30px 50px;
+	padding: 0 10px 0 30px;
+	border-left: 1px solid $c-accent;
+  
+	p {
+	  font-family: $f-title;
+	  font-size: 18px;
+	  color: $c-title;
+	}
+  
+	cite {
+	  display: block;
+	  font-style: normal;
+	  margin: 10px 0 0;
+	}
+  }
+  
+  .is-style-large {
+	position: relative;
+	display: block;
+	margin: 30px 0 30px 50px !important;
+	padding: 20px 30px 20px 90px !important;
+	background: $c-accent;
+	color: $c-white;
+  
+	p {
+	  font-family: $f-title;
+	  font-size: 18px !important;
+	  font-style: normal !important;
+	}
+  
+	&::before {
+	  content: '“';
+	  position: absolute;
+	  top: 20px;
+	  left: 25px;
+	  font-size: 100px;
+	  color: $c-white;
+	}
+  
+	&::after {
+	  content: '';
+	  position: absolute;
+	  top: 20px;
+	  left: 70px;
+	  width: 1px;
+	  height: calc(100% - 40px);
+	  color: rgba(255,255,255,0.2);
+	}
+  
+	cite {
+	  font-size: $f-regular-size !important;
+	  font-style: normal !important;
+	  color: rgba(255,255,255,0.8);
+	}
+  }
