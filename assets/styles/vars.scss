@@ -5,7 +5,16 @@
   * because you'll define the basic-values here.
   */
 
-/* HTML
+/* wp customizer
+/––––––––––––––––––––––––*/
+:root {
+  --c-accent: #F158A2;
+  --c-text: #111;
+  --c-title: #1b1b1b;
+  --c-second: #777;
+}
+
+/* fonts weight
 /––––––––––––––––––––––––*/
 $light:                       300;
 $regular:                     400;
@@ -16,27 +25,21 @@ $black:                       900;
 /* colors
 /––––––––––––––––––––––––*/
 $c-white: #fff;
-$c-accent: #F158A2;
-$c-text: #746565;
-$c-title: #1B1B1B;
-$c-second: rgba(105, 13, 63, 0.03);
-$c-light: #FBF9F9;
-$c-accent-light: #FFE0EF;
+$c-accent: var(--c-accent);
+$c-text: var(--c-text);
+$c-title: var(--c-title);
+$c-second: var(--c-second);
 
 /* fonts
 /––––––––––––––––––––––––*/
-$f-regular: 'Fira Sans';
+$f-regular: 'Jost';
 $f-regular-size: 	16px;
-$f-title: 'Playfair Display';
+$f-title: 'Jost';
 
 /* transitions
 /––––––––––––––––––––––––*/
 $transition_fast:            .3s;
 $transition_slow:            .7s;
-
-:root {
-  --c-accent: #{$c-accent};
-}
 
 /* flex center
 /––––––––––––––––––––––––*/

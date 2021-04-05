@@ -13,8 +13,8 @@
  */
 
 get_header();
-get_template_part( '/template-parts/home/home-hero' ); 
-get_template_part( '/template-parts/home/home-history' ); 
-get_template_part( '/template-parts/home/home-portfolio' ); 
-get_template_part( '/template-parts/home/home-instagram' ); 
+// get_template_part( '/template-parts/home/home-hero' ); 
+
 get_footer();
+
+?>

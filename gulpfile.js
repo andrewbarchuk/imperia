@@ -5,7 +5,6 @@
  *
 */
 
-
 /* SETTINGS
 /===================================================== */
 // local domain used by browsersync
@@ -22,7 +21,6 @@ var assets = {
 
 // vendors are loaded from gulp-vendors.json
 var vendors = require('./gulp-vendors.json');
-
 
 /* DEPENDENCIES
 /===================================================== */
@@ -60,7 +58,6 @@ var browserify = require('gulp-browserify');
 /* CLEAN
 /––––––––––––––––––––––––*/
 // delete compiled files/folders (before running the build)
-// css
 gulp.task('clean:css', function() { return del(['style.css', 'dist/*.css', 'dist/rev-manifest.json'])});
 gulp.task('clean:rtl', function() { return del(['style-rtl.css'])});
 gulp.task('clean:cachebust', function() { return del(['dist/style-*.min.css'])});
@@ -83,11 +80,9 @@ gulp.task('browsersync', function() {
   });
 });
 
-
 /* CSS
 /––––––––––––––––––––––––*/
 gulp.task('css', gulp.series('clean:css', function() {
-
   return gulp
     .src(assets['css'].concat(vendors['css']))
     .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
@@ -102,7 +97,6 @@ gulp.task('css', gulp.series('clean:css', function() {
 
 // rtl
 gulp.task('css-rtl', gulp.series('clean:rtl', function() {
-
   return gulp
     .src(assets['css'].concat(vendors['css']))
     .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
@@ -116,7 +110,6 @@ gulp.task('css-rtl', gulp.series('clean:rtl', function() {
     .pipe(browserSync.stream());
 }));
 
-
 /* CSS CACHE BUSTING
 /––––––––––––––––––––––––*/
 gulp.task('cachebust', gulp.series('clean:cachebust', 'css', function() {
@@ -128,26 +121,8 @@ gulp.task('cachebust', gulp.series('clean:cachebust', 'css', function() {
     .pipe(gulp.dest('dist'))
 }));
 
-
 /* JAVASCRIPT
 /––––––––––––––––––––––––*/
-// from:    assets/scripts/
-// actions: concatinate, minify, rename
-// to:      dist/script.min.css
-// gulp.task('javascript', gulp.series('clean:javascript', function() {
-//   return gulp
-//     .src(assets['javascript'].concat(vendors['javascript']))
-//     .pipe(order([
-//       'assets/scripts/*.js'
-//     ], { base: './' }))
-//     .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
-//     .pipe(concat('script.min.js'))
-//     .pipe(uglify())
-//     .pipe(rename('dist/script.min.js'))
-//     .pipe(gulp.dest('./'))
-//     .pipe(browserSync.stream());
-// }));
-
 gulp.task('javascript', gulp.series('clean:javascript', function() {
   return gulp.src(
     assets['javascript'],
@@ -179,7 +154,6 @@ gulp.task('images', gulp.series('clean:images', function() {
     .pipe(gulp.dest('dist/images'))
 }));
 
-
 /* FONTS
 /––––––––––––––––––––––––*/
 gulp.task('fonts', gulp.series('clean:fonts', function() {
@@ -187,7 +161,6 @@ gulp.task('fonts', gulp.series('clean:fonts', function() {
     .src(assets['fonts'])
     .pipe(gulp.dest('dist/fonts'))
 }));
-
 
 /* WATCH
 /––––––––––––––––––––––––*/
@@ -200,8 +173,6 @@ gulp.task('watch', gulp.parallel('browsersync', function() {
   watch('template-parts/*.php', browserSync.reload);
   watch('inc/*.php', browserSync.reload);
 }));
-
-
 
 /* DEFAULT
 /––––––––––––––––––––––––*/

@@ -204,7 +204,12 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Add svg support.
  */
-require get_template_directory() . '/inc/svg.php';
+require get_template_directory() . '/inc/template-svg.php';
+
+/**
+ * Add customizer
+ */
+require get_template_directory() . '/inc/template-customizer.php';
 
 /**
  * Add meta boxes support.
