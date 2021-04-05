@@ -1,0 +1,46 @@
+{
+  "name": "ieverly",
+  "version": "1.0.1",
+  "description": "Hi. I'm a starter theme called ieverly, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
+  "author": "Andrew Barchuk",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@wordpress/scripts": "^13.0.3",
+    "babel-polyfill": "^6.26.0",
+    "browser-sync": "^2.26.14",
+    "dir-archiver": "^1.1.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-order": "^1.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-rtlcss": "^1.4.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1"
+  },
+  "scripts": {
+    "bundle": "gulp && dir-archiver --src . --dest ../ieverly.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor gulp-vendors.json gulpfile.js package-lock.json package.json .travis.yml phpcs.xml.dist assets sass style.css.map"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "basicscroll": "^3.0.4",
+    "bootstrap": "4.6.0",
+    "glightbox": "^3.0.7",
+    "imagesloaded": "^4.1.4",
+    "isotope-layout": "^3.0.6"
+  }
+}

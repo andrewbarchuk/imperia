@@ -1,0 +1,60 @@
+ /**
+  * Variables
+  * Contains re-usable variables like colors, sizes, breakpoints etc.
+  * Normally, you don't have to change anything in essentials.css and general.css
+  * because you'll define the basic-values here.
+  */
+
+/* HTML
+/––––––––––––––––––––––––*/
+$light:                       300;
+$regular:                     400;
+$semibold:                    600;
+$bold:                        700;
+$black:                       900;
+
+/* colors
+/––––––––––––––––––––––––*/
+$c-white: #fff;
+$c-accent: #F158A2;
+$c-text: #746565;
+$c-title: #1B1B1B;
+$c-second: rgba(105, 13, 63, 0.03);
+$c-light: #FBF9F9;
+$c-accent-light: #FFE0EF;
+
+/* fonts
+/––––––––––––––––––––––––*/
+$f-regular: 'Fira Sans';
+$f-regular-size: 	16px;
+$f-title: 'Playfair Display';
+
+/* transitions
+/––––––––––––––––––––––––*/
+$transition_fast:            .3s;
+$transition_slow:            .7s;
+
+:root {
+  --c-accent: #{$c-accent};
+}
+
+/* flex center
+/––––––––––––––––––––––––*/
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin img-fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin img-fit-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
