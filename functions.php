@@ -9,7 +9,7 @@
 
 if (!defined('IEVERLY_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('IEVERLY_VERSION', '1.0.8');
+	define('IEVERLY_VERSION', '1.0.1');
 }
 
 if (!function_exists('ieverly_setup')) :
@@ -176,7 +176,7 @@ function ieverly_content_width() {
 add_action( 'after_setup_theme', 'ieverly_content_width', 0 );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts and styles
  */
 function ieverly_scripts()
 {
@@ -192,7 +192,7 @@ function ieverly_scripts()
 add_action('wp_enqueue_scripts', 'ieverly_scripts');
 
 /**
- * Custom template tags for this theme.
+ * Custom template tags for this theme
  */
 require get_template_directory() . '/inc/template-tags.php';
 
@@ -202,7 +202,7 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
- * Add svg support.
+ * Add svg support
  */
 require get_template_directory() . '/inc/template-svg.php';
 
@@ -212,11 +212,17 @@ require get_template_directory() . '/inc/template-svg.php';
 require get_template_directory() . '/inc/template-customizer.php';
 
 /**
- * Add meta boxes support.
+ * Add meta-box
  */
-// home meta
-require get_template_directory() . '/inc/meta-box/home.php';
+require get_template_directory() . '/inc/meta-box/meta-home.php';
+require get_template_directory() . '/inc/meta-box/meta-property.php';
 
-// portfolio
-require get_template_directory() . '/inc/post-type/portfolio.php';
-require get_template_directory() . '/inc/meta-box/portfolio.php';
+/**
+ * Add post-type
+ */
+require get_template_directory() . '/inc/post-type/post-property.php';
+
+/**
+ * Add Property support
+ */
+require get_template_directory() . '/inc/template-property.php';

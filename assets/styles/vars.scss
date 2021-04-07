@@ -41,6 +41,11 @@ $f-title: 'Jost';
 $transition_fast:            .3s;
 $transition_slow:            .7s;
 
+/* radius
+/––––––––––––––––––––––––*/
+$r-radius:                  3px;
+$r-radius-big:              10px;
+
 /* flex center
 /––––––––––––––––––––––––*/
 @mixin flex-center {

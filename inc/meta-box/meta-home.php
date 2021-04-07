@@ -175,18 +175,3 @@ function save_home_info( $post_id ) {
 	} // end foreach  
 }
 add_action( 'save_post', 'save_home_info' );
-
-
-// gallery
-function meta_boxes() {
-	 wp_enqueue_script( 'jquery-ui-core' );
-	wp_enqueue_script( 'jquery-ui-widget' );
-	wp_enqueue_script( 'jquery-ui-sortable' );
-
-	if ( ! did_action( 'wp_enqueue_media' ) ) {
-		wp_enqueue_media();
-	}
-
-	wp_enqueue_script( 'myuploadscript', get_stylesheet_directory_uri() . '/js/meta-box.js', array( 'jquery' ) );
-}
-add_action( 'admin_enqueue_scripts', 'meta_boxes' );

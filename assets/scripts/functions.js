@@ -7,6 +7,7 @@ const glide_settings = {
 	 */
 
 	init() {
+
 		const elem = document.querySelector('.glide');
 		if (elem) {
 			// Component lenght
@@ -81,8 +82,105 @@ const glight = {
 	},
 };
 
+const ieverly_property = {
+	/**
+	 * Property
+	 */
+	filter() {
+		function property__response() {
+			const form = document.querySelector('#property__filter');
+			const data = new FormData(form);
+			const url_list = new URLSearchParams(data).toString();
+			const url_list_filter = '?' + url_list.replace(/&action=property__filter\S*/gi, '');
+
+			fetch(ajaxurl, {
+				method: 'POST',
+				body: data
+			})
+				.then(response => response.json()) // parse response as JSON (can be res.text() for plain response)
+				.then(response => {
+
+					current_page = 1;
+
+					posts = response.posts;
+					max_page = response.max_page;
+
+					document.querySelector('#property__found-posts').innerHTML = response.found_posts;
+
+					document.querySelector('#property__items').innerHTML = response.content;
+					history.pushState(null, null, url_list_filter);
+
+					if (response.max_page < 2) {
+						document.querySelector('#property__loadmore').style.display = 'none';
+					} else {
+						document.querySelector('#property__loadmore').style.display = '';
+					}
+				})
+				.catch(error => {
+					console.log(error);
+				});
+
+			return false;
+		}
+
+		const button__search = document.querySelector('.button__search');
+		button__search.addEventListener('click', (event) => {
+			property__response();
+			button__search.classList.remove('light');
+		});
+
+		document.querySelector('#property__filter').addEventListener('change', (event) => {
+			button__search.classList.add('light');
+		});
+
+		document.querySelectorAll('.price-replace').forEach((elem, i) => {
+			const price = elem.textContent;
+			elem.textContent = price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+		});
+	},
+
+	loadmore() {
+		function property__loadmore() {
+
+			const data = new FormData();
+			data.append('action', 'loadmorebutton');
+			data.append('query', posts);
+			data.append('page', current_page);
+
+			fetch(ajaxurl, {
+				method: 'POST',
+				body: data
+			})
+				.then(response => response.text()) // parse response as JSON (can be res.text() for plain response)
+				.then(response => {
+					if (response) {
+						// add current page
+						current_page++;
+						// append items
+						document.querySelector('#property__items').innerHTML += response;
+						// remove button if last page
+						if (current_page == max_page) document.querySelector('#property__loadmore').style.display = 'none';
+					} else {
+						document.querySelector('#property__loadmore').style.display = 'none';
+					}
+				})
+				.catch(error => {
+					console.log(error);
+				});
+		}
+
+		document.querySelector('#property__loadmore').addEventListener('click', (event) => {
+			console.log('load click');
+			property__loadmore();
+		});
+
+	},
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 	glide_settings.init();
 	smooth_scroll.init();
 	glight.init();
+	ieverly_property.filter();
+	ieverly_property.loadmore();
 });
