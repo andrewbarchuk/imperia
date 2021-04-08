@@ -55,7 +55,7 @@ $search_query = new WP_Query( $search_args );
 
 		<?php 
 			if (  $search_query->max_num_pages > 1 ) :
-				echo '<div id="property__loadmore" data-loading="'. __('Loading...', 'ieverly') .'" class="loadmore">'. __('Load more', 'ieverly') .'</div>';
+				echo '<button type="button" id="property__loadmore" data-loading="'. __('Loading...', 'ieverly') .'" class="button__accent button__loadmore">'. __('Load more', 'ieverly') .'</button>';
 			endif;
 			wp_reset_postdata();
 		?>

@@ -84,14 +84,15 @@ const glight = {
 
 const ieverly_property = {
 	/**
-	 * Property
+	 * Filter
 	 */
 	filter() {
 		function property__response() {
-			const form = document.querySelector('#property__filter');
-			const data = new FormData(form);
-			const url_list = new URLSearchParams(data).toString();
-			const url_list_filter = '?' + url_list.replace(/&action=property__filter\S*/gi, '');
+			const form = document.querySelector('#property__filter'),
+				data = new FormData(form),
+				url_list = new URLSearchParams(data).toString(),
+				url_list_filter = '?' + url_list.replace(/&action=property__filter\S*/gi, ''),
+				property__items = document.querySelector('#property__items');
 
 			fetch(ajaxurl, {
 				method: 'POST',
@@ -109,6 +110,7 @@ const ieverly_property = {
 
 					document.querySelector('#property__items').innerHTML = response.content;
 					history.pushState(null, null, url_list_filter);
+					property__items.classList.remove('active');
 
 					if (response.max_page < 2) {
 						document.querySelector('#property__loadmore').style.display = 'none';
@@ -125,6 +127,7 @@ const ieverly_property = {
 
 		const button__search = document.querySelector('.button__search');
 		button__search.addEventListener('click', (event) => {
+			property__items.classList.add('active');
 			property__response();
 			button__search.classList.remove('light');
 		});
@@ -139,9 +142,15 @@ const ieverly_property = {
 		});
 	},
 
+	/**
+	 * Load more
+	 */
 	loadmore() {
-		function property__loadmore() {
+		const loadmore__button = document.querySelector('#property__loadmore'),
+			loadmore__text = loadmore__button.innerHTML,
+			loadmore__loading = loadmore__button.dataset.loading;
 
+		function property__loadmore() {
 			const data = new FormData();
 			data.append('action', 'loadmorebutton');
 			data.append('query', posts);
@@ -158,6 +167,10 @@ const ieverly_property = {
 						current_page++;
 						// append items
 						document.querySelector('#property__items').innerHTML += response;
+						// reset loadmore button text
+						loadmore__button.innerHTML = loadmore__text;
+						loadmore__button.classList.remove('active');
+						property__items.classList.remove('active');
 						// remove button if last page
 						if (current_page == max_page) document.querySelector('#property__loadmore').style.display = 'none';
 					} else {
@@ -169,8 +182,11 @@ const ieverly_property = {
 				});
 		}
 
-		document.querySelector('#property__loadmore').addEventListener('click', (event) => {
-			console.log('load click');
+		// click loadmore
+		loadmore__button.addEventListener('click', (event) => {
+			loadmore__button.innerHTML = loadmore__loading;
+			loadmore__button.classList.add('active');
+			property__items.classList.add('active');
 			property__loadmore();
 		});
 

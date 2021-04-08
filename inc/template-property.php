@@ -16,6 +16,20 @@ if (!function_exists('property_get_search')) {
         $tax_query = array();   // taxonomy query array
         $meta_query = array();  // meta query qrray
 
+        /* count */
+        if ((!empty($_GET['property_number_of_results'])) && ($_GET['property_number_of_results'] != 'any')) {
+            $ordercountpage = $_GET['property_number_of_results'];
+            $search_args['posts_per_page'] = $ordercountpage;
+        }
+
+        /* order */
+        if ((!empty($_GET['property_order_by'])) && ($_GET['property_order_by'] != 'any')) {
+            $order_get = explode('-', $_GET['property_order_by']);
+            $search_args['orderby'] = $order_get[0];
+            $search_args['order'] = $order_get[1];
+            $search_args['meta_key'] = $order_get[2];
+        }
+
         /* Keyword Based Search */
         if (isset($_GET['keyword'])) {
             $keyword = trim($_GET['keyword']);
@@ -202,16 +216,6 @@ if (!function_exists('property_get_search')) {
         if ($meta_count > 0) {
             $search_args['meta_query'] = $meta_query;
         }
-
-        /* count */
-        $ordercountpage = $_GET['property_number_of_results'];
-        $search_args['posts_per_page'] = $ordercountpage;
-
-        /* order */
-        $order_get = explode('-', $_GET['property_order_by']);
-        $search_args['orderby'] = $order_get[0];
-        $search_args['order'] = $order_get[1];
-        $search_args['meta_key'] = $order_get[2];
 
         return $search_args;
     }
