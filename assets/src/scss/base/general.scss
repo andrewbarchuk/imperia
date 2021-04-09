@@ -1,0 +1,500 @@
+/**
+ * General CSS File
+ * Contains defaults and presets
+ *
+ * The Idea is to keep editing in this file to a
+ * minimum while using vars.scss for very basic styling.
+ *
+ */
+
+/*==================================================================================
+  GENERAL
+==================================================================================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: -webkit-fill-available;
+}
+
+body {
+  display: block;
+  background: $c-white;
+  font-family: $f-regular;
+  font-size: $f-regular-size;
+  color: $c-text;
+  cursor: default;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+
+.site {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.content {
+  padding: 4vw 0;
+}
+
+.content-top {
+  padding: 4vw 0 0;
+}
+
+.content-bottom {
+  padding: 0 0 4vw;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+h1 {
+  font-family: $f-title;
+  font-size: 48px;
+  color: $c-title;
+}
+
+.entry-title {
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.entry-content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $f-title;
+    margin: 25px 0 10px;
+    color: $c-title;
+  }
+
+  p {
+    margin: 10px 0;
+    line-height: 160%;
+  }
+
+  a {
+    color: $c-accent;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+} 
+
+button:focus {
+  outline: 0;
+}
+
+/*==================================================================================
+  HEADER
+==================================================================================*/
+
+
+
+
+
+
+select {
+  cursor: pointer;
+  width: 100%;
+}
+
+select, input {
+  display: flex;
+  align-items: center;
+  background: $c-white;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  color: $c-text;
+  border: none;
+  padding: 5px;
+  margin: 0;
+  outline: none;
+}
+
+.button__accent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $r-radius-big;
+  color: $c-white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: $semibold;
+  cursor: pointer;
+  transition: all ease-out $transition_fast;
+
+  &.light {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  }
+
+  &:hover, &.active {
+    background: $c-text !important;
+  }
+}
+
+
+/*==================================================================================
+  Property
+==================================================================================*/
+/* Sort
+/––––––––––––––––––––––––*/
+.property__sort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $c-second;
+  padding: 10px 0;
+}
+
+.property__sort-info {
+  display: flex;
+
+  div {
+    margin: 0 5px 0 0;
+    font-weight: $bold;
+  }
+}
+
+.property__sort-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Filter
+/––––––––––––––––––––––––*/
+.filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.filter-fx {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.button__show-filter {
+  display: none;
+}
+
+.filter__item {
+  flex: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  button {
+    &:first-child {
+      border-radius: $r-radius-big 0 0 $r-radius-big;
+    }
+
+    &:last-child {
+      border-radius: 0 $r-radius-big $r-radius-big 0;
+      background: $c-second;
+    }
+  }
+
+  &.features {
+    flex: 80%;
+  }
+
+  > label {
+    font-weight: $semibold;
+    font-size: 12px;
+  }
+
+  &.search {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+.features-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  label {
+    cursor: pointer;
+  }
+
+  span {
+    display: none;
+  }
+}
+
+.features__list {
+  display: flex;
+  gap: 10px;
+}
+
+/* Item
+/––––––––––––––––––––––––*/
+.property__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  border-radius: $r-radius;
+  overflow: hidden;
+  margin: 30px 0 0;
+
+  &:hover {
+    box-shadow: 0 13px 13px rgba(0,0,0,0.15);
+  }
+
+  main {
+    padding: 15px 20px;
+  }
+
+  .ref {
+    color: $c-accent;
+    font-size: 12px;
+    margin: 0 0 5px;
+  }
+
+  .property__item-price {
+    font-size: 24px;
+    font-weight: $bold;
+  }
+
+  h4 {
+    font-weight: $regular;
+    font-size: 24px;
+  }
+}
+
+.property__item-header {
+  position: relative;
+  padding-bottom: 60%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.property__item-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 2;
+}
+
+.property__info-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 20px 15px;
+}
+
+.property__info-box {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin: 0 8px 0 0;
+    path {
+      fill: $c-second;
+    }
+  }
+
+  span {
+    color: $c-second;
+  }
+}
+
+.button__loadmore {
+  margin: 30px auto 0;
+}
+
+.property__loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $c-white;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity ease-out $transition_fast;
+  opacity: 0;
+
+  svg {
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: lds-dual-ring 1.2s linear infinite;
+
+    path {
+      fill: $c-accent;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.property__wrap {
+  position: relative;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: $c-light-bg;
+  width: 100%;
+  margin: 15px;
+  padding: 15px;
+  font-size: 24px;
+  border-radius: $r-radius-big;
+}
+
+/* Single
+/––––––––––––––––––––––––*/
+
+.property__single-header {
+  position: relative;
+  min-height: 80vh;
+  overflow: hidden;
+  background: $c-accent;
+  display: flex;
+  align-items: flex-end;
+}
+
+.property__single-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.property__single-header-description {
+  position: relative;
+  width: 100%;
+  color: $c-white;
+  padding: 10vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 22.05%, rgba(0, 0, 0, 0) 100%);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.property__single-title {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .price {
+    font-size: 48px;
+    font-weight: $semibold;
+  }
+
+  .info {
+    font-size: 36px;
+  }
+}
+
+.property__single-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0 0;
+}
+
+.single-info__box {
+  display: flex;
+  flex-direction: column;
+  
+  svg {
+    width: 60px;
+    height: 60px;
+
+    path {
+      fill: $c-accent;
+    }
+  }
+
+  span {
+    display: block;
+    font-size: 30px;
+    font-weight: $semibold;
+    margin: 10px 0 0;
+  }
+}
+
+.badge {
+  display: block;
+  padding: 5px;
+  font-weight: $semibold;
+  border-radius: $r-radius;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.badge__reserved {
+  background: orange;
+}
+
+.badge__new-building {
+  background: green;
+}
+
+.badge__sold-out {
+  background: red;
+}

@@ -171,7 +171,7 @@ add_action('init', function () {
  * Content width
  */
 function ieverly_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ieverly_content_width', 1005 );
+	$GLOBALS['content_width'] = apply_filters( 'ieverly_content_width', 1320 );
 }
 add_action( 'after_setup_theme', 'ieverly_content_width', 0 );
 
@@ -183,7 +183,7 @@ function ieverly_scripts()
 	wp_enqueue_style('ieverly-style', get_stylesheet_uri(), array(), IEVERLY_VERSION);
 	wp_style_add_data('ieverly-style', 'rtl', 'replace');
 
-	wp_enqueue_script('ieverly-navigation', get_template_directory_uri() . '/dist/functions.js', array(), IEVERLY_VERSION, true);
+	wp_enqueue_script('ieverly-navigation', get_template_directory_uri() . '/assets/dist/js/main.js', array(), IEVERLY_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');

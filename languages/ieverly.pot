@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ieverly 1.0.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gloss\n"
+"Project-Id-Version: ieverly 1.0.6\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/imperia\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-24T00:07:01+00:00\n"
+"POT-Creation-Date: 2021-04-09T16:16:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: ieverly\n"
@@ -31,7 +31,7 @@ msgid "Andrew Barchuk"
 msgstr ""
 
 #. Author URI of the theme
-msgid "http://andrewbarchuk.com/_s"
+msgid "http://andrewbarchuk.com/ieverly"
 msgstr ""
 
 #: 404.php:20
@@ -39,7 +39,7 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:24
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgid "It looks like nothing was found at this location."
 msgstr ""
 
 #. translators: 1: title.
@@ -63,121 +63,615 @@ msgstr ""
 msgid "All rights reserved."
 msgstr ""
 
-#: functions.php:53
+#: functions.php:54
 msgid "Header menu"
 msgstr ""
 
-#: functions.php:54
+#: functions.php:55
 msgid "Social networks"
 msgstr ""
 
-#: inc/meta-box/home.php:13
+#: inc/meta-box/meta-home.php:13
 msgid "Home settings"
 msgstr ""
 
-#: inc/meta-box/home.php:26
+#: inc/meta-box/meta-home.php:25
 msgid "Name"
 msgstr ""
 
-#: inc/meta-box/home.php:27
+#: inc/meta-box/meta-home.php:26
 msgid "Enter name"
 msgstr ""
 
-#: inc/meta-box/home.php:32
+#: inc/meta-box/meta-home.php:31
 msgid "Slogan"
 msgstr ""
 
-#: inc/meta-box/home.php:33
+#: inc/meta-box/meta-home.php:32
 msgid "Enter slogan"
 msgstr ""
 
-#: inc/meta-box/home.php:38
+#: inc/meta-box/meta-home.php:37
 msgid "Slogan description"
 msgstr ""
 
-#: inc/meta-box/home.php:39
+#: inc/meta-box/meta-home.php:38
 msgid "Enter description"
 msgstr ""
 
-#: inc/meta-box/home.php:44
+#: inc/meta-box/meta-home.php:43
 msgid "Hero slider"
 msgstr ""
 
-#: inc/meta-box/home.php:45
+#: inc/meta-box/meta-home.php:44
 msgid "Check photos for slider"
 msgstr ""
 
-#: inc/meta-box/home.php:50
+#: inc/meta-box/meta-home.php:49
 msgid "History title"
 msgstr ""
 
-#: inc/meta-box/home.php:51
+#: inc/meta-box/meta-home.php:50
 msgid "Enter title"
 msgstr ""
 
-#: inc/meta-box/home.php:56
+#: inc/meta-box/meta-home.php:55
 msgid "History image"
 msgstr ""
 
-#: inc/meta-box/home.php:57
+#: inc/meta-box/meta-home.php:56
 msgid "Select image"
 msgstr ""
 
-#: inc/meta-box/home.php:62
+#: inc/meta-box/meta-home.php:61
 msgid "History portfolio description"
 msgstr ""
 
-#: inc/meta-box/home.php:63
-#: inc/meta-box/home.php:69
-#: inc/meta-box/home.php:75
+#: inc/meta-box/meta-home.php:62
+#: inc/meta-box/meta-home.php:68
+#: inc/meta-box/meta-home.php:74
 msgid "Enter text"
 msgstr ""
 
-#: inc/meta-box/home.php:68
+#: inc/meta-box/meta-home.php:67
 msgid "Portfolio title"
 msgstr ""
 
-#: inc/meta-box/home.php:74
-#: template-parts/home/home-instagram.php:19
+#: inc/meta-box/meta-home.php:73
 msgid "Instagram"
 msgstr ""
 
-#: inc/meta-box/portfolio.php:12
-msgid "Portfolio settings"
+#: inc/meta-box/meta-property.php:13
+msgid "Settings"
 msgstr ""
 
-#: inc/meta-box/portfolio.php:23
-msgid "Show on home?"
+#: inc/meta-box/meta-property.php:24
+#: template-parts/property/filter.php:42
+msgid "REF"
 msgstr ""
 
-#: inc/meta-box/portfolio.php:24
-msgid "Check if show on home page"
+#: inc/meta-box/meta-property.php:25
+msgid "Enter this ref code"
 msgstr ""
 
-#: inc/meta-box/portfolio.php:29
-msgid "Case images"
+#: inc/meta-box/meta-property.php:31
+#: template-parts/property/item.php:32
+#: template-parts/property/single.php:52
+#: template-parts/property/single.php:197
+msgid "Reserved"
 msgstr ""
 
-#: inc/meta-box/portfolio.php:30
-msgid "Select images"
+#: inc/meta-box/meta-property.php:32
+msgid "Check if reserved"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:37
+#: template-parts/property/item.php:34
+#: template-parts/property/single.php:54
+#: template-parts/property/single.php:199
+msgid "Sold out"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:38
+msgid "Check if sold out"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:43
+msgid "Show on home"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:44
+msgid "Check if show home page"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:49
+#: template-parts/property/filter.php:48
+msgid "Price"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:50
+#: inc/meta-box/meta-property.php:57
+#: inc/meta-box/meta-property.php:64
+#: inc/meta-box/meta-property.php:70
+#: inc/meta-box/meta-property.php:76
+#: inc/meta-box/meta-property.php:82
+#: inc/meta-box/meta-property.php:88
+msgid "Only digits"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:56
+msgid "Area house"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:63
+#: template-parts/property/single.php:104
+#: template-parts/property/single.php:265
+msgid "Land area"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:69
+msgid "Number of floors"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:75
+#: template-parts/property/single.php:293
+msgid "Beds"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:81
+#: template-parts/property/single.php:309
+msgid "Baths"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:87
+msgid "Garage"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:93
+msgid "Map iframe"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:94
+msgid "Enter this map iframe"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:99
+msgid "Gallery"
+msgstr ""
+
+#: inc/post-type/post-property.php:12
+msgid "Properties"
+msgstr ""
+
+#: inc/post-type/post-property.php:13
+msgid "Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:14
+msgid "Add New"
+msgstr ""
+
+#: inc/post-type/post-property.php:15
+msgid "Add New Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:16
+msgid "Edit Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:17
+msgid "New Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:18
+msgid "View Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:19
+msgid "Search Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:20
+msgid "No Property found"
+msgstr ""
+
+#: inc/post-type/post-property.php:21
+msgid "No Property found in Trash"
+msgstr ""
+
+#: inc/post-type/post-property.php:53
+#: inc/post-type/post-property.php:54
+#: inc/post-type/post-property.php:67
+msgid "Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:55
+msgid "Search Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:56
+msgid "Popular Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:57
+msgid "All Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:58
+msgid "Parent Property Feature"
+msgstr ""
+
+#: inc/post-type/post-property.php:59
+msgid "Parent Property Feature:"
+msgstr ""
+
+#: inc/post-type/post-property.php:60
+msgid "Edit Property Feature"
+msgstr ""
+
+#: inc/post-type/post-property.php:61
+msgid "Update Property Feature"
+msgstr ""
+
+#: inc/post-type/post-property.php:62
+msgid "Add New Property Feature"
+msgstr ""
+
+#: inc/post-type/post-property.php:63
+msgid "New Property Feature Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:64
+msgid "Separate Property Features with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:65
+msgid "Add or remove Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:66
+msgid "Choose from the most used Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:84
+#: inc/post-type/post-property.php:85
+msgid "Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:86
+msgid "Search Property Types"
+msgstr ""
+
+#: inc/post-type/post-property.php:87
+msgid "Popular Property Types"
+msgstr ""
+
+#: inc/post-type/post-property.php:88
+msgid "All Property Types"
+msgstr ""
+
+#: inc/post-type/post-property.php:89
+msgid "Parent Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:90
+msgid "Parent Property Type:"
+msgstr ""
+
+#: inc/post-type/post-property.php:91
+msgid "Edit Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:92
+msgid "Update Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:93
+msgid "Add New Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:94
+msgid "New Property Type Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:95
+msgid "Separate Property Types with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:96
+msgid "Add or remove Property Types"
+msgstr ""
+
+#: inc/post-type/post-property.php:97
+msgid "Choose from the most used Property Types"
+msgstr ""
+
+#: inc/post-type/post-property.php:98
+msgid "Property Types"
+msgstr ""
+
+#: inc/post-type/post-property.php:119
+#: inc/post-type/post-property.php:120
+msgid "Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:121
+msgid "Search Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:122
+msgid "Popular Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:123
+msgid "All Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:124
+msgid "Parent Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:125
+msgid "Parent Property City:"
+msgstr ""
+
+#: inc/post-type/post-property.php:126
+msgid "Edit Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:127
+msgid "Update Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:128
+msgid "Add New Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:129
+msgid "New Property City Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:130
+msgid "Separate Property Cities with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:131
+msgid "Add or remove Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:132
+msgid "Choose from the most used Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:133
+msgid "Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:152
+#: inc/post-type/post-property.php:153
+#: inc/post-type/post-property.php:166
+msgid "Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:154
+msgid "Search Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:155
+msgid "Popular Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:156
+msgid "All Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:157
+msgid "Parent Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:158
+msgid "Parent Property State:"
+msgstr ""
+
+#: inc/post-type/post-property.php:159
+msgid "Edit Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:160
+msgid "Update Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:161
+msgid "Add New Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:162
+msgid "New Property State Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:163
+msgid "Separate Property State with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:164
+msgid "Add or remove Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:165
+msgid "Choose from the most used Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:184
+#: inc/post-type/post-property.php:185
+#: inc/post-type/post-property.php:198
+msgid "Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:186
+msgid "Search Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:187
+msgid "Popular Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:188
+msgid "All Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:189
+msgid "Parent Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:190
+msgid "Parent Property Kitchen:"
+msgstr ""
+
+#: inc/post-type/post-property.php:191
+msgid "Edit Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:192
+msgid "Update Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:193
+msgid "Add New Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:194
+msgid "New Property Kitchen Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:195
+msgid "Separate Property Kitchen with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:196
+msgid "Add or remove Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:197
+msgid "Choose from the most used Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:216
+#: inc/post-type/post-property.php:217
+#: inc/post-type/post-property.php:230
+msgid "Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:218
+msgid "Search Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:219
+msgid "Popular Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:220
+msgid "All Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:221
+msgid "Parent Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:222
+msgid "Parent Property Status:"
+msgstr ""
+
+#: inc/post-type/post-property.php:223
+msgid "Edit Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:224
+msgid "Update Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:225
+msgid "Add New Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:226
+msgid "New Property Status Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:227
+msgid "Separate Property Status with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:228
+msgid "Add or remove Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:229
+msgid "Choose from the most used Property Status"
+msgstr ""
+
+#: inc/template-customizer.php:134
+msgid "Custom settings"
+msgstr ""
+
+#: inc/template-customizer.php:137
+msgid "Theme settings"
+msgstr ""
+
+#: inc/template-customizer.php:155
+msgid "Phone number"
+msgstr ""
+
+#: inc/template-customizer.php:156
+msgid "Enter this text"
+msgstr ""
+
+#: inc/template-customizer.php:178
+msgid "E-mail"
+msgstr ""
+
+#: inc/template-customizer.php:179
+msgid "Enter this e-mail"
+msgstr ""
+
+#: inc/template-customizer.php:201
+msgid "Currency"
+msgstr ""
+
+#: inc/template-customizer.php:202
+msgid "Enter this currency"
+msgstr ""
+
+#: inc/template-customizer.php:224
+#: template-parts/property/filter.php:62
+#: template-parts/property/single.php:263
+msgid "Area"
+msgstr ""
+
+#: inc/template-customizer.php:225
+msgid "Enter this area type"
 msgstr ""
 
 #: inc/template-functions.php:38
 msgid "Read post"
 msgstr ""
 
+#: inc/template-property.php:276
+#: inc/template-property.php:278
+#: inc/template-property.php:325
+#: inc/template-property.php:327
+msgid "Any"
+msgstr ""
+
 #. Template Name of the theme
-#: template-parts/home/home-history.php:35
 msgid "Portfolio"
 msgstr ""
 
-#: page-portfolio.php:36
-#: template-parts/home/home-portfolio.php:26
+#: page-portfolio.php:35
 msgid "All"
 msgstr ""
 
 #. translators: %s: search query.
-#: search.php:23
+#: search.php:24
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -215,6 +709,144 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/home/home-portfolio.php:71
-msgid "View all cases"
+#: template-parts/notfound.php:12
+msgid "Not found"
+msgstr ""
+
+#: template-parts/property/content.php:34
+msgid "listings found"
+msgstr ""
+
+#: template-parts/property/content.php:73
+msgid "Loading..."
+msgstr ""
+
+#: template-parts/property/content.php:73
+msgid "Load more"
+msgstr ""
+
+#: template-parts/property/filter.php:35
+msgid "Hide filter"
+msgstr ""
+
+#: template-parts/property/filter.php:36
+msgid "Show filter"
+msgstr ""
+
+#: template-parts/property/filter.php:43
+msgid "id"
+msgstr ""
+
+#: template-parts/property/filter.php:76
+msgid "Status"
+msgstr ""
+
+#: template-parts/property/filter.php:78
+msgid "Select status"
+msgstr ""
+
+#: template-parts/property/filter.php:84
+msgid "Type"
+msgstr ""
+
+#: template-parts/property/filter.php:86
+msgid "Select type"
+msgstr ""
+
+#: template-parts/property/filter.php:92
+msgid "Location"
+msgstr ""
+
+#: template-parts/property/filter.php:95
+msgid "Select location"
+msgstr ""
+
+#: template-parts/property/filter.php:102
+msgid "State"
+msgstr ""
+
+#: template-parts/property/filter.php:104
+msgid "Select state"
+msgstr ""
+
+#: template-parts/property/filter.php:110
+msgid "Kitchen"
+msgstr ""
+
+#: template-parts/property/filter.php:112
+msgid "Select kitchen"
+msgstr ""
+
+#: template-parts/property/filter.php:118
+msgid "Min beds"
+msgstr ""
+
+#: template-parts/property/filter.php:126
+msgid "Min baths"
+msgstr ""
+
+#: template-parts/property/filter.php:134
+msgid "Features"
+msgstr ""
+
+#: template-parts/property/filter.php:142
+msgid "Search"
+msgstr ""
+
+#: template-parts/property/item.php:37
+#: template-parts/property/single.php:57
+#: template-parts/property/single.php:202
+msgid "New building"
+msgstr ""
+
+#: template-parts/property/single.php:80
+msgid "Storeys"
+msgstr ""
+
+#: template-parts/property/single.php:88
+msgid "Bedrooms"
+msgstr ""
+
+#: template-parts/property/single.php:96
+msgid "Living area"
+msgstr ""
+
+#: template-parts/property/single.php:219
+msgid "Year built"
+msgstr ""
+
+#: template-parts/property/single.php:234
+msgid "REF:"
+msgstr ""
+
+#: template-parts/property/single.php:279
+msgid "Floors"
+msgstr ""
+
+#: template-parts/property/single.php:331
+msgid "Type of cuisine"
+msgstr ""
+
+#: template-parts/property/single.php:344
+msgid "Garages"
+msgstr ""
+
+#: template-parts/property/single.php:364
+msgid "General state"
+msgstr ""
+
+#: template-parts/property/single.php:387
+msgid "Description"
+msgstr ""
+
+#: template-parts/property/single.php:400
+msgid "Request a showing"
+msgstr ""
+
+#: template-parts/property/sort.php:7
+msgid "Per page"
+msgstr ""
+
+#: template-parts/property/sort.php:15
+msgid "Order"
 msgstr ""

@@ -22,19 +22,19 @@ if (has_post_thumbnail()) {
 }
 ?>
 
-<div class="col-md-4">
+<div class="col-xl-3 col-lg-4 col-md-6">
 	<article <?php post_class('property__item'); ?>>
 		<a rel="bookmark" arial-label="<?php echo get_the_title(); ?>" class="property__item-link" href="<?php echo get_permalink($post->ID); ?>"></a>
 
 		<header class="property__item-header">
 			<div class="property__item-badge">
 				<?php if (get_post_meta($post->ID, 'reserved', true) == 'on') {
-					echo '<div class="badge badge__reserved">' . __("Reserved", "restate") . '</div>';
+					echo '<div class="badge badge__reserved">' . __("Reserved", "ieverly") . '</div>';
 				} elseif (get_post_meta($post->ID, 'sold_out', true) == 'on') {
-					echo '<div class="badge badge__sold-out">' . __("Sold out", "restate") . '</div>';
+					echo '<div class="badge badge__sold-out">' . __("Sold out", "ieverly") . '</div>';
 				} ?>
 				<?php if (has_term(array(315, 316, 317), 'property-building')) {
-					echo '<div class="badge badge__new-building">' . __("New building", "restate") . '</div>';
+					echo '<div class="badge badge__new-building">' . __("New building", "ieverly") . '</div>';
 				} ?>
 			</div>
 			<img loading="lazy" src="<?php esc_html_e($item__imgurl); ?>" alt="<?php echo get_the_title(); ?>">
@@ -46,10 +46,10 @@ if (has_post_thumbnail()) {
 			<?php }; ?>
 			<h4>
 				<?php
-				foreach ($property_type as $property_type_slug) {
-					echo $property_type_slug->name . ' ';
-				}
-				echo get_the_title();
+					foreach ($property_type as $property_type_slug) {
+						echo $property_type_slug->name . ' ';
+					}
+					echo get_the_title();
 				?>
 			</h4>
 			<p class="property__item-price price-replace"><?php esc_html_e(get_theme_mod('currency')); ?><?php esc_html_e($price); ?></p>

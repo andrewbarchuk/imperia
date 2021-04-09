@@ -1,6 +1,23 @@
-node_modules
-vendor
 .DS_Store
 package-lock.json
 composer.lock
 style.css.map
+
+# VAGRANT
+.vagrant/
+
+# IDE
+/nbproject/
+.idea/*
+
+# Composer
+composer.phar
+vendor/
+
+# Project
+.sass-cache
+assets/dist/
+bower_components/
+node_modules/
+
+_RESSOURCES/

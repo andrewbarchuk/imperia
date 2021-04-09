@@ -1,5 +1,9 @@
-<?php 
-if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
+/**
+ * Ieverly Theme Property single
+ *
+ * @package ieverly
+ */
 
 $gallery_id = get_post_meta($post->ID, 'property_url', true);
 
@@ -18,13 +22,136 @@ $map = get_post_meta($post->ID, 'map', true);
 
 $ref = get_post_meta($post->ID, 'ref', true);
 
-$prop_status = wp_get_post_terms($post->ID, 'property-status');
-$prop_city = wp_get_post_terms($post->ID, 'property-city');
-$prop_type = wp_get_post_terms($post->ID, 'property-type');
-$prop_features = wp_get_post_terms($post->ID, 'property-feature');
-$prop_states = wp_get_post_terms($post->ID, 'property-state');
-$prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
+$property_status = wp_get_post_terms($post->ID, 'property-status');
+$property_city = wp_get_post_terms($post->ID, 'property-city');
+$property_type = wp_get_post_terms($post->ID, 'property-type');
+$property_features = wp_get_post_terms($post->ID, 'property-feature');
+$property_states = wp_get_post_terms($post->ID, 'property-state');
+$property_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
+
+if (has_post_thumbnail()) {
+	$item__imgurl = get_the_post_thumbnail_url(get_the_ID(), 'full');
+} else {
+	$item__imgurl = get_template_directory_uri() . '/dist/images/img-default.png';
+}
 ?>
+
+<article class="property__single">
+	<!-- cover -->
+	<header class="property__single-header">
+		<div class="property__single-cover">
+			<img loading="lazy" src="<?php esc_html_e($item__imgurl); ?>" alt="<?php echo get_the_title(); ?>">
+		</div>
+
+		<div class="property__single-header-description">
+			<div class="container">
+				<div class="property__single-title">
+
+					<div class="property__single-badge">
+						<?php if (get_post_meta($post->ID, 'reserved', true) == 'on') {
+							echo '<div class="badge badge__reserved">' . __("Reserved", "ieverly") . '</div>';
+						} elseif (get_post_meta($post->ID, 'sold_out', true) == 'on') {
+							echo '<div class="badge badge__sold-out">' . __("Sold out", "ieverly") . '</div>';
+						} ?>
+						<?php if (has_term(array(315, 316, 317), 'property-building')) {
+							echo '<div class="badge badge__new-building">' . __("New building", "ieverly") . '</div>';
+						} ?>
+					</div>
+
+					<div class="price">
+						<p class="price-replace"><?php esc_html_e(get_theme_mod('currency')); ?><?php esc_html_e($price, 'ieverly'); ?></p>
+					</div>
+
+					<div class="info">
+						<?php
+							foreach ($property_type as $property_type_slug) {
+								echo $property_type_slug->name . ' ';
+							}
+							echo get_the_title();
+						?>
+					</div>
+				</div>
+
+				<div class="property__single-info">
+					<?php if ($floors) { ?>
+						<div class="single-info__box storeys">
+							<?php ieverly_the_theme_svg('storeys', 'ui'); ?>
+							<span><?php esc_html_e($floors); ?></span>
+							<p><?php esc_html_e('Storeys', 'ieverly'); ?></p>
+						</div>
+					<?php }; ?>
+
+					<?php if ($beds) { ?>
+						<div class="single-info__box beds">
+							<?php ieverly_the_theme_svg('beds', 'ui'); ?>
+							<span><?php esc_html_e($beds); ?></span>
+							<p><?php esc_html_e('Bedrooms', 'ieverly'); ?></p>
+						</div>
+					<?php }; ?>
+
+					<?php if ($area) { ?>
+						<div class="single-info__box area">
+							<?php ieverly_the_theme_svg('area', 'ui'); ?>
+							<span><?php esc_html_e($area); ?><?php esc_html_e(get_theme_mod('area')); ?></span>
+							<p><?php esc_html_e('Living area', 'ieverly'); ?></p>
+						</div>
+					<?php }; ?>
+
+					<?php if ($area_land) { ?>
+						<div class="single-info__box area-land">
+							<?php ieverly_the_theme_svg('area-land', 'ui'); ?>
+							<span><?php esc_html_e($area_land); ?><?php esc_html_e(get_theme_mod('area')); ?></span>
+							<p><?php esc_html_e('Land area', 'ieverly'); ?></p>
+						</div>
+					<?php }; ?>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="property__single-gallery">
+					<?php 
+						if( $images = get_posts( array(
+							'post_type' => 'attachment',
+							'orderby' => 'post__in', /* we have to save the order */
+							'order' => 'ASC',
+							'post__in' => explode(',', $gallery_id), /* $value is the image IDs comma separated */
+							'numberposts' => -1,
+							'post_mime_type' => 'image'
+						) ) ) {
+
+							echo '<div class="prop-gallery">';
+							foreach( $images as $image ) {
+								$image_src = wp_get_attachment_image_src( $image->ID, 'medium' );
+								$image_src_preview = wp_get_attachment_image_src( $image->ID, 'gallery-thumbnail' );
+								echo '<div class="photo-item"><img src="'. $image_src_preview[0] .'" data-lazy="'. $image_src[0] .'"></div>';
+							}
+							echo '</div>';
+						}
+					?>
+				</div>
+			</div>
+			<div class="col-lg-4">text</div>
+		</div>
+	</main>
+
+<div class="splide" id="#primary-slider">
+	<div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">Slide 01</li>
+			<li class="splide__slide">Slide 02</li>
+			<li class="splide__slide">Slide 03</li>
+		</ul>
+	</div>
+</div>
+
+
+</article>
+
+
 <!-- single property -->
 <section class="single-prop">
 	<div class="container-fluid">
@@ -67,44 +194,44 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 				<div class="single-prop-list">
 					<div class="prop-item-top-badge">
 						<?php if(get_post_meta($post->ID, 'reserved', true) == 'on') { 
-							echo '<div class="badge badge-reserve">'. __("Reserved", "restate") .'</div>';
+							echo '<div class="badge badge-reserve">'. __("Reserved", "ieverly") .'</div>';
 						} elseif (get_post_meta($post->ID, 'sold_out', true) == 'on') {
-							echo '<div class="badge badge-sold_out">'. __("Sold out", "restate") .'</div>';
+							echo '<div class="badge badge-sold_out">'. __("Sold out", "ieverly") .'</div>';
 						} ?>
 						<?php if(has_term( array(315, 316, 317), 'property-building')) {
-							echo '<div class="badge badge-new_building">'. __("New building", "restate") .'</div>';
+							echo '<div class="badge badge-new_building">'. __("New building", "ieverly") .'</div>';
 						} ?>
 					</div>
 
 					<div class="single-prop-list-status">
 						<?php 
-						foreach( $prop_type as $prop_type_slug ) {
-							echo '<a href="'. get_post_type_archive_link('property') .'?property-type='. $prop_type_slug->slug .'">'. $prop_type_slug->name .'</a> ';
+						foreach( $property_type as $property_type_slug ) {
+							echo '<a href="'. get_post_type_archive_link('property') .'?property-type='. $property_type_slug->slug .'">'. $property_type_slug->name .'</a> ';
 						}
-						foreach( $prop_status as $prop_status_slug ) {
-							echo '<a href="'. get_post_type_archive_link('property') .'?property-status='. $prop_status_slug->slug .'">'. $prop_status_slug->name .'</a> ';
+						foreach( $property_status as $property_status_slug ) {
+							echo '<a href="'. get_post_type_archive_link('property') .'?property-status='. $property_status_slug->slug .'">'. $property_status_slug->name .'</a> ';
 						}
 						?>
 					</div>
 
 					<?php if($built) { ?>
 						<div class="single-prop-list-built">
-							<span><?php _e('Year built', 'restate'); ?></span>, <?php echo $built; ?>
+							<span><?php _e('Year built', 'ieverly'); ?></span>, <?php echo $built; ?>
 						</div>
 					<?php };?>
 
 					<div class="single-prop-list-title">
 						<h1>
 							<?php 
-								foreach( $prop_type as $prop_type_slug ) {
-									echo $prop_type_slug->name . ' ';
+								foreach( $property_type as $property_type_slug ) {
+									echo $property_type_slug->name . ' ';
 								}
 								echo get_the_title(); 
 							?>
 						</h1>
 						<span class="date"><?php echo get_the_date('M d, Y'); ?></span>
 						<?php if($ref) { ?>
-							<span><b><?php _e('REF:', 'restate'); ?></b> <?php echo $ref; ?></span>
+							<span><b><?php _e('REF:', 'ieverly'); ?></b> <?php echo $ref; ?></span>
 						<?php };?>
 					</div>
 					<div class="single-prop-list-city">
@@ -112,8 +239,8 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 							<path d="M13.7238 0.0528522C13.5829 -0.0177802 13.4168 -0.0177802 13.2759 0.0528522L0.276323 6.55264C0.0293882 6.67624 -0.0705986 6.97658 0.0529714 7.22352C0.123311 7.36408 0.25567 7.46339 0.410293 7.4916L5.56962 8.43007L6.50808 13.5894C6.54649 13.8009 6.71582 13.9642 6.92857 13.9949C6.95209 13.9983 6.97582 13.9999 6.99955 13.9999C7.18906 14 7.36232 13.8929 7.44704 13.7234L13.9469 0.723816C14.0705 0.476939 13.9707 0.176539 13.7238 0.0528522Z" fill="#F1BF3D"/>
 						</svg>
 						<?php 
-						foreach( $prop_city as $prop_city_slug ) {
-							echo '<a href="'. get_post_type_archive_link('property') .'?property-city='. $prop_city_slug->slug .'">'. $prop_city_slug->name .'</a>';
+						foreach( $property_city as $property_city_slug ) {
+							echo '<a href="'. get_post_type_archive_link('property') .'?property-city='. $property_city_slug->slug .'">'. $property_city_slug->name .'</a>';
 						}
 						?>
 					</div>
@@ -133,9 +260,9 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 									<path d="M180.834 57.9129H217V7.23927C217 3.24024 213.76 0 209.767 0H110.911V57.9129H147.078C151.071 57.9129 154.311 61.1531 154.311 65.1522C154.311 69.1512 151.071 72.3914 147.078 72.3914H110.911V94.1088C110.911 98.1079 107.671 101.348 103.678 101.348C99.6844 101.348 96.4442 98.1079 96.4442 94.1088V0H65.0997C61.1065 0 57.8662 3.24024 57.8662 7.23927V156.848C57.8662 160.847 61.1065 164.087 65.0997 164.087H96.4442V127.891C96.4442 123.892 99.6844 120.652 103.678 120.652C107.671 120.652 110.911 123.892 110.911 127.891V164.087H209.767C213.76 164.087 217 160.847 217 156.848V72.3914H180.834C176.84 72.3914 173.6 69.1512 173.6 65.1522C173.6 61.1531 176.84 57.9129 180.834 57.9129Z" fill="black"/>
 								</svg>
 								<div class="property-meta-item-txt">
-									<span><?php _e('Area', 'restate'); ?>: <b><?php echo $area; ?></b> <?php esc_html_e(get_theme_mod('area')); ?></span>
+									<span><?php _e('Area', 'ieverly'); ?>: <b><?php echo $area; ?></b> <?php esc_html_e(get_theme_mod('area')); ?></span>
 									<?php if($area_land) { ?>
-										<span><?php _e('Land area', 'restate'); ?>: <b><?php echo $area_land; ?></b> <?php esc_html_e(get_theme_mod('area')); ?></span>
+										<span><?php _e('Land area', 'ieverly'); ?>: <b><?php echo $area_land; ?></b> <?php esc_html_e(get_theme_mod('area')); ?></span>
 									<?php };?>
 								</div>
 							</div>
@@ -149,7 +276,7 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 								</svg>
 								<div class="property-meta-item-txt">
 									<b><?php echo $floors; ?></b>
-									<span><?php _e('Floors', 'restate'); ?></span>
+									<span><?php _e('Floors', 'ieverly'); ?></span>
 								</div>
 							</div>
 						<?php };?>
@@ -163,7 +290,7 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 								</svg>
 								<div class="property-meta-item-txt">
 									<b><?php echo $beds; ?></b>
-									<span><?php _e('Beds', 'restate'); ?></span>
+									<span><?php _e('Beds', 'ieverly'); ?></span>
 								</div>
 							</div>
 						<?php };?>
@@ -179,12 +306,12 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 								</svg>
 								<div class="property-meta-item-txt">
 									<b><?php echo $baths; ?></b>
-									<span><?php _e('Baths', 'restate'); ?></span>
+									<span><?php _e('Baths', 'ieverly'); ?></span>
 								</div>
 							</div>
 						<?php };?>
 
-						<?php if($prop_kitchen) { ?>
+						<?php if($property_kitchen) { ?>
 							<div class="property-meta-item baths">
 								<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M213.555 35.2344H127.617C124.058 35.2344 121.172 38.1202 121.172 41.6797V103.984H6.44531C2.88578 103.984 0 106.87 0 110.43V213.555C0 217.114 2.88578 220 6.44531 220H213.555C217.114 220 220 217.114 220 213.555V41.6797C220 38.1202 217.114 35.2344 213.555 35.2344ZM134.062 48.125H207.109V103.984H134.062V48.125ZM12.8906 116.875H121.172V129.766H12.8906V116.875ZM12.8906 142.656H86.7969V207.109H12.8906V142.656ZM99.6875 142.656H121.172V207.109H99.6875V142.656ZM134.062 207.109V116.875H207.109V207.109H134.062Z" fill="black"/>
@@ -196,12 +323,12 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 								<div class="property-meta-item-txt">
 									<b>
 										<?php
-											foreach( $prop_kitchen as $prop_kitchen_item ) {
-												echo $prop_kitchen_item->name;
+											foreach( $property_kitchen as $property_kitchen_item ) {
+												echo $property_kitchen_item->name;
 											} 
 										?>
 									</b>
-									<span><?php _e('Type of cuisine', 'restate'); ?></span>
+									<span><?php _e('Type of cuisine', 'ieverly'); ?></span>
 								</div>
 							</div>
 						<?php };?>
@@ -214,7 +341,7 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 								</svg>
 								<div class="property-meta-item-txt">
 									<b><?php echo $garage; ?></b>
-									<span><?php _e('Garages', 'restate'); ?></span>
+									<span><?php _e('Garages', 'ieverly'); ?></span>
 								</div>
 							</div>
 						<?php };?>
@@ -231,21 +358,21 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 		<div class="row">
 			<div class="col-12">
 				<div class="single-prop-features">
-					<?php if($prop_states) { ?>
+					<?php if($property_states) { ?>
 						<div class="property-meta-condition">
 							<?php
-								echo __('General state', 'restate') . ': ';
-								foreach( $prop_states as $prop_state ) {
-									echo '<a href="'. get_post_type_archive_link('property') .'?property-state='. $prop_state->slug .'"><b>'. $prop_state->name .'</b></a> ';
+								echo __('General state', 'ieverly') . ': ';
+								foreach( $property_states as $property_state ) {
+									echo '<a href="'. get_post_type_archive_link('property') .'?property-state='. $property_state->slug .'"><b>'. $property_state->name .'</b></a> ';
 								}
 							?>
 						</div>
 					<?php };?>
-					<?php if($prop_features) { ?>
+					<?php if($property_features) { ?>
 						<div class="property-meta-features">
 							<?php 
-								foreach( $prop_features as $prop_feature ) {
-									echo '<a href="'. get_post_type_archive_link('property') .'?feature-'. $prop_feature->slug .'=on"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 0C22.4311 0 0 22.4311 0 50C0 77.5689 22.4311 100 50 100C77.5689 100 100 77.5689 100 50C100 22.4311 77.5689 0 50 0ZM77.9449 36.8421L45.99 68.5464C44.1103 70.4261 41.1028 70.5514 39.0977 68.6717L22.1805 53.2581C20.1754 51.3784 20.0501 48.2456 21.8045 46.2406C23.6842 44.2356 26.817 44.1103 28.8221 45.99L42.2306 58.2707L70.802 29.6992C72.807 27.6942 75.9398 27.6942 77.9449 29.6992C79.9499 31.7043 79.9499 34.8371 77.9449 36.8421Z" fill="black"/></svg>'. $prop_feature->name .'</a>';
+								foreach( $property_features as $property_feature ) {
+									echo '<a href="'. get_post_type_archive_link('property') .'?feature-'. $property_feature->slug .'=on"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 0C22.4311 0 0 22.4311 0 50C0 77.5689 22.4311 100 50 100C77.5689 100 100 77.5689 100 50C100 22.4311 77.5689 0 50 0ZM77.9449 36.8421L45.99 68.5464C44.1103 70.4261 41.1028 70.5514 39.0977 68.6717L22.1805 53.2581C20.1754 51.3784 20.0501 48.2456 21.8045 46.2406C23.6842 44.2356 26.817 44.1103 28.8221 45.99L42.2306 58.2707L70.802 29.6992C72.807 27.6942 75.9398 27.6942 77.9449 29.6992C79.9499 31.7043 79.9499 34.8371 77.9449 36.8421Z" fill="black"/></svg>'. $property_feature->name .'</a>';
 								}
 							?>
 						</div>
@@ -257,7 +384,7 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 		<div class="row">
 			<div class="col-md-6">
 				<div class="single-prop-txt-box">
-					<h4><?php _e('Description', 'restate'); ?></h4>
+					<h4><?php _e('Description', 'ieverly'); ?></h4>
 					<div class="entry-content">
 						<?php the_content(); ?>
 					</div>
@@ -270,7 +397,7 @@ $prop_kitchen = wp_get_post_terms($post->ID, 'property-kitchen');
 			</div>
 			<div class="col-md-6">
 				<div class="single-prop-txt-box">
-					<h4><?php _e('Request a showing', 'restate'); ?></h4>
+					<h4><?php _e('Request a showing', 'ieverly'); ?></h4>
 
 					<?php 
 						if(ICL_LANGUAGE_CODE=='en'):

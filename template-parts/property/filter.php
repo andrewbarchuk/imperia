@@ -140,6 +140,7 @@ if(!empty($areas)) {
         <!-- search -->
         <div class="filter__item search">
             <button type="button" class="button__search button__accent"><?php esc_html_e('Search', 'ieverly'); ?></button>
+            <button class="button__reset button__accent" type="button">✕</button>
     	</div>
     </div>
 </div>
