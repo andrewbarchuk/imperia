@@ -181,7 +181,7 @@ add_action( 'after_setup_theme', 'ieverly_content_width', 0 );
 function ieverly_scripts()
 {
 	wp_enqueue_style('ieverly-style', get_stylesheet_uri(), array(), IEVERLY_VERSION);
-	wp_style_add_data('ieverly-style', 'rtl', 'replace');
+	// wp_style_add_data('ieverly-style', 'rtl', 'replace');
 
 	wp_enqueue_script('ieverly-navigation', get_template_directory_uri() . '/assets/dist/js/main.js', array(), IEVERLY_VERSION, true);
 

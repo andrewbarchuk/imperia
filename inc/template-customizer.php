@@ -116,12 +116,11 @@ function ieverly_theme_get_customizer_css()
 // Modify our styles registration like so:
 function ieverly_enqueue_styles()
 {
-    wp_enqueue_style('theme-styles', get_stylesheet_uri()); // This is where you enqueue your theme's main stylesheet
+    wp_enqueue_style('ieverly-style', get_stylesheet_uri()); // This is where you enqueue your theme's main stylesheet
     $custom_css = ieverly_theme_get_customizer_css();
-    wp_add_inline_style('theme-styles', $custom_css);
+    wp_add_inline_style('ieverly-style', $custom_css);
 }
 add_action('wp_enqueue_scripts', 'ieverly_enqueue_styles');
-
 
 
 

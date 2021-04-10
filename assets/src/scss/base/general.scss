@@ -78,7 +78,13 @@ h1 {
 }
 
 .entry-content {
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: $f-title;
     margin: 25px 0 10px;
     color: $c-title;
@@ -96,7 +102,7 @@ h1 {
       text-decoration: none;
     }
   }
-} 
+}
 
 button:focus {
   outline: 0;
@@ -116,11 +122,12 @@ select {
   width: 100%;
 }
 
-select, input {
+select,
+input {
   display: flex;
   align-items: center;
   background: $c-white;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   color: $c-text;
   border: none;
   padding: 5px;
@@ -142,10 +149,11 @@ select, input {
   transition: all ease-out $transition_fast;
 
   &.light {
-    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
   }
 
-  &:hover, &.active {
+  &:hover,
+  &.active {
     background: $c-text !important;
   }
 }
@@ -220,7 +228,7 @@ select, input {
     flex: 80%;
   }
 
-  > label {
+  >label {
     font-weight: $semibold;
     font-size: 12px;
   }
@@ -256,13 +264,13 @@ select, input {
   position: relative;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   border-radius: $r-radius;
   overflow: hidden;
   margin: 30px 0 0;
 
   &:hover {
-    box-shadow: 0 13px 13px rgba(0,0,0,0.15);
+    box-shadow: 0 13px 13px rgba(0, 0, 0, 0.15);
   }
 
   main {
@@ -323,6 +331,7 @@ select, input {
 
   svg {
     margin: 0 8px 0 0;
+
     path {
       fill: $c-second;
     }
@@ -355,7 +364,7 @@ select, input {
     left: 50%;
     width: 50px;
     height: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: lds-dual-ring 1.2s linear infinite;
@@ -378,6 +387,7 @@ select, input {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
   }
+
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
@@ -398,7 +408,6 @@ select, input {
 
 /* Single
 /––––––––––––––––––––––––*/
-
 .property__single-header {
   position: relative;
   min-height: 80vh;
@@ -415,10 +424,24 @@ select, input {
   width: 100%;
   height: 100%;
 
+  img[loading=lazy] {
+    animation: show 1s;
+  }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -447,6 +470,7 @@ select, input {
 
   .info {
     font-size: 36px;
+    color: $c-white;
   }
 }
 
@@ -460,7 +484,7 @@ select, input {
 .single-info__box {
   display: flex;
   flex-direction: column;
-  
+
   svg {
     width: 60px;
     height: 60px;
@@ -475,6 +499,15 @@ select, input {
     font-size: 30px;
     font-weight: $semibold;
     margin: 10px 0 0;
+  }
+}
+
+.property__single-badge {
+  display: flex;
+  align-items: center;
+
+  .badge {
+    margin: 0 10px 0 0;
   }
 }
 
@@ -497,4 +530,80 @@ select, input {
 
 .badge__sold-out {
   background: red;
+}
+
+.propery__single-content-box {
+  margin: 3vw 0;
+  font-size: 18px;
+
+  h3 {
+    font-size: 36px;
+    margin: 0 0 20px;
+  }
+}
+
+.property__single-features {
+  a {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    text-decoration: none;
+    color: $c-text;
+    font-size: 20px;
+    transition: color ease-out $transition_fast;
+
+    &:hover {
+      color: $c-accent;
+    }
+
+    svg {
+      margin: 0 10px 0 0;
+
+      path {
+        fill: $c-accent;
+      }
+    }
+  }
+
+  .condition, .kitchen {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .features {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+}
+
+.splide--nav > .splide__track > .splide__list > .splide__slide.is-active {
+  border-color: $c-accent !important;
+}
+
+.splide--nav > .splide__track > .splide__list > .splide__slide {
+  cursor: pointer;
+  border: 2px solid transparent !important;
+  transition: all ease-out $transition_fast;
+}
+
+#gallery__dots {
+  margin: 15px 0 0;
+}
+
+.property__single-location {
+  iframe {
+    width: 100%;
+  }
+}
+
+.property__single-form {
+  position: sticky;
+  top: 60px;
+  display: block;
+  background: $c-white;
+  padding: 30px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
 }

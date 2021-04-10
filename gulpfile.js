@@ -81,6 +81,7 @@ gulp.task('styles:watch', gulp.series('styles:dev', lazyQuire(require, './gulp/c
 gulp.task('php:watch', function() {
 	watch('*.php', browserSync.reload);
 	watch('template-parts/*.php', browserSync.reload);
+	watch('template-parts/*/*.php', browserSync.reload);
 	watch('inc/*.php', browserSync.reload);
 });
 

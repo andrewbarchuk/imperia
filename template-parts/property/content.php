@@ -44,7 +44,7 @@ $search_query = new WP_Query($search_args);
 		<div class="property__wrap">
 			<!-- loading -->
 			<div class="property__loading">
-				<?php ieverly_the_theme_svg('loading', 'ui'); ?>
+				<?php ieverly_the_theme_svg('loading', 'ux'); ?>
 			</div>
 
 			<div id="property__items" class="row">

@@ -18,7 +18,7 @@ $property_type = wp_get_post_terms($post->ID, 'property-type');
 if (has_post_thumbnail()) {
 	$item__imgurl = get_the_post_thumbnail_url(get_the_ID(), 'medium');
 } else {
-	$item__imgurl = get_template_directory_uri() . '/dist/images/img-default.png';
+	$item__imgurl = get_template_directory_uri() . '/assets/dist/img/img-default.png';
 }
 ?>
 

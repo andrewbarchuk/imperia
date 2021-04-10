@@ -21,9 +21,8 @@ module.exports = deepMerge({
 			assets.src + '/scss/*.scss',
 			'!' + assets.src + '/scss/**/_*'
 		],
-		dest:  assets.dest + '/css',
-		clean: assets.dest + '/css/**/*.{css,map}',
-		rtl: assets.dest + '/css/rtl',
+		dest:  './',
+		clean: './*.{css,map}'
 	},
 
 	options: {
@@ -39,7 +38,7 @@ module.exports = deepMerge({
 			preset: [
 				'default',
 				{
-					discardComments: { removeAll: true }
+					// discardComments: { removeAll: true }
 				}
 			]
 		}
