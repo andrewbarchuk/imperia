@@ -95,7 +95,7 @@ gulp.task('default', gulp.parallel(
 	'scripts:watch',
 	'styles:watch',
 	'php:watch',
-	'browser:sync',
+	'browser:sync'
 	)
 );
 
