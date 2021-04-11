@@ -57,14 +57,16 @@ $gallery = get_posts(array(
 		<div class="container">
 			<div class="property__single-title">
 
-				<div class="property__single-badge">
-					<?php if (get_post_meta($post->ID, 'reserved', true) == 'on') {
-						echo '<div class="badge badge__reserved">' . __("Reserved", "ieverly") . '</div>';
-					}
-					if (get_post_meta($post->ID, 'sold_out', true) == 'on') {
-						echo '<div class="badge badge__sold-out">' . __("Sold out", "ieverly") . '</div>';
-					} ?>
-				</div>
+				<?php if(get_post_meta($post->ID, 'reserved', true) == 'on' OR get_post_meta($post->ID, 'sold_out', true) == 'on') { ?>
+					<div class="property__single-badge">
+						<?php if (get_post_meta($post->ID, 'reserved', true) == 'on') {
+							echo '<div class="badge badge__reserved">' . __("Reserved", "ieverly") . '</div>';
+						}
+						if (get_post_meta($post->ID, 'sold_out', true) == 'on') {
+							echo '<div class="badge badge__sold-out">' . __("Sold out", "ieverly") . '</div>';
+						} ?>
+					</div>
+				<?php } ?>
 
 				<div class="price">
 					<p class="price-replace"><?php esc_html_e(get_theme_mod('currency')); ?><?php esc_html_e($price, 'ieverly'); ?></p>
@@ -78,8 +80,9 @@ $gallery = get_posts(array(
 					foreach ($property_type as $property_type_slug) {
 						echo $property_type_slug->name . ' ';
 					}
-					echo get_the_title() . ' ' . esc_html('in', 'ieverly');
+					echo get_the_title() . ' ';
 					foreach ($property_city as $property_city_slug) {
+						esc_html_e('in', 'ieverly');
 						echo  ' ' . $property_city_slug->name;
 					}
 					?>
@@ -203,7 +206,7 @@ $gallery = get_posts(array(
 							<?php
 							echo __('Kitchen', 'ieverly') . ': ';
 							foreach ($property_kitchen as $property_kitchen_item) {
-								echo '<a href="' . get_post_type_archive_link('property') . '?property-state=' . $property_kitchen_item->slug . '"><b>' . $property_kitchen_item->name . '</b></a> ';
+								echo '<a href="' . get_post_type_archive_link('property') . '?property-kitchen=' . $property_kitchen_item->slug . '"><b>' . $property_kitchen_item->name . '</b></a> ';
 							}
 							?>
 						</div>

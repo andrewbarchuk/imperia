@@ -27,16 +27,16 @@ if (has_post_thumbnail()) {
 		<a rel="bookmark" arial-label="<?php echo get_the_title(); ?>" class="property__item-link" href="<?php echo get_permalink($post->ID); ?>"></a>
 
 		<header class="property__item-header">
-			<div class="property__item-badge">
-				<?php if (get_post_meta($post->ID, 'reserved', true) == 'on') {
-					echo '<div class="badge badge__reserved">' . __("Reserved", "ieverly") . '</div>';
-				} elseif (get_post_meta($post->ID, 'sold_out', true) == 'on') {
-					echo '<div class="badge badge__sold-out">' . __("Sold out", "ieverly") . '</div>';
-				} ?>
-				<?php if (has_term(array(315, 316, 317), 'property-building')) {
-					echo '<div class="badge badge__new-building">' . __("New building", "ieverly") . '</div>';
-				} ?>
-			</div>
+			<?php if(get_post_meta($post->ID, 'reserved', true) == 'on' OR get_post_meta($post->ID, 'sold_out', true) == 'on') { ?>
+				<div class="property__item-badge">
+						<?php if (get_post_meta($post->ID, 'reserved', true) == 'on') {
+							echo '<div class="badge badge__reserved">' . __("Reserved", "ieverly") . '</div>';
+						}
+						if (get_post_meta($post->ID, 'sold_out', true) == 'on') {
+							echo '<div class="badge badge__sold-out">' . __("Sold out", "ieverly") . '</div>';
+						} ?>
+				</div>
+			<?php } ?>
 			<img loading="lazy" src="<?php esc_html_e($item__imgurl); ?>" alt="<?php echo get_the_title(); ?>">
 		</header>
 

@@ -69,7 +69,7 @@ $search_query = new WP_Query($search_args);
 		</script>
 
 		<?php
-		if ($search_query->max_num_pages > get_query_var('paged')) {
+		if ( $search_query->max_num_pages > 1 ) {
 			echo '<button type="button" id="property__loadmore" data-loading="' . __('Loading...', 'ieverly') . '" class="button__accent button__loadmore">' . __('Load more', 'ieverly') . '</button>';
 		}
 		wp_reset_postdata();

@@ -48,11 +48,11 @@ if(!empty($areas)) {
             <label><?php esc_html_e('Price', 'ieverly'); ?> (<?php esc_html_e(get_theme_mod('currency')); ?>)</label>
             <div class="filter-fx">
                 <div class="double-init-box">
-                    <input type="number" placeholder="<?php echo esc_attr(min($prices)); ?>" min="<?php echo esc_attr(min($prices)); ?>" max="<?php echo esc_attr(max($prices)); ?>" class="inprange inprange-min range-price" name="min-price" id="min-price" value=""/>
+                    <input type="number" placeholder="<?php echo esc_attr(min($prices)); ?>" min="<?php echo esc_attr(min($prices)); ?>" value="<?php echo isset ( $_GET['min-price'] ) ? $_GET['min-price'] : ''; ?>" max="<?php echo esc_attr(max($prices)); ?>" class="inprange inprange-min range-price" name="min-price" id="min-price"/>
                 </div>
                 <span>-</span> 
                 <div class="double-init__box">
-                    <input type="number" placeholder="<?php echo esc_attr(max($prices)); ?>" min="<?php echo esc_attr(min($prices)); ?>" max="<?php echo esc_attr(max($prices)); ?>" class="inprange inprange-max range-price" name="max-price" id="max-price" value=""/>
+                    <input type="number" placeholder="<?php echo esc_attr(max($prices)); ?>" min="<?php echo esc_attr(min($prices)); ?>" value="<?php echo isset ( $_GET['max-price'] ) ? $_GET['max-price'] : ''; ?>" max="<?php echo esc_attr(max($prices)); ?>" class="inprange inprange-max range-price" name="max-price" id="max-price"/>
                 </div>
             </div>
         </div>
@@ -62,11 +62,11 @@ if(!empty($areas)) {
             <label><?php esc_html_e('Area', 'ieverly'); ?> (<?php esc_html_e(get_theme_mod('area')); ?>)</label>
             <div class="filter-fx">
                 <div class="double-init-box">
-                    <input type="number" placeholder="<?php echo esc_attr(min($areas)); ?>" min="<?php echo esc_attr(min($areas)); ?>" max="<?php echo esc_attr(max($areas)); ?>" class="inprange inprange-min range-area" name="min-area" id="min-area" value=""/>
+                    <input type="number" placeholder="<?php echo esc_attr(min($areas)); ?>" min="<?php echo esc_attr(min($areas)); ?>" value="<?php echo isset ( $_GET['max-area'] ) ? $_GET['max-area'] : ''; ?>" max="<?php echo esc_attr(max($areas)); ?>" class="inprange inprange-min range-area" name="min-area" id="min-area"/>
                 </div>
                 <span>-</span> 
                 <div class="double-init-box">
-                    <input type="number" placeholder="<?php echo esc_attr(max($areas)); ?>" min="<?php echo esc_attr(min($areas)); ?>" max="<?php echo esc_attr(max($areas)); ?>" class="inprange inprange-max range-area" name="max-area" id="max-area" value=""/>
+                    <input type="number" placeholder="<?php echo esc_attr(max($areas)); ?>" min="<?php echo esc_attr(min($areas)); ?>" value="<?php echo isset ( $_GET['max-area'] ) ? $_GET['max-area'] : ''; ?>" max="<?php echo esc_attr(max($areas)); ?>" class="inprange inprange-max range-area" name="max-area" id="max-area"/>
                 </div>
             </div>
         </div>

@@ -94,9 +94,9 @@ module.exports = deepMerge({
 					]
 				},
 				plugins: [
-					new ESLintPlugin( {
-						fix: true
-					}),
+					// new ESLintPlugin( {
+					// 	fix: true
+					// }),
 					// new webpack.ProvidePlugin({
 					// 	$: 'jquery',
 					// 	jQuery: 'jquery',
