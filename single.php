@@ -16,14 +16,14 @@ get_header();
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
 				<?php
-				while (have_posts()) :
+				while ( have_posts() ) :
 					the_post();
 
-					get_template_part('template-parts/content', get_post_type());
+					get_template_part( 'template-parts/content', get_post_type() );
 					the_post_navigation(
 						array(
-							'prev_text' => '<i></i><p><span class="nav-subtitle">' . esc_html__('Preview Post', 'ieverly') . '</span> <span class="nav-title">%title</span></p>',
-							'next_text' => '<i></i><p><span class="nav-subtitle">' . esc_html__('Next Post', 'ieverly') . '</span> <span class="nav-title">%title</span></p>',
+							'prev_text' => '<i></i><p><span class="nav-subtitle">' . esc_html__( 'Preview Post', 'ieverly' ) . '</span> <span class="nav-title">%title</span></p>',
+							'next_text' => '<i></i><p><span class="nav-subtitle">' . esc_html__( 'Next Post', 'ieverly' ) . '</span> <span class="nav-title">%title</span></p>',
 						)
 					);
 

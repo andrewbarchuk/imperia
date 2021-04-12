@@ -8,5 +8,5 @@
  */
 
 get_header();
-include ('template-parts/property/single.php');
+require 'template-parts/property/single.php';
 get_footer();

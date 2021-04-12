@@ -42,16 +42,15 @@ add_filter( 'the_content_more_link', 'modify_read_more_link' );
 /**
  * Add custom gallery support
  */
-function meta_boxes()
-{
-    wp_enqueue_script('jquery-ui-core');
-    wp_enqueue_script('jquery-ui-widget');
-    wp_enqueue_script('jquery-ui-sortable');
+function meta_boxes() {
+	 wp_enqueue_script( 'jquery-ui-core' );
+	wp_enqueue_script( 'jquery-ui-widget' );
+	wp_enqueue_script( 'jquery-ui-sortable' );
 
-    if (!did_action('wp_enqueue_media')) {
-        wp_enqueue_media();
-    }
+	if ( ! did_action( 'wp_enqueue_media' ) ) {
+		wp_enqueue_media();
+	}
 
-    wp_enqueue_script('myuploadscript', get_stylesheet_directory_uri() . '/js/meta-box.js', array('jquery'));
+	wp_enqueue_script( 'myuploadscript', get_stylesheet_directory_uri() . '/js/meta-box.js', array( 'jquery' ) );
 }
-add_action('admin_enqueue_scripts', 'meta_boxes');
+add_action( 'admin_enqueue_scripts', 'meta_boxes' );

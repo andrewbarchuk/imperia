@@ -8,5 +8,5 @@
  */
 
 get_header();
-include ('template-parts/property/content.php');
+require 'template-parts/property/content.php';
 get_footer();
