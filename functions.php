@@ -132,6 +132,8 @@ function ieverly_wphead_cleanup() {
 	// remove oEmbed link
 	remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
 	remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+	// wpml dropdown css
+	define( 'ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true );
 }
 add_action( 'after_setup_theme', 'ieverly_wphead_cleanup' );
 

@@ -46,8 +46,8 @@ $gallery = get_posts(
 
 <!-- cover -->
 <section class="property__single-header">
-	<div class="property__single-cover">
-		<img loading="lazy" src="<?php echo wp_kses( $item__imgurl ); ?>" alt="<?php echo wp_kses( get_the_title() ); ?>">
+	<div class="cover">
+		<img loading="lazy" src="<?php echo $item__imgurl; ?>" alt="<?php echo get_the_title(); ?>">
 	</div>
 
 	<div class="property__single-header-description">
@@ -67,7 +67,7 @@ $gallery = get_posts(
 				<?php } ?>
 
 				<div class="price">
-					<p class="price-replace"><?php echo wp_kses( get_theme_mod( 'currency' ) ); ?><?php echo wp_kses( $price ); ?></p>
+					<p class="price-replace"><?php echo get_theme_mod( 'currency' ); ?><?php echo $price; ?></p>
 				</div>
 
 				<h1 class="info">
@@ -91,7 +91,7 @@ $gallery = get_posts(
 				<?php if ( $floors ) { ?>
 					<div class="single-info__box storeys">
 						<?php ieverly_the_theme_svg( 'storeys', 'ui' ); ?>
-						<span><?php echo wp_kses( $floors ); ?></span>
+						<span><?php echo $floors; ?></span>
 						<p><?php esc_html_e( 'Storeys', 'ieverly' ); ?></p>
 					</div>
 				<?php }; ?>
@@ -99,7 +99,7 @@ $gallery = get_posts(
 				<?php if ( $beds ) { ?>
 					<div class="single-info__box beds">
 						<?php ieverly_the_theme_svg( 'beds', 'ui' ); ?>
-						<span><?php echo wp_kses( $beds ); ?></span>
+						<span><?php echo $beds; ?></span>
 						<p><?php esc_html_e( 'Bedrooms', 'ieverly' ); ?></p>
 					</div>
 				<?php }; ?>
@@ -107,7 +107,7 @@ $gallery = get_posts(
 				<?php if ( $area ) { ?>
 					<div class="single-info__box area">
 						<?php ieverly_the_theme_svg( 'area', 'ui' ); ?>
-						<span><?php echo wp_kses( $area ); ?><?php echo wp_kses( get_theme_mod( 'area' ) ); ?></span>
+						<span><?php echo $area; ?><?php echo get_theme_mod( 'area' ); ?></span>
 						<p><?php esc_html_e( 'Living area', 'ieverly' ); ?></p>
 					</div>
 				<?php }; ?>
@@ -115,7 +115,7 @@ $gallery = get_posts(
 				<?php if ( $area_land ) { ?>
 					<div class="single-info__box area-land">
 						<?php ieverly_the_theme_svg( 'area-land', 'ui' ); ?>
-						<span><?php echo wp_kses( $area_land ); ?><?php echo wp_kses( get_theme_mod( 'area' ) ); ?></span>
+						<span><?php echo $area_land; ?><?php echo get_theme_mod( 'area' ); ?></span>
 						<p><?php esc_html_e( 'Land area', 'ieverly' ); ?></p>
 					</div>
 				<?php }; ?>
@@ -123,7 +123,7 @@ $gallery = get_posts(
 				<?php if ( $baths ) { ?>
 					<div class="single-info__box baths">
 						<?php ieverly_the_theme_svg( 'baths', 'ui' ); ?>
-						<span><?php echo wp_kses( $baths ); ?></span>
+						<span><?php echo $baths; ?></span>
 						<p><?php esc_html_e( 'Baths', 'ieverly' ); ?></p>
 					</div>
 				<?php }; ?>
@@ -131,7 +131,7 @@ $gallery = get_posts(
 				<?php if ( $garage ) { ?>
 					<div class="single-info__box garage">
 						<?php ieverly_the_theme_svg( 'garage', 'ui' ); ?>
-						<span><?php echo wp_kses( $garage ); ?></span>
+						<span><?php echo $garage; ?></span>
 						<p><?php esc_html_e( 'Parking place', 'ieverly' ); ?></p>
 					</div>
 				<?php }; ?>

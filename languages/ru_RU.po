@@ -1,0 +1,844 @@
+# Copyright (C) 2021 Andrew Barchuk
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ieverly 1.1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/imperia\n"
+"Last-Translator: \n"
+"Language-Team: Русский\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-04-14T11:28:56+00:00\n"
+"PO-Revision-Date: 2021-04-14 11:59+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: ieverly\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Loco-Version: 2.5.2; wp-5.7"
+
+#: inc/post-type/post-property.php:13
+msgid "Add New"
+msgstr "Добавить"
+
+#: inc/post-type/post-property.php:14
+msgid "Add New Property"
+msgstr "Добавить недвижимость"
+
+#: inc/post-type/post-property.php:126
+msgid "Add New Property City"
+msgstr "Добавить город"
+
+#: inc/post-type/post-property.php:60
+msgid "Add New Property Feature"
+msgstr "Добавить преимущества"
+
+#: inc/post-type/post-property.php:191
+msgid "Add New Property Kitchen"
+msgstr "Добавить тип кухни"
+
+#: inc/post-type/post-property.php:159
+msgid "Add New Property State"
+msgstr "Добавить тип состояния"
+
+#: inc/post-type/post-property.php:223
+msgid "Add New Property Status"
+msgstr "Добавить статус"
+
+#: inc/post-type/post-property.php:91
+msgid "Add New Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:129
+msgid "Add or remove Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:63
+msgid "Add or remove Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:194
+msgid "Add or remove Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:162
+msgid "Add or remove Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:226
+msgid "Add or remove Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:94
+msgid "Add or remove Property Types"
+msgstr ""
+
+#: inc/post-type/post-property.php:121
+msgid "All Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:55
+msgid "All Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:186
+msgid "All Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:154
+msgid "All Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:218
+msgid "All Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:86
+msgid "All Property Types"
+msgstr ""
+
+#. Author of the theme
+msgid "Andrew Barchuk"
+msgstr ""
+
+#: inc/template-property.php:276 inc/template-property.php:278
+#: inc/template-property.php:325 inc/template-property.php:327
+msgid "Any"
+msgstr "Все"
+
+#: inc/template-customizer.php:262 template-parts/property/filter.php:67
+#: template-parts/property/search.php:64
+msgid "Area"
+msgstr "Площадь"
+
+#: inc/meta-box/meta-property.php:55
+msgid "Area house"
+msgstr "Площадь дома"
+
+#: inc/meta-box/meta-property.php:80 template-parts/property/single.php:127
+msgid "Baths"
+msgstr "Ванны"
+
+#: template-parts/property/single.php:103
+msgid "Bedrooms"
+msgstr "Спальни"
+
+#: inc/meta-box/meta-property.php:74
+msgid "Beds"
+msgstr "Спальни"
+
+#: inc/meta-box/meta-property.php:31
+msgid "Check if reserved"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:43
+msgid "Check if show home page"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:37
+msgid "Check if sold out"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:44
+msgid "Check photos for slider"
+msgstr ""
+
+#: inc/post-type/post-property.php:130
+msgid "Choose from the most used Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:64
+msgid "Choose from the most used Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:195
+msgid "Choose from the most used Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:163
+msgid "Choose from the most used Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:227
+msgid "Choose from the most used Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:95
+msgid "Choose from the most used Property Types"
+msgstr ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:41
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/template-customizer.php:237
+msgid "Currency"
+msgstr "Валюта"
+
+#: inc/template-customizer.php:165
+msgid "Custom settings"
+msgstr ""
+
+#. Description of the theme
+msgid "Custom theme"
+msgstr ""
+
+#: template-parts/property/sort.php:29
+msgid "date-ASC"
+msgstr "Дата ↑"
+
+#: template-parts/property/sort.php:28
+msgid "date-DESC"
+msgstr "Дата ↓"
+
+#: template-parts/property/single.php:216
+msgid "Description"
+msgstr "Описание"
+
+#: inc/template-customizer.php:212
+msgid "E-mail"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:39
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/post-type/post-property.php:15
+msgid "Edit Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:124
+msgid "Edit Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:58
+msgid "Edit Property Feature"
+msgstr ""
+
+#: inc/post-type/post-property.php:189
+msgid "Edit Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:157
+msgid "Edit Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:221
+msgid "Edit Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:89
+msgid "Edit Property Type"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:38
+msgid "Enter description"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:26
+msgid "Enter name"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:32
+msgid "Enter slogan"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:62 inc/meta-box/meta-home.php:68
+#: inc/meta-box/meta-home.php:74
+msgid "Enter text"
+msgstr ""
+
+#: inc/template-customizer.php:263
+msgid "Enter this area type"
+msgstr ""
+
+#: inc/template-customizer.php:238
+msgid "Enter this currency"
+msgstr ""
+
+#: inc/template-customizer.php:213
+msgid "Enter this e-mail"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:93
+msgid "Enter this map iframe"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:24
+msgid "Enter this ref code"
+msgstr ""
+
+#: inc/template-customizer.php:188
+msgid "Enter this text"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:50
+msgid "Enter title"
+msgstr ""
+
+#: template-parts/property/filter.php:137
+#: template-parts/property/single.php:180
+msgid "Features"
+msgstr "Опции"
+
+#: template-parts/property/search.php:94
+msgid "Find properties"
+msgstr "Поиск"
+
+#: inc/meta-box/meta-property.php:98
+msgid "Gallery"
+msgstr "Галерея"
+
+#: inc/meta-box/meta-property.php:86
+msgid "Garage"
+msgstr "Гараж"
+
+#: template-parts/property/single.php:195
+msgid "General state"
+msgstr "Состояние"
+
+#: functions.php:53
+msgid "Header menu"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:43
+msgid "Hero slider"
+msgstr ""
+
+#: template-parts/property/filter.php:40
+msgid "Hide filter"
+msgstr "Скрыть фильтр"
+
+#: inc/meta-box/meta-home.php:55
+msgid "History image"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:61
+msgid "History portfolio description"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:49
+msgid "History title"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:13
+msgid "Home settings"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://andrewbarchuk.com"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://andrewbarchuk.com/ieverly"
+msgstr ""
+
+#: template-parts/property/filter.php:48 template-parts/property/search.php:45
+msgid "id"
+msgstr ""
+
+#. Theme Name of the theme
+msgid "ieverly"
+msgstr ""
+
+#: template-parts/property/single.php:83
+msgid "in"
+msgstr "в"
+
+#: inc/meta-box/meta-home.php:73
+msgid "Instagram"
+msgstr ""
+
+#: 404.php:24
+msgid "It looks like nothing was found at this location."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/property/filter.php:113
+#: template-parts/property/single.php:205
+msgid "Kitchen"
+msgstr "Кухня"
+
+#: inc/meta-box/meta-property.php:62 template-parts/property/single.php:119
+msgid "Land area"
+msgstr "Площадь земли"
+
+#: inc/template-functions.php:63
+msgid "Language switcher"
+msgstr ""
+
+#: template-parts/property/content.php:35
+msgid "listings found"
+msgstr "объектов "
+
+#: template-parts/property/single.php:111
+msgid "Living area"
+msgstr "Жилая площадь"
+
+#: template-parts/property/content.php:73
+msgid "Load more"
+msgstr "Загрузить еще"
+
+#: template-parts/property/content.php:73
+msgid "Loading..."
+msgstr "Загрузка..."
+
+#: template-parts/property/filter.php:97 template-parts/property/search.php:78
+#: template-parts/property/single.php:225
+msgid "Location"
+msgstr "Расположение"
+
+#: inc/meta-box/meta-property.php:92
+msgid "Map iframe"
+msgstr ""
+
+#: template-parts/property/sort.php:33
+msgid "meta_value_num-ASC-area"
+msgstr "Площадь ↑"
+
+#: template-parts/property/sort.php:31
+msgid "meta_value_num-ASC-price"
+msgstr "Цена ↑"
+
+#: template-parts/property/sort.php:32
+msgid "meta_value_num-DESC-area"
+msgstr "Площадь ↓"
+
+#: template-parts/property/sort.php:30
+msgid "meta_value_num-DESC-price"
+msgstr "Цена ↓"
+
+#: template-parts/property/filter.php:129
+msgid "Min baths"
+msgstr "Ванны"
+
+#: template-parts/property/filter.php:121 template-parts/property/search.php:86
+msgid "Min beds"
+msgstr "Спальни"
+
+#: inc/meta-box/meta-home.php:25
+msgid "Name"
+msgstr "Имя"
+
+#: inc/post-type/post-property.php:16
+msgid "New Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:127
+msgid "New Property City Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:61
+msgid "New Property Feature Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:192
+msgid "New Property Kitchen Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:160
+msgid "New Property State Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:224
+msgid "New Property Status Name"
+msgstr ""
+
+#: inc/post-type/post-property.php:92
+msgid "New Property Type Name"
+msgstr ""
+
+#: single.php:26
+msgid "Next Post"
+msgstr ""
+
+#: inc/post-type/post-property.php:19
+msgid "No Property found"
+msgstr ""
+
+#: inc/post-type/post-property.php:20
+msgid "No Property found in Trash"
+msgstr ""
+
+#: template-parts/notfound.php:12
+msgid "Not found"
+msgstr "Не найдено"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Не найдено"
+
+#: inc/meta-box/meta-property.php:68
+msgid "Number of floors"
+msgstr "Этажность"
+
+#. translators: 1: title.
+#: comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:49 inc/meta-box/meta-property.php:56
+#: inc/meta-box/meta-property.php:63 inc/meta-box/meta-property.php:69
+#: inc/meta-box/meta-property.php:75 inc/meta-box/meta-property.php:81
+#: inc/meta-box/meta-property.php:87
+msgid "Only digits"
+msgstr "Только цифры"
+
+#: 404.php:20
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ой! Эту страницу нельзя найти."
+
+#: template-parts/property/sort.php:19
+msgid "Order"
+msgstr "Сортировать"
+
+#: template-parts/content-page.php:25
+msgid "Pages:"
+msgstr "Страниц:"
+
+#: inc/post-type/post-property.php:122
+msgid "Parent Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:123
+msgid "Parent Property City:"
+msgstr ""
+
+#: inc/post-type/post-property.php:56
+msgid "Parent Property Feature"
+msgstr ""
+
+#: inc/post-type/post-property.php:57
+msgid "Parent Property Feature:"
+msgstr ""
+
+#: inc/post-type/post-property.php:187
+msgid "Parent Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:188
+msgid "Parent Property Kitchen:"
+msgstr ""
+
+#: inc/post-type/post-property.php:155
+msgid "Parent Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:156
+msgid "Parent Property State:"
+msgstr ""
+
+#: inc/post-type/post-property.php:219
+msgid "Parent Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:220
+msgid "Parent Property Status:"
+msgstr ""
+
+#: inc/post-type/post-property.php:87
+msgid "Parent Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:88
+msgid "Parent Property Type:"
+msgstr ""
+
+#: template-parts/property/single.php:135
+msgid "Parking place"
+msgstr "Паркомест"
+
+#: template-parts/property/sort.php:11
+msgid "Per page"
+msgstr "На странице"
+
+#: inc/template-customizer.php:187
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: inc/post-type/post-property.php:120
+msgid "Popular Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:54
+msgid "Popular Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:185
+msgid "Popular Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:153
+msgid "Popular Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:217
+msgid "Popular Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:85
+msgid "Popular Property Types"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:67
+msgid "Portfolio title"
+msgstr ""
+
+#: single.php:25
+msgid "Preview Post"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:48 template-parts/property/filter.php:53
+#: template-parts/property/search.php:50
+msgid "Price"
+msgstr "Цена"
+
+#: inc/post-type/post-property.php:11
+msgid "Properties"
+msgstr "Недвижимость"
+
+#: inc/post-type/post-property.php:12
+msgid "Property"
+msgstr "Недвижимость"
+
+#: inc/post-type/post-property.php:131
+msgid "Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:117 inc/post-type/post-property.php:118
+msgid "Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:51 inc/post-type/post-property.php:52
+#: inc/post-type/post-property.php:65
+msgid "Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:182 inc/post-type/post-property.php:183
+#: inc/post-type/post-property.php:196
+msgid "Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:150 inc/post-type/post-property.php:151
+#: inc/post-type/post-property.php:164
+msgid "Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:214 inc/post-type/post-property.php:215
+#: inc/post-type/post-property.php:228
+msgid "Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:82 inc/post-type/post-property.php:83
+msgid "Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:96
+msgid "Property Types"
+msgstr ""
+
+#: inc/template-functions.php:38
+msgid "Read post"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: inc/meta-box/meta-property.php:23 template-parts/property/filter.php:47
+#: template-parts/property/search.php:44
+msgid "REF"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:30 template-parts/property/item.php:34
+#: template-parts/property/single.php:60
+msgid "Reserved"
+msgstr "Зарезервировано"
+
+#: template-parts/property/filter.php:145
+msgid "Search"
+msgstr "Поиск"
+
+#: inc/post-type/post-property.php:18
+msgid "Search Property"
+msgstr ""
+
+#: inc/post-type/post-property.php:119
+msgid "Search Property Cities"
+msgstr ""
+
+#: inc/post-type/post-property.php:53
+msgid "Search Property Features"
+msgstr ""
+
+#: inc/post-type/post-property.php:184
+msgid "Search Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:152
+msgid "Search Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:216
+msgid "Search Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:84
+msgid "Search Property Types"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:24
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:56
+msgid "Select image"
+msgstr "Выберите изображение"
+
+#: template-parts/property/filter.php:115
+msgid "Select kitchen"
+msgstr "Выберите тип кухни"
+
+#: template-parts/property/filter.php:99 template-parts/property/search.php:80
+msgid "Select location"
+msgstr "Выберите город"
+
+#: template-parts/property/filter.php:107
+msgid "Select state"
+msgstr "Выберите состояние"
+
+#: template-parts/property/filter.php:83
+msgid "Select status"
+msgstr "Выберите статус"
+
+#: template-parts/property/filter.php:91
+msgid "Select type"
+msgstr "Выберите тип"
+
+#: inc/post-type/post-property.php:128
+msgid "Separate Property Cities with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:62
+msgid "Separate Property Features with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:193
+msgid "Separate Property Kitchen with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:161
+msgid "Separate Property State with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:225
+msgid "Separate Property Status with commas"
+msgstr ""
+
+#: inc/post-type/post-property.php:93
+msgid "Separate Property Types with commas"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:12
+msgid "Settings"
+msgstr "Настройки"
+
+#: template-parts/property/filter.php:41
+msgid "Show filter"
+msgstr "Показать фильтр"
+
+#: inc/meta-box/meta-property.php:42
+msgid "Show on home"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:31
+msgid "Slogan"
+msgstr ""
+
+#: inc/meta-box/meta-home.php:37
+msgid "Slogan description"
+msgstr ""
+
+#: functions.php:54
+msgid "Social networks"
+msgstr ""
+
+#: inc/meta-box/meta-property.php:36 template-parts/property/item.php:37
+#: template-parts/property/single.php:63
+msgid "Sold out"
+msgstr "Продано"
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Извините, но ничего не соответствовало вашим поисковым запросам. Пожалуйста, "
+"попытайтесь снова с другими ключевыми словами."
+
+#: template-parts/property/filter.php:105
+msgid "State"
+msgstr "Состояние"
+
+#: template-parts/property/filter.php:81
+msgid "Status"
+msgstr "Статус"
+
+#: template-parts/property/single.php:95
+msgid "Storeys"
+msgstr "Этажность"
+
+#: inc/template-customizer.php:168
+msgid "Theme settings"
+msgstr ""
+
+#: template-parts/property/filter.php:89
+msgid "Type"
+msgstr "Тип"
+
+#: inc/post-type/post-property.php:125
+msgid "Update Property City"
+msgstr ""
+
+#: inc/post-type/post-property.php:59
+msgid "Update Property Feature"
+msgstr ""
+
+#: inc/post-type/post-property.php:190
+msgid "Update Property Kitchen"
+msgstr ""
+
+#: inc/post-type/post-property.php:158
+msgid "Update Property State"
+msgstr ""
+
+#: inc/post-type/post-property.php:222
+msgid "Update Property Status"
+msgstr ""
+
+#: inc/post-type/post-property.php:90
+msgid "Update Property Type"
+msgstr ""
+
+#: inc/post-type/post-property.php:17
+msgid "View Property"
+msgstr "Смотреть недвижимость"

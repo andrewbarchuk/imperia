@@ -4,15 +4,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ieverly 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/imperia\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: \n"
+"Language-Team: Spanish (Spain)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-14T11:57:52+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
+"POT-Creation-Date: 2021-04-14T11:28:56+00:00\n"
+"PO-Revision-Date: 2021-04-14 11:29+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Domain: ieverly\n"
+"\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.5.2; wp-5.7"
 
 #. Theme Name of the theme
 msgid "ieverly"
@@ -123,8 +127,7 @@ msgstr ""
 msgid "History portfolio description"
 msgstr ""
 
-#: inc/meta-box/meta-home.php:62
-#: inc/meta-box/meta-home.php:68
+#: inc/meta-box/meta-home.php:62 inc/meta-box/meta-home.php:68
 #: inc/meta-box/meta-home.php:74
 msgid "Enter text"
 msgstr ""
@@ -141,8 +144,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:23
-#: template-parts/property/filter.php:47
+#: inc/meta-box/meta-property.php:23 template-parts/property/filter.php:47
 #: template-parts/property/search.php:44
 msgid "REF"
 msgstr ""
@@ -151,8 +153,7 @@ msgstr ""
 msgid "Enter this ref code"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:30
-#: template-parts/property/item.php:34
+#: inc/meta-box/meta-property.php:30 template-parts/property/item.php:34
 #: template-parts/property/single.php:60
 msgid "Reserved"
 msgstr ""
@@ -161,8 +162,7 @@ msgstr ""
 msgid "Check if reserved"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:36
-#: template-parts/property/item.php:37
+#: inc/meta-box/meta-property.php:36 template-parts/property/item.php:37
 #: template-parts/property/single.php:63
 msgid "Sold out"
 msgstr ""
@@ -179,18 +179,14 @@ msgstr ""
 msgid "Check if show home page"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:48
-#: template-parts/property/filter.php:53
+#: inc/meta-box/meta-property.php:48 template-parts/property/filter.php:53
 #: template-parts/property/search.php:50
 msgid "Price"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:49
-#: inc/meta-box/meta-property.php:56
-#: inc/meta-box/meta-property.php:63
-#: inc/meta-box/meta-property.php:69
-#: inc/meta-box/meta-property.php:75
-#: inc/meta-box/meta-property.php:81
+#: inc/meta-box/meta-property.php:49 inc/meta-box/meta-property.php:56
+#: inc/meta-box/meta-property.php:63 inc/meta-box/meta-property.php:69
+#: inc/meta-box/meta-property.php:75 inc/meta-box/meta-property.php:81
 #: inc/meta-box/meta-property.php:87
 msgid "Only digits"
 msgstr ""
@@ -199,8 +195,7 @@ msgstr ""
 msgid "Area house"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:62
-#: template-parts/property/single.php:119
+#: inc/meta-box/meta-property.php:62 template-parts/property/single.php:119
 msgid "Land area"
 msgstr ""
 
@@ -212,8 +207,7 @@ msgstr ""
 msgid "Beds"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:80
-#: template-parts/property/single.php:127
+#: inc/meta-box/meta-property.php:80 template-parts/property/single.php:127
 msgid "Baths"
 msgstr ""
 
@@ -273,8 +267,7 @@ msgstr ""
 msgid "No Property found in Trash"
 msgstr ""
 
-#: inc/post-type/post-property.php:51
-#: inc/post-type/post-property.php:52
+#: inc/post-type/post-property.php:51 inc/post-type/post-property.php:52
 #: inc/post-type/post-property.php:65
 msgid "Property Features"
 msgstr ""
@@ -327,8 +320,7 @@ msgstr ""
 msgid "Choose from the most used Property Features"
 msgstr ""
 
-#: inc/post-type/post-property.php:82
-#: inc/post-type/post-property.php:83
+#: inc/post-type/post-property.php:82 inc/post-type/post-property.php:83
 msgid "Property Type"
 msgstr ""
 
@@ -384,8 +376,7 @@ msgstr ""
 msgid "Property Types"
 msgstr ""
 
-#: inc/post-type/post-property.php:117
-#: inc/post-type/post-property.php:118
+#: inc/post-type/post-property.php:117 inc/post-type/post-property.php:118
 msgid "Property City"
 msgstr ""
 
@@ -441,8 +432,7 @@ msgstr ""
 msgid "Property Cities"
 msgstr ""
 
-#: inc/post-type/post-property.php:150
-#: inc/post-type/post-property.php:151
+#: inc/post-type/post-property.php:150 inc/post-type/post-property.php:151
 #: inc/post-type/post-property.php:164
 msgid "Property State"
 msgstr ""
@@ -495,8 +485,7 @@ msgstr ""
 msgid "Choose from the most used Property State"
 msgstr ""
 
-#: inc/post-type/post-property.php:182
-#: inc/post-type/post-property.php:183
+#: inc/post-type/post-property.php:182 inc/post-type/post-property.php:183
 #: inc/post-type/post-property.php:196
 msgid "Property Kitchen"
 msgstr ""
@@ -549,8 +538,7 @@ msgstr ""
 msgid "Choose from the most used Property Kitchen"
 msgstr ""
 
-#: inc/post-type/post-property.php:214
-#: inc/post-type/post-property.php:215
+#: inc/post-type/post-property.php:214 inc/post-type/post-property.php:215
 #: inc/post-type/post-property.php:228
 msgid "Property Status"
 msgstr ""
@@ -635,8 +623,7 @@ msgstr ""
 msgid "Enter this currency"
 msgstr ""
 
-#: inc/template-customizer.php:262
-#: template-parts/property/filter.php:67
+#: inc/template-customizer.php:262 template-parts/property/filter.php:67
 #: template-parts/property/search.php:64
 msgid "Area"
 msgstr ""
@@ -653,10 +640,8 @@ msgstr ""
 msgid "Language switcher"
 msgstr ""
 
-#: inc/template-property.php:276
-#: inc/template-property.php:278
-#: inc/template-property.php:325
-#: inc/template-property.php:327
+#: inc/template-property.php:276 inc/template-property.php:278
+#: inc/template-property.php:325 inc/template-property.php:327
 msgid "Any"
 msgstr ""
 
@@ -679,15 +664,20 @@ msgstr ""
 
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:37
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:44
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #: template-parts/content-page.php:25
@@ -723,8 +713,7 @@ msgstr ""
 msgid "Show filter"
 msgstr ""
 
-#: template-parts/property/filter.php:48
-#: template-parts/property/search.php:45
+#: template-parts/property/filter.php:48 template-parts/property/search.php:45
 msgid "id"
 msgstr ""
 
@@ -744,14 +733,12 @@ msgstr ""
 msgid "Select type"
 msgstr ""
 
-#: template-parts/property/filter.php:97
-#: template-parts/property/search.php:78
+#: template-parts/property/filter.php:97 template-parts/property/search.php:78
 #: template-parts/property/single.php:225
 msgid "Location"
 msgstr ""
 
-#: template-parts/property/filter.php:99
-#: template-parts/property/search.php:80
+#: template-parts/property/filter.php:99 template-parts/property/search.php:80
 msgid "Select location"
 msgstr ""
 
@@ -772,8 +759,7 @@ msgstr ""
 msgid "Select kitchen"
 msgstr ""
 
-#: template-parts/property/filter.php:121
-#: template-parts/property/search.php:86
+#: template-parts/property/filter.php:121 template-parts/property/search.php:86
 msgid "Min beds"
 msgstr ""
 
@@ -788,10 +774,6 @@ msgstr ""
 
 #: template-parts/property/filter.php:145
 msgid "Search"
-msgstr ""
-
-#: template-parts/property/search.php:94
-msgid "Find properties"
 msgstr ""
 
 #: template-parts/property/single.php:83
@@ -828,28 +810,4 @@ msgstr ""
 
 #: template-parts/property/sort.php:19
 msgid "Order"
-msgstr ""
-
-#: template-parts/property/sort.php:28
-msgid "date-DESC"
-msgstr ""
-
-#: template-parts/property/sort.php:29
-msgid "date-ASC"
-msgstr ""
-
-#: template-parts/property/sort.php:30
-msgid "meta_value_num-DESC-price"
-msgstr ""
-
-#: template-parts/property/sort.php:31
-msgid "meta_value_num-ASC-price"
-msgstr ""
-
-#: template-parts/property/sort.php:32
-msgid "meta_value_num-DESC-area"
-msgstr ""
-
-#: template-parts/property/sort.php:33
-msgid "meta_value_num-ASC-area"
 msgstr ""

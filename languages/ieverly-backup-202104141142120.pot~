@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-14T11:57:52+00:00\n"
+"POT-Creation-Date: 2021-04-14T11:28:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: ieverly\n"
@@ -790,10 +790,6 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: template-parts/property/search.php:94
-msgid "Find properties"
-msgstr ""
-
 #: template-parts/property/single.php:83
 msgid "in"
 msgstr ""
@@ -828,28 +824,4 @@ msgstr ""
 
 #: template-parts/property/sort.php:19
 msgid "Order"
-msgstr ""
-
-#: template-parts/property/sort.php:28
-msgid "date-DESC"
-msgstr ""
-
-#: template-parts/property/sort.php:29
-msgid "date-ASC"
-msgstr ""
-
-#: template-parts/property/sort.php:30
-msgid "meta_value_num-DESC-price"
-msgstr ""
-
-#: template-parts/property/sort.php:31
-msgid "meta_value_num-ASC-price"
-msgstr ""
-
-#: template-parts/property/sort.php:32
-msgid "meta_value_num-DESC-area"
-msgstr ""
-
-#: template-parts/property/sort.php:33
-msgid "meta_value_num-ASC-area"
 msgstr ""

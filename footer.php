@@ -20,7 +20,11 @@
 						<?php the_custom_logo(); ?>
 					</div>
 
-					<nav class="site__footer-menu hero__social-menu">
+					<div class="site__footer-copyright">
+						<span class="name">© <b><?php echo get_bloginfo( 'name' ); ?></b>, <?php echo date( 'Y' ); ?></span>
+					</div>
+
+					<nav class="site__footer-menu site__social-menu">
 						<?php
 						wp_nav_menu(
 							array(
@@ -29,11 +33,6 @@
 						);
 						?>
 					</nav>
-
-					<div class="site__footer-copyright">
-						<span class="name">© <b><?php echo get_bloginfo( 'name' ); ?></b>, <?php echo date( 'Y' ); ?></span>
-						<span class="description"><?php esc_html_e( 'All rights reserved.', 'ieverly' ); ?></span>
-					</div>
 				</div>
 			</div>
 		</div>

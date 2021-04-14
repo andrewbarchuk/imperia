@@ -13,8 +13,8 @@
  */
 
 get_header();
-// get_template_part( '/template-parts/home/home-hero' ); 
-
+get_template_part( '/template-parts/home/property-search' );
+get_template_part( '/template-parts/content-clean' ); 
 get_footer();
 
 

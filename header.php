@@ -15,7 +15,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
@@ -29,13 +29,20 @@
 		<header id="masthead" class="site__header">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-2 col-md-3 col-6 static">
-						<div class="site__header-branding">
-							<?php the_custom_logo(); ?>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-8 static">
+						<div class="site__header-box">
+							<div class="site__header-branding">
+								<?php the_custom_logo(); ?>
+							</div>
+
+							<?php if (is_active_sidebar('language')) : ?>
+								<!-- switcher -->
+								<?php dynamic_sidebar('language'); ?>
+							<?php endif; ?>
 						</div>
 					</div>
 
-					<div class="col-lg-10 col-md-9 col-6 static">
+					<div class="col-xl-9 col-lg-9 col-md-8 col-4 static">
 						<div id="site-navigation" class="site__header-navigation">
 							<button class="site__header-menu-button" aria-controls="primary-menu" aria-expanded="false">
 								<b></b>
@@ -50,6 +57,16 @@
 										wp_nav_menu(
 											array(
 												'theme_location' => 'header',
+											)
+										);
+										?>
+									</nav>
+
+									<nav class="site__social-menu">
+										<?php
+										wp_nav_menu(
+											array(
+												'theme_location' => 'social',
 											)
 										);
 										?>
