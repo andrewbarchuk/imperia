@@ -511,10 +511,11 @@ img[loading=lazy] {
 .features-checkbox {
   display: flex;
   align-items: center;
-  gap: 3px;
+  margin: 5px;
 
   label {
     cursor: pointer;
+    margin: 0 5px;
   }
 
   span {
@@ -525,7 +526,6 @@ img[loading=lazy] {
 .features__list {
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
 }
 
 /* Item

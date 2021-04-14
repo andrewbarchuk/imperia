@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('item__full-clean content'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'item__full-clean content' ); ?>>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 offset-md-1">
