@@ -77,6 +77,7 @@ h1 {
 }
 
 .entry-content {
+  font-size: 18px;
 
   h1,
   h2,
@@ -85,7 +86,7 @@ h1 {
   h5,
   h6 {
     font-family: $f-title;
-    margin: 25px 0 10px;
+    margin: 40px 0 20px;
     color: $c-title;
   }
 
@@ -100,6 +101,10 @@ h1 {
     &:hover {
       text-decoration: none;
     }
+  }
+
+  ul {
+    margin: 0 0 0 30px;
   }
 }
 
@@ -175,6 +180,7 @@ img[loading=lazy] {
   Header
 ==================================================================================*/
 .site__header {
+  position: relative;
   background: $c-white;
   border-bottom: 1px solid #f1f1f1;
   padding: 10px 0;
@@ -197,6 +203,35 @@ img[loading=lazy] {
 
 .site__header-menu-button {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 15px 0 0;
+
+  b {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: $c-text;
+    margin: 3px 0;
+    transition: all ease-out 0.3s;
+  }
+
+  &[aria-expanded="true"] {
+    b:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    b:nth-child(2) {
+      transform: scaleX(0);
+    }
+
+    b:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+  }
 }
 
 .site__header-menu {
@@ -225,17 +260,6 @@ img[loading=lazy] {
         color: $c-accent;
       }
     }
-  }
-}
-
-.site__header-nav-box {
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: none;
-    width: 100%;
-    padding: 0;
   }
 }
 
@@ -277,11 +301,11 @@ img[loading=lazy] {
 /* Language switcher
 /––––––––––––––––––––––––*/
 .language__swithcer {
+  position: relative;
   display: flex;
   align-items: flex-start;
   flex: 1;
   margin: 0 10px;
-  position: relative;
 
   ul {
     display: flex;
@@ -313,7 +337,7 @@ img[loading=lazy] {
         align-items: center;
         color: var(--c-accent);
         height: 100%;
-        padding: 0 1vw;
+        padding: 0 10px;
         text-decoration: none;
         transition: all ease-out $transition_fast;
 
@@ -331,7 +355,7 @@ img[loading=lazy] {
         transform: translateY(20%);
         transition: all ease-out $transition_fast;
         visibility: hidden;
-        z-index: 2;
+        z-index: 100;
 
         li {
           margin: 15px 0 0;
@@ -415,6 +439,8 @@ img[loading=lazy] {
 
   label {
     margin: 0 10px 0 0;
+    display: flex;
+    align-items: center;
   }
 
   #property_number_of_results {
@@ -433,7 +459,6 @@ img[loading=lazy] {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-around;
-  gap: 10px;
 }
 
 .filter-fx {
@@ -451,6 +476,7 @@ img[loading=lazy] {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin: 10px;
 
   button {
     &:first-child {
@@ -499,7 +525,7 @@ img[loading=lazy] {
 .features__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  margin: 10px;
 }
 
 /* Item
@@ -760,7 +786,7 @@ img[loading=lazy] {
   width: 100%;
   color: $c-white;
   padding: 10vh;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 22.05%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 22.05%, rgba(0, 0, 0, 0) 100%);
 
   .container {
     display: flex;
@@ -771,6 +797,7 @@ img[loading=lazy] {
 .property__single-title {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 30px;
 
   .price {
@@ -781,12 +808,14 @@ img[loading=lazy] {
   .info {
     font-size: 36px;
     color: $c-white;
+    line-height: 110%;
   }
 }
 
 .property__single-info {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 40px 0 0;
 }
@@ -794,6 +823,7 @@ img[loading=lazy] {
 .single-info__box {
   display: flex;
   flex-direction: column;
+  margin: 10px;
 
   svg {
     width: 60px;
@@ -814,10 +844,11 @@ img[loading=lazy] {
 
 .property__single-badge {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
 
   .badge {
-    margin: 0 10px 0 0;
+    margin: 5px;
   }
 }
 
@@ -928,7 +959,6 @@ img[loading=lazy] {
   align-items: flex-end;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   color: $c-white;
@@ -937,6 +967,8 @@ img[loading=lazy] {
   transition: all .3s ease-out;
 
   .filter__item {
+    margin: 10px;
+
     &.submit {
       flex: 0 1 auto;
     }
@@ -978,6 +1010,22 @@ img[loading=lazy] {
   top: 60px;
   display: block;
   background: $c-white;
-  padding: 30px;
+  padding: 40px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+  h4 {
+    font-size: 30px;
+  }
+
+  .inp {
+    padding: 15px;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .ajax-loader {
+    position: absolute;
+    top: 30px;
+    right: 0;
+  }
 }

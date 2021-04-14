@@ -64,6 +64,52 @@ const smooth_scroll = {
 	},
 };
 
+const menu = {
+	/**
+	 * Toggle menu
+	 */
+	init() {
+		// Menu toggle button
+		function navigation_togge() {
+			const siteNavigation = document.querySelector( '.site__header-nav-box' ),
+				button = document.querySelector( '.site__header-menu-button' ),
+				menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
+
+			if ( ! menu.classList.contains( 'nav-menu' ) ) {
+				menu.classList.add( 'nav-menu' );
+			}
+
+			function toggled_menu() {
+				siteNavigation.classList.toggle( 'active' );
+				const overflow = document.querySelector( 'body' );
+
+				if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
+					button.setAttribute( 'aria-expanded', 'false' );
+					overflow.style.removeProperty( 'overflow' );
+				} else {
+					button.setAttribute( 'aria-expanded', 'true' );
+					overflow.style.overflow = 'hidden';
+				}
+			}
+
+			// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
+			button.addEventListener( 'click', function() {
+				toggled_menu();
+			} );
+
+			// Toogle when click # tag
+			document.querySelectorAll( '.site__header-nav-box a[href^="#"]' ).forEach( ( event ) => {
+				event.addEventListener( 'click', function() {
+					siteNavigation.classList.remove( 'active' );
+					button.setAttribute( 'aria-expanded', 'false' );
+					document.querySelector( 'body' ).style.removeProperty( 'overflow' );
+				} );
+			} );
+		}
+		navigation_togge();
+	},
+};
+
 const glight = {
 	/**
 	 * Glight gallery
@@ -138,6 +184,8 @@ const ieverly_property = {
 							}
 							history.pushState( null, null, cur_url_filter );
 
+							console.log( 'success load more' );
+
 							property__loading(); // loading animation
 							// remove button if last page
 							if ( current_page == max_page ) {
@@ -168,7 +216,7 @@ const ieverly_property = {
 
 			// disable loadmore button
 			if ( current_page == max_page ) {
-				document.querySelector( '#property__loadmore' ).style.display = 'none';
+				loadmore__button.style.display = 'none';
 			}
 
 			/**
@@ -203,6 +251,8 @@ const ieverly_property = {
 						}
 						history.pushState( null, null, cur_url_filter );
 
+						console.log( 'success filter' );
+
 						property__loading(); // loading animation
 						if ( response.max_page < 2 ) {
 							document.querySelector( '#property__loadmore' ).style.display = 'none';
@@ -218,9 +268,15 @@ const ieverly_property = {
 			}
 
 			const button__search = document.querySelector( '.button__search' );
-
-			// click button
+			// click search button
 			button__search.addEventListener( 'click', () => {
+				if ( window.matchMedia( '(max-width: 992px)' ).matches ) {
+					filter_show();
+					window.scrollTo( {
+						top: 0,
+						behavior: 'smooth',
+					} );
+				}
 				property__loading();
 				property__response();
 				button__search.classList.remove( 'light' );
@@ -243,6 +299,7 @@ const ieverly_property = {
 			 */
 			const form = document.querySelector( '#property__filter' );
 			function clearForm( form ) {
+				console.log( 'clear filter' );
 				const elements = form.elements;
 				form.reset();
 				for ( let i = 0; i < elements.length; i++ ) {
@@ -273,9 +330,37 @@ const ieverly_property = {
 			// reset
 			document.querySelector( '.button__reset' ).addEventListener( 'click', () => {
 				clearForm( form );
-				property__loading();
-				property__response();
+				if ( window.matchMedia( '(min-width: 992px)' ).matches ) {
+					property__loading();
+					property__response();
+				}
 				button__search.classList.remove( 'light' );
+			} );
+
+			// show filter if home page
+			function filter_show() {
+				if ( window.matchMedia( '(max-width: 992px)' ).matches ) {
+					const filter_list = document.querySelector( '.filter__list' ),
+						overflow = document.querySelector( 'body' ),
+						button = document.querySelector( '.button__show-filter' ),
+						button_text = button.dataset.text,
+						button_close_text = button.dataset.hide;
+
+					filter_list.classList.toggle( 'active' );
+
+					if ( filter_list.classList.contains( 'active' ) ) {
+						button.innerHTML = button_close_text;
+						overflow.style.overflow = 'hidden';
+					} else {
+						button.innerHTML = button_text;
+						overflow.style.removeProperty( 'overflow' );
+					}
+				}
+			}
+
+			// click show filter
+			document.querySelector( '.button__show-filter' ).addEventListener( 'click', () => {
+				filter_show();
 			} );
 		}
 	},
@@ -283,6 +368,7 @@ const ieverly_property = {
 
 document.addEventListener( 'DOMContentLoaded', () => {
 	smooth_scroll.init();
+	menu.init();
 	glight.init();
 	ieverly_property.filter();
 	splide_settings.init();
