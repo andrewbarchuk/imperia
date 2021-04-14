@@ -132,9 +132,9 @@ const ieverly_property = {
 							// url replace
 							const cur_url = document.URL;
 							if ( cur_url.indexOf( '?' ) > -1 ) {
-								var cur_url_filter = cur_url.replace( /property\S*\?/g, 'property/page/' + current_page + '/?' );
+								var cur_url_filter = cur_url.replace( /\/property\S*\?/g, '/property/page/' + current_page + '/?' );
 							} else {
-								var cur_url_filter = cur_url.replace( /property\S*/, 'property/page/' + current_page + '/' );
+								var cur_url_filter = cur_url.replace( /\/property\S*/, '/property/page/' + current_page + '/' );
 							}
 							history.pushState( null, null, cur_url_filter );
 
@@ -197,7 +197,7 @@ const ieverly_property = {
 							url_list_filter = '?' + url_list.replace( /&action=property__filter\S*/gi, '' );
 
 						if ( cur_url.indexOf( 'page' ) > -1 ) {
-							var cur_url_filter = cur_url.replace( /property\/page\/*\S/g, 'property/' + url_list_filter );
+							var cur_url_filter = cur_url.replace( /\/property\/page\/*\S/g, '/property/' + url_list_filter );
 						} else {
 							var cur_url_filter = url_list_filter;
 						}
@@ -238,9 +238,41 @@ const ieverly_property = {
 				button__search.classList.add( 'light' );
 			} );
 
+			/**
+			 * Clear form
+			 */
+			const form = document.querySelector( '#property__filter' );
+			function clearForm( form ) {
+				const elements = form.elements;
+				form.reset();
+				for ( let i = 0; i < elements.length; i++ ) {
+					const field_type = elements[ i ].type.toLowerCase();
+					switch ( field_type ) {
+						case 'text':
+						case 'password':
+						case 'textarea':
+						case 'number':
+							elements[ i ].value = '';
+							break;
+						case 'radio':
+						case 'checkbox':
+							if ( elements[ i ].checked ) {
+								elements[ i ].checked = false;
+							}
+							break;
+						case 'select-one':
+						case 'select-multi':
+							elements[ i ].selectedIndex = 0;
+							break;
+						default:
+							break;
+					}
+				}
+			}
+
 			// reset
 			document.querySelector( '.button__reset' ).addEventListener( 'click', () => {
-				document.querySelector( '#property__filter' ).reset();
+				clearForm( form );
 				property__loading();
 				property__response();
 				button__search.classList.remove( 'light' );

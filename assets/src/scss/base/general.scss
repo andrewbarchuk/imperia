@@ -189,6 +189,12 @@ img[loading=lazy] {
   align-items: center;
 }
 
+.site__header-branding {
+  img {
+    max-width: 170px;
+  }
+}
+
 .site__header-menu-button {
   display: none;
 }
@@ -274,7 +280,7 @@ img[loading=lazy] {
   display: flex;
   align-items: flex-start;
   flex: 1;
-  margin: 0 15px;
+  margin: 0 10px;
   position: relative;
 
   ul {
@@ -597,6 +603,10 @@ img[loading=lazy] {
 
 .button__loadmore {
   margin: 30px auto 0;
+
+  &.active {
+    pointer-events: none;
+  }
 }
 
 /* Loading

@@ -29,7 +29,7 @@
 		<header id="masthead" class="site__header">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xl-3 col-lg-3 col-md-4 col-8 static">
+					<div class="col-xl-2 col-lg-3 col-md-4 col-8 static">
 						<div class="site__header-box">
 							<div class="site__header-branding">
 								<?php the_custom_logo(); ?>
@@ -42,7 +42,7 @@
 						</div>
 					</div>
 
-					<div class="col-xl-9 col-lg-9 col-md-8 col-4 static">
+					<div class="col-xl-10 col-lg-9 col-md-8 col-4 static">
 						<div id="site-navigation" class="site__header-navigation">
 							<button class="site__header-menu-button" aria-controls="primary-menu" aria-expanded="false">
 								<b></b>

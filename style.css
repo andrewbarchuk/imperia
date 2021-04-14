@@ -1485,6 +1485,9 @@ img[loading=lazy] {
       -ms-flex-align: center;
           align-items: center; }
 
+.site__header-branding img {
+  max-width: 170px; }
+
 .site__header-menu-button {
   display: none; }
 
@@ -1575,7 +1578,7 @@ img[loading=lazy] {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin: 0 15px;
+  margin: 0 10px;
   position: relative; }
   .language__swithcer ul {
     display: -webkit-box;
@@ -1946,6 +1949,8 @@ img[loading=lazy] {
 
 .button__loadmore {
   margin: 30px auto 0; }
+  .button__loadmore.active {
+    pointer-events: none; }
 
 /* Loading
 /––––––––––––––––––––––––*/
