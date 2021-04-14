@@ -6,6 +6,7 @@
  *
  * @package ieverly
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'item__short' ); ?>>

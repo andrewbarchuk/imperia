@@ -51,7 +51,7 @@ function meta_boxes() {
 		wp_enqueue_media();
 	}
 
-	wp_enqueue_script( 'myuploadscript', get_stylesheet_directory_uri() . '/js/meta-box.js', array( 'jquery' ) );
+	wp_enqueue_script( 'myuploadscript', get_stylesheet_directory_uri() . '/js/meta-box.js', array( 'jquery' ), IEVERLY_VERSION );
 }
 add_action( 'admin_enqueue_scripts', 'meta_boxes' );
 
@@ -59,13 +59,15 @@ add_action( 'admin_enqueue_scripts', 'meta_boxes' );
  * Sidebars
  */
 function position_widgets_init() {
-    register_sidebar(array(
-        'name' => __('Language switcher', 'ieverly'),
-        'id' => 'language',
-        'before_widget' => '<nav id="%1$s" class="widget language__swithcer %2$s">',
-        'after_widget' => '</nav>',
-        'before_title'  => '',
-        'after_title'   => '',
-    ));
+	register_sidebar(
+		array(
+			'name'          => __( 'Language switcher', 'ieverly' ),
+			'id'            => 'language',
+			'before_widget' => '<nav id="%1$s" class="widget language__swithcer %2$s">',
+			'after_widget'  => '</nav>',
+			'before_title'  => '',
+			'after_title'   => '',
+		)
+	);
 }
-add_action('widgets_init', 'position_widgets_init');
+add_action( 'widgets_init', 'position_widgets_init' );

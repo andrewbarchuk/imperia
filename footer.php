@@ -21,7 +21,7 @@
 					</div>
 
 					<div class="site__footer-copyright">
-						<span class="name">© <b><?php echo get_bloginfo( 'name' ); ?></b>, <?php echo date( 'Y' ); ?></span>
+						<span class="name">© <b><?php echo esc_attr( get_bloginfo( 'name' ) ); ?></b>, <?php echo esc_attr( date( 'Y' ) ); ?></span>
 					</div>
 
 					<nav class="site__footer-menu site__social-menu">

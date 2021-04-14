@@ -156,7 +156,7 @@ if ( ! class_exists( 'Ieverly_SVG_Icons' ) ) {
 			'mail'      => array(
 				'mailto:',
 			),
-			'phone'      => array(
+			'phone' => array(
 				'tel:',
 			),
 			'pocket'    => array(

@@ -16,15 +16,15 @@ if ( has_post_thumbnail() ) {
 ?>
 
 <section class="property__search content">
-    <div class="cover">
-        <img loading="lazy" src="<?php echo $item__imgurl; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-                <h1><?php echo get_the_title(); ?></h1>
-                <?php get_template_part( '/template-parts/property/search' ); ?>
-            </div>
-        </div>
-    </div>
+	<div class="cover">
+		<img loading="lazy" src="<?php echo esc_url( $item__imgurl ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 offset-lg-1">
+				<h1><?php echo esc_attr( get_the_title() ); ?></h1>
+				<?php get_template_part( '/template-parts/property/search' ); ?>
+			</div>
+		</div>
+	</div>
 </section>

@@ -9,31 +9,30 @@
 /*
 	Sort by GET (url)
 */
-if (!function_exists('property_get_search')) {
-	function property_get_search($search_args)
-	{
+if ( ! function_exists( 'property_get_search' ) ) {
+	function property_get_search( $search_args ) {
 
 		$tax_query  = array();   // taxonomy query array
 		$meta_query = array();  // meta query qrray
 
 		/* count */
-		if ((!empty($_GET['property_number_of_results'])) && ($_GET['property_number_of_results'] != 'any')) {
+		if ( ( ! empty( $_GET['property_number_of_results'] ) ) && ( $_GET['property_number_of_results'] != 'any' ) ) {
 			$ordercountpage                = $_GET['property_number_of_results'];
 			$search_args['posts_per_page'] = $ordercountpage;
 		}
 
 		/* order */
-		if ((!empty($_GET['property_order_by'])) && ($_GET['property_order_by'] != 'any')) {
-			$order_get               = explode('-', $_GET['property_order_by']);
+		if ( ( ! empty( $_GET['property_order_by'] ) ) && ( $_GET['property_order_by'] != 'any' ) ) {
+			$order_get               = explode( '-', $_GET['property_order_by'] );
 			$search_args['orderby']  = $order_get[0];
 			$search_args['order']    = $order_get[1];
 			$search_args['meta_key'] = $order_get[2];
 		}
 
 		/* Keyword Based Search */
-		if (isset($_GET['keyword'])) {
-			$keyword = trim($_GET['keyword']);
-			if (!empty($keyword)) {
+		if ( isset( $_GET['keyword'] ) ) {
+			$keyword = trim( $_GET['keyword'] );
+			if ( ! empty( $keyword ) ) {
 				// $search_args[ 's' ] = $keyword;
 				$meta_query[] = array(
 					'key'     => 'ref',
@@ -44,7 +43,7 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* property city taxonomy query */
-		if ((!empty($_GET['property-city'])) && ($_GET['property-city'] != 'any')) {
+		if ( ( ! empty( $_GET['property-city'] ) ) && ( $_GET['property-city'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-city',
 				'field'    => 'slug',
@@ -53,7 +52,7 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* property status taxonomy query */
-		if ((!empty($_GET['property-status'])) && ($_GET['property-status'] != 'any')) {
+		if ( ( ! empty( $_GET['property-status'] ) ) && ( $_GET['property-status'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-status',
 				'field'    => 'slug',
@@ -62,7 +61,7 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* property type taxonomy query */
-		if ((!empty($_GET['property-type'])) && ($_GET['property-type'] != 'any')) {
+		if ( ( ! empty( $_GET['property-type'] ) ) && ( $_GET['property-type'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-type',
 				'field'    => 'slug',
@@ -71,7 +70,7 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* property state taxonomy query */
-		if ((!empty($_GET['property-state'])) && ($_GET['property-state'] != 'any')) {
+		if ( ( ! empty( $_GET['property-state'] ) ) && ( $_GET['property-state'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-state',
 				'field'    => 'slug',
@@ -80,7 +79,7 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* property kitchen taxonomy query */
-		if ((!empty($_GET['property-kitchen'])) && ($_GET['property-kitchen'] != 'any')) {
+		if ( ( ! empty( $_GET['property-kitchen'] ) ) && ( $_GET['property-kitchen'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-kitchen',
 				'field'    => 'slug',
@@ -89,7 +88,7 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* Property Bedrooms Parameter */
-		if ((!empty($_GET['bedrooms'])) && ($_GET['bedrooms'] != 'any')) {
+		if ( ( ! empty( $_GET['bedrooms'] ) ) && ( $_GET['bedrooms'] != 'any' ) ) {
 			$meta_query[] = array(
 				'key'     => 'beds',
 				'value'   => $_GET['bedrooms'],
@@ -99,7 +98,7 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* Property Bathrooms Parameter */
-		if ((!empty($_GET['bathrooms'])) && ($_GET['bathrooms'] != 'any')) {
+		if ( ( ! empty( $_GET['bathrooms'] ) ) && ( $_GET['bathrooms'] != 'any' ) ) {
 			$meta_query[] = array(
 				'key'     => 'baths',
 				'value'   => $_GET['bathrooms'],
@@ -109,20 +108,20 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* Logic for Min and Max Price Parameters */
-		if (isset($_GET['min-price']) && ($_GET['min-price'] != '') && isset($_GET['max-price']) && ($_GET['max-price'] != '')) {
-			$min_price = doubleval($_GET['min-price']);
-			$max_price = doubleval($_GET['max-price']);
-			if ($min_price >= 0 && $max_price > $min_price) {
+		if ( isset( $_GET['min-price'] ) && ( $_GET['min-price'] != '' ) && isset( $_GET['max-price'] ) && ( $_GET['max-price'] != '' ) ) {
+			$min_price = doubleval( $_GET['min-price'] );
+			$max_price = doubleval( $_GET['max-price'] );
+			if ( $min_price >= 0 && $max_price > $min_price ) {
 				$meta_query[] = array(
 					'key'     => 'price',
-					'value'   => array($min_price, $max_price),
+					'value'   => array( $min_price, $max_price ),
 					'type'    => 'NUMERIC',
 					'compare' => 'BETWEEN',
 				);
 			}
-		} elseif (isset($_GET['min-price']) && ($_GET['min-price'] != '')) {
-			$min_price = doubleval($_GET['min-price']);
-			if ($min_price > 0) {
+		} elseif ( isset( $_GET['min-price'] ) && ( $_GET['min-price'] != '' ) ) {
+			$min_price = doubleval( $_GET['min-price'] );
+			if ( $min_price > 0 ) {
 				$meta_query[] = array(
 					'key'     => 'price',
 					'value'   => $min_price,
@@ -130,9 +129,9 @@ if (!function_exists('property_get_search')) {
 					'compare' => '>=',
 				);
 			}
-		} elseif (isset($_GET['max-price']) && ($_GET['max-price'] != '')) {
-			$max_price = doubleval($_GET['max-price']);
-			if ($max_price > 0) {
+		} elseif ( isset( $_GET['max-price'] ) && ( $_GET['max-price'] != '' ) ) {
+			$max_price = doubleval( $_GET['max-price'] );
+			if ( $max_price > 0 ) {
 				$meta_query[] = array(
 					'key'     => 'price',
 					'value'   => $max_price,
@@ -143,20 +142,20 @@ if (!function_exists('property_get_search')) {
 		}
 
 		/* Logic for Min and Max Area Parameters */
-		if (isset($_GET['min-area']) && ($_GET['min-area'] != '') && isset($_GET['max-area']) && ($_GET['max-area'] != '')) {
-			$min_price = doubleval($_GET['min-area']);
-			$max_price = doubleval($_GET['max-area']);
-			if ($min_price >= 0 && $max_price > $min_price) {
+		if ( isset( $_GET['min-area'] ) && ( $_GET['min-area'] != '' ) && isset( $_GET['max-area'] ) && ( $_GET['max-area'] != '' ) ) {
+			$min_price = doubleval( $_GET['min-area'] );
+			$max_price = doubleval( $_GET['max-area'] );
+			if ( $min_price >= 0 && $max_price > $min_price ) {
 				$meta_query[] = array(
 					'key'     => 'area',
-					'value'   => array($min_price, $max_price),
+					'value'   => array( $min_price, $max_price ),
 					'type'    => 'NUMERIC',
 					'compare' => 'BETWEEN',
 				);
 			}
-		} elseif (isset($_GET['min-area']) && ($_GET['min-area'] != '')) {
-			$min_price = doubleval($_GET['min-area']);
-			if ($min_price > 0) {
+		} elseif ( isset( $_GET['min-area'] ) && ( $_GET['min-area'] != '' ) ) {
+			$min_price = doubleval( $_GET['min-area'] );
+			if ( $min_price > 0 ) {
 				$meta_query[] = array(
 					'key'     => 'area',
 					'value'   => $min_price,
@@ -164,9 +163,9 @@ if (!function_exists('property_get_search')) {
 					'compare' => '>=',
 				);
 			}
-		} elseif (isset($_GET['max-area']) && ($_GET['max-area'] != '')) {
-			$max_price = doubleval($_GET['max-area']);
-			if ($max_price > 0) {
+		} elseif ( isset( $_GET['max-area'] ) && ( $_GET['max-area'] != '' ) ) {
+			$max_price = doubleval( $_GET['max-area'] );
+			if ( $max_price > 0 ) {
 				$meta_query[] = array(
 					'key'     => 'area',
 					'value'   => $max_price,
@@ -177,16 +176,16 @@ if (!function_exists('property_get_search')) {
 		}
 
 		// features
-		if ($features = get_terms(array('taxonomy' => 'property-feature'))) :
+		if ( $features = get_terms( array( 'taxonomy' => 'property-feature' ) ) ) :
 			$all_terms = array();
 
-			foreach ($features as $feature) {
-				if (isset($_GET['feature-' . $feature->slug]) && $_GET['feature-' . $feature->slug] == 'on') {
+			foreach ( $features as $feature ) {
+				if ( isset( $_GET[ 'feature-' . $feature->slug ] ) && $_GET[ 'feature-' . $feature->slug ] == 'on' ) {
 					$all_terms[] = $feature->slug;
 				}
 			}
 
-			if (count($all_terms) > 0) {
+			if ( count( $all_terms ) > 0 ) {
 				$tax_query[] = array(
 					array(
 						'taxonomy' => 'property-feature',
@@ -198,90 +197,89 @@ if (!function_exists('property_get_search')) {
 		endif;
 
 		/* if more than one taxonomies exist then specify the relation */
-		$tax_count = count($tax_query);
-		if ($tax_count > 1) {
+		$tax_count = count( $tax_query );
+		if ( $tax_count > 1 ) {
 			$tax_query['relation'] = 'AND';
 		}
 
 		/* if more than one meta query elements exist then specify the relation */
-		$meta_count = count($meta_query);
-		if ($meta_count > 1) {
+		$meta_count = count( $meta_query );
+		if ( $meta_count > 1 ) {
 			$meta_query['relation'] = 'AND';
 		}
 
-		if ($tax_count > 0) {
+		if ( $tax_count > 0 ) {
 			$search_args['tax_query'] = $tax_query;
 		}
 
 		/* if meta query has some values then add it to base home page query */
-		if ($meta_count > 0) {
+		if ( $meta_count > 0 ) {
 			$search_args['meta_query'] = $meta_query;
 		}
 
 		return $search_args;
 	}
 
-	add_filter('property_get_search_parameters', 'property_get_search');
+	add_filter( 'property_get_search_parameters', 'property_get_search' );
 }
 
 /* 
 	advance_search_options
 */
-if (!function_exists('advance_search_options')) {
-	function advance_search_options($taxonomy_name, $title)
-	{
-		$taxonomy_terms = get_terms($taxonomy_name);
+if ( ! function_exists( 'advance_search_options' ) ) {
+	function advance_search_options( $taxonomy_name, $title ) {
+		$taxonomy_terms = get_terms( $taxonomy_name );
 		$searched_term  = '';
 
-		if ($taxonomy_name == 'property-city') {
-			if (!empty($_GET['property-city'])) {
+		if ( $taxonomy_name == 'property-city' ) {
+			if ( ! empty( $_GET['property-city'] ) ) {
 				$searched_term = $_GET['property-city'];
 			}
 		}
 
-		if ($taxonomy_name == 'property-type') {
-			if (!empty($_GET['property-type'])) {
+		if ( $taxonomy_name == 'property-type' ) {
+			if ( ! empty( $_GET['property-type'] ) ) {
 				$searched_term = $_GET['property-type'];
 			}
 		}
 
-		if ($taxonomy_name == 'property-state') {
-			if (!empty($_GET['property-state'])) {
+		if ( $taxonomy_name == 'property-state' ) {
+			if ( ! empty( $_GET['property-state'] ) ) {
 				$searched_term = $_GET['property-state'];
 			}
 		}
 
-		if ($taxonomy_name == 'property-kitchen') {
-			if (!empty($_GET['property-kitchen'])) {
+		if ( $taxonomy_name == 'property-kitchen' ) {
+			if ( ! empty( $_GET['property-kitchen'] ) ) {
 				$searched_term = $_GET['property-kitchen'];
 			}
 		}
 
-		if ($taxonomy_name == 'property-status') {
-			if (!empty($_GET['property-status'])) {
+		if ( $taxonomy_name == 'property-status' ) {
+			if ( ! empty( $_GET['property-status'] ) ) {
 				$searched_term = $_GET['property-status'];
 			}
 		}
 
-		if (!empty($title)) {
+		if ( ! empty( $title ) ) {
 
-			if ($searched_term == $title || empty($searched_term)) {
+			if ( $searched_term == $title || empty( $searched_term ) ) {
 				echo '<option value="any" selected="selected">' . $title . '</option>';
 			} else {
 				echo '<option value="any">' . $title . '</option>';
 			}
 		} else {
 
-			if ($searched_term == 'any' || empty($searched_term)) {
-				echo '<option value="any" selected="selected">' . esc_html__('Any', 'ieverly') . '</option>';
+			if ( $searched_term == 'any' || empty( $searched_term ) ) {
+				echo '<option value="any" selected="selected">' . esc_html__( 'Any', 'ieverly' ) . '</option>';
 			} else {
-				echo '<option value="any">' . esc_html__('Any', 'ieverly') . '</option>';
+				echo '<option value="any">' . esc_html__( 'Any', 'ieverly' ) . '</option>';
 			}
 		}
 
-		if (!empty($taxonomy_terms)) {
-			foreach ($taxonomy_terms as $term) {
-				if ($searched_term == $term->slug) {
+		if ( ! empty( $taxonomy_terms ) ) {
+			foreach ( $taxonomy_terms as $term ) {
+				if ( $searched_term == $term->slug ) {
 					echo '<option value="' . $term->slug . '" selected="selected">' . $term->name . '</option>';
 				} else {
 					echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
@@ -294,43 +292,42 @@ if (!function_exists('advance_search_options')) {
 /*
 	numbers_list
 */
-if (!function_exists('numbers_list')) {
-	function numbers_list($numbers_list_for, $title)
-	{
-		$numbers_array  = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+if ( ! function_exists( 'numbers_list' ) ) {
+	function numbers_list( $numbers_list_for, $title ) {
+		$numbers_array  = array( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 );
 		$searched_value = '';
 
-		if ($numbers_list_for == 'bedrooms') {
-			if (isset($_GET['bedrooms'])) {
+		if ( $numbers_list_for == 'bedrooms' ) {
+			if ( isset( $_GET['bedrooms'] ) ) {
 				$searched_value = $_GET['bedrooms'];
 			}
 		}
 
-		if ($numbers_list_for == 'bathrooms') {
-			if (isset($_GET['bathrooms'])) {
+		if ( $numbers_list_for == 'bathrooms' ) {
+			if ( isset( $_GET['bathrooms'] ) ) {
 				$searched_value = $_GET['bathrooms'];
 			}
 		}
 
-		if (!empty($title)) {
+		if ( ! empty( $title ) ) {
 
-			if ($searched_value == $title || empty($searched_value)) {
+			if ( $searched_value == $title || empty( $searched_value ) ) {
 				echo '<option value="any" selected="selected">' . $title . '</option>';
 			} else {
 				echo '<option value="any">' . $title . '</option>';
 			}
 		} else {
 
-			if ($searched_value == 'any' || empty($searched_value)) {
-				echo '<option value="any" selected="selected">' . esc_html__('Any', 'ieverly') . '</option>';
+			if ( $searched_value == 'any' || empty( $searched_value ) ) {
+				echo '<option value="any" selected="selected">' . esc_html__( 'Any', 'ieverly' ) . '</option>';
 			} else {
-				echo '<option value="any">' . esc_html__('Any', 'ieverly') . '</option>';
+				echo '<option value="any">' . esc_html__( 'Any', 'ieverly' ) . '</option>';
 			}
 		}
 
-		if (!empty($numbers_array)) {
-			foreach ($numbers_array as $number) {
-				if ($searched_value == $number) {
+		if ( ! empty( $numbers_array ) ) {
+			foreach ( $numbers_array as $number ) {
+				if ( $searched_value == $number ) {
 					echo '<option value="' . $number . '" selected="selected">' . $number . '</option>';
 				} else {
 					echo '<option value="' . $number . '">' . $number . '</option>';
@@ -343,22 +340,21 @@ if (!function_exists('numbers_list')) {
 /*
 	count_list
 */
-if (!function_exists('count_list')) {
-	function count_list($count_list_for)
-	{
-		$count_native        = get_option('posts_per_page');
-		$count_numbers_array = array($count_native, $count_native * 2, $count_native * 3);
+if ( ! function_exists( 'count_list' ) ) {
+	function count_list( $count_list_for ) {
+		$count_native        = get_option( 'posts_per_page' );
+		$count_numbers_array = array( $count_native, $count_native * 2, $count_native * 3 );
 		$searched_value      = '';
 
-		if ($count_list_for == 'property_number_of_results') {
-			if (isset($_GET['property_number_of_results'])) {
+		if ( $count_list_for == 'property_number_of_results' ) {
+			if ( isset( $_GET['property_number_of_results'] ) ) {
 				$searched_value = $_GET['property_number_of_results'];
 			}
 		}
 
-		if (!empty($count_numbers_array)) {
-			foreach ($count_numbers_array as $number) {
-				if ($searched_value == $number) {
+		if ( ! empty( $count_numbers_array ) ) {
+			foreach ( $count_numbers_array as $number ) {
+				if ( $searched_value == $number ) {
 					echo '<option value="' . $number . '" selected="selected">' . $number . '</option>';
 				} else {
 					echo '<option value="' . $number . '">' . $number . '</option>';
@@ -371,24 +367,23 @@ if (!function_exists('count_list')) {
 /*
 	order_list
 */
-if (!function_exists('order_list')) {
-	function order_list($order_list_for)
-	{
-		$order_numbers_array = array('date-DESC', 'date-ASC', 'meta_value_num-DESC-price', 'meta_value_num-ASC-price', 'meta_value_num-DESC-area', 'meta_value_num-ASC-area');
+if ( ! function_exists( 'order_list' ) ) {
+	function order_list( $order_list_for ) {
+		$order_numbers_array = array( 'date-DESC', 'date-ASC', 'meta_value_num-DESC-price', 'meta_value_num-ASC-price', 'meta_value_num-DESC-area', 'meta_value_num-ASC-area' );
 		$searched_value      = '';
 
-		if ($order_list_for == 'property_order_by') {
-			if (isset($_GET['property_order_by'])) {
+		if ( $order_list_for == 'property_order_by' ) {
+			if ( isset( $_GET['property_order_by'] ) ) {
 				$searched_value = $_GET['property_order_by'];
 			}
 		}
 
-		if (!empty($order_numbers_array)) {
-			foreach ($order_numbers_array as $number) {
-				if ($searched_value == $number) {
-					echo '<option value="' . $number . '" selected="selected">' . __($number, 'ieverly') . '</option>';
+		if ( ! empty( $order_numbers_array ) ) {
+			foreach ( $order_numbers_array as $number ) {
+				if ( $searched_value == $number ) {
+					echo '<option value="' . $number . '" selected="selected">' . __( $number, 'ieverly' ) . '</option>';
 				} else {
-					echo '<option value="' . $number . '">' . __($number, 'ieverly') . '</option>';
+					echo '<option value="' . $number . '">' . __( $number, 'ieverly' ) . '</option>';
 				}
 			}
 		}
@@ -398,13 +393,12 @@ if (!function_exists('order_list')) {
 /*
 	feature checkbox
 */
-if (!function_exists('advance_features_options')) {
-	function advance_features_options($features_name)
-	{
-		$features_terms = get_terms($features_name);
-		if (!empty($features_terms)) {
-			foreach ($features_terms as $features_term) {
-				if (isset($_GET['feature-' . $features_term->slug]) && $_GET['feature-' . $features_term->slug] == 'on') {
+if ( ! function_exists( 'advance_features_options' ) ) {
+	function advance_features_options( $features_name ) {
+		$features_terms = get_terms( $features_name );
+		if ( ! empty( $features_terms ) ) {
+			foreach ( $features_terms as $features_term ) {
+				if ( isset( $_GET[ 'feature-' . $features_term->slug ] ) && $_GET[ 'feature-' . $features_term->slug ] == 'on' ) {
 					echo '<p class="features-checkbox"><input checked="checked" class="checkbox" type="checkbox" id="feature-' . $features_term->slug . '" name="feature-' . $features_term->slug . '" /><label for="feature-' . $features_term->slug . '">' . $features_term->name . '</label><span>' . $features_term->count . '</span></p>';
 				} else {
 					echo '<p class="features-checkbox"><input class="checkbox" type="checkbox" id="feature-' . $features_term->slug . '" name="feature-' . $features_term->slug . '" /><label for="feature-' . $features_term->slug . '">' . $features_term->name . '</label><span>' . $features_term->count . '</span></p>';
@@ -417,24 +411,23 @@ if (!function_exists('advance_features_options')) {
 /*
 	min-max price & area
 */
-if (!function_exists('property_get_max_min_price')) {
-	function property_get_max_min_price()
-	{
-		$ft_property_price = array();
-		$search_args       = array(
+if ( ! function_exists( 'property_get_max_min_price' ) ) {
+	function property_get_max_min_price() {
+		 $ft_property_price = array();
+		$search_args        = array(
 			'post_type'           => 'property',
 			'posts_per_page'      => -1,
-			'post_status'         => array('publish'),
+			'post_status'         => array( 'publish' ),
 		);
 
-		$properties_query = new WP_Query($search_args);
+		$properties_query = new WP_Query( $search_args );
 		$total            = $properties_query->found_posts;
 
-		if ($properties_query->have_posts()) :
-			while ($properties_query->have_posts()) :
+		if ( $properties_query->have_posts() ) :
+			while ( $properties_query->have_posts() ) :
 				$properties_query->the_post();
-				$ft_property_price_f = get_post_meta(get_the_ID(), 'price', true);
-				if (!empty($ft_property_price_f)) {
+				$ft_property_price_f = get_post_meta( get_the_ID(), 'price', true );
+				if ( ! empty( $ft_property_price_f ) ) {
 					$ft_property_price[] = $ft_property_price_f;
 				}
 			endwhile;
@@ -444,24 +437,23 @@ if (!function_exists('property_get_max_min_price')) {
 	}
 }
 // area
-if (!function_exists('property_get_max_min_area')) {
-	function property_get_max_min_area()
-	{
+if ( ! function_exists( 'property_get_max_min_area' ) ) {
+	function property_get_max_min_area() {
 		$ft_property_area = array();
 		$search_args      = array(
 			'post_type'           => 'property',
 			'posts_per_page'      => -1,
-			'post_status'         => array('publish'),
+			'post_status'         => array( 'publish' ),
 		);
 
-		$properties_query = new WP_Query($search_args);
+		$properties_query = new WP_Query( $search_args );
 		$total            = $properties_query->found_posts;
 
-		if ($properties_query->have_posts()) :
-			while ($properties_query->have_posts()) :
+		if ( $properties_query->have_posts() ) :
+			while ( $properties_query->have_posts() ) :
 				$properties_query->the_post();
-				$ft_property_area_f = get_post_meta(get_the_ID(), 'area', true);
-				if (!empty($ft_property_area_f)) {
+				$ft_property_area_f = get_post_meta( get_the_ID(), 'area', true );
+				if ( ! empty( $ft_property_area_f ) ) {
 					$ft_property_area[] = $ft_property_area_f;
 				}
 			endwhile;
@@ -474,19 +466,18 @@ if (!function_exists('property_get_max_min_area')) {
 /*
 	Load more ajax
 */
-if (!function_exists('property_loadmore_ajax_handler')) {
-	function property_loadmore_ajax_handler()
-	{
-		$params            = json_decode(stripslashes($_POST['query']), true);
-		$params['paged']   = $_POST['page'] + 1;
+if ( ! function_exists( 'property_loadmore_ajax_handler' ) ) {
+	function property_loadmore_ajax_handler() {
+		 $params               = json_decode( stripslashes( $_POST['query'] ), true );
+		$params['paged']       = $_POST['page'] + 1;
 		$params['post_status'] = 'publish';
-		$property_load     = new WP_Query($params);
-		$property_template = 'template-parts/' . $property_load->post->post_type . '/item';
+		$property_load         = new WP_Query( $params );
+		$property_template     = 'template-parts/' . $property_load->post->post_type . '/item';
 
-		if ($property_load->have_posts()) {
-			while ($property_load->have_posts()) :
+		if ( $property_load->have_posts() ) {
+			while ( $property_load->have_posts() ) :
 				$property_load->the_post();
-				get_template_part($property_template);
+				get_template_part( $property_template );
 			endwhile;
 		} else {
 			echo 'not found';
@@ -494,24 +485,23 @@ if (!function_exists('property_loadmore_ajax_handler')) {
 
 		die();
 	}
-	add_action('wp_ajax_loadmorebutton', 'property_loadmore_ajax_handler');
-	add_action('wp_ajax_nopriv_loadmorebutton', 'property_loadmore_ajax_handler');
+	add_action( 'wp_ajax_loadmorebutton', 'property_loadmore_ajax_handler' );
+	add_action( 'wp_ajax_nopriv_loadmorebutton', 'property_loadmore_ajax_handler' );
 }
 
 /*
 	Filter ajax
 */
-if (!function_exists('property_filter_function')) {
+if ( ! function_exists( 'property_filter_function' ) ) {
 
-	function property_filter_function()
-	{
+	function property_filter_function() {
 		$tax_query  = array();   // taxonomy query array
 		$meta_query = array();  // meta query qrray
 
 		/* Keyword Based Search */
-		if (isset($_REQUEST['keyword'])) {
-			$keyword = trim($_REQUEST['keyword']);
-			if (!empty($keyword)) {
+		if ( isset( $_REQUEST['keyword'] ) ) {
+			$keyword = trim( $_REQUEST['keyword'] );
+			if ( ! empty( $keyword ) ) {
 				// $search_args[ 's' ] = $keyword;
 				$meta_query[] = array(
 					'key'     => 'ref',
@@ -522,7 +512,7 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// property city
-		if ((!empty($_REQUEST['property-city'])) && ($_REQUEST['property-city'] != 'any')) {
+		if ( ( ! empty( $_REQUEST['property-city'] ) ) && ( $_REQUEST['property-city'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-city',
 				'field'    => 'slug',
@@ -531,7 +521,7 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// property status
-		if ((!empty($_REQUEST['property-status'])) && ($_REQUEST['property-status'] != 'any')) {
+		if ( ( ! empty( $_REQUEST['property-status'] ) ) && ( $_REQUEST['property-status'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-status',
 				'field'    => 'slug',
@@ -540,7 +530,7 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// property type
-		if ((!empty($_REQUEST['property-type'])) && ($_REQUEST['property-type'] != 'any')) {
+		if ( ( ! empty( $_REQUEST['property-type'] ) ) && ( $_REQUEST['property-type'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-type',
 				'field'    => 'slug',
@@ -549,7 +539,7 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// property state
-		if ((!empty($_REQUEST['property-state'])) && ($_REQUEST['property-state'] != 'any')) {
+		if ( ( ! empty( $_REQUEST['property-state'] ) ) && ( $_REQUEST['property-state'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-state',
 				'field'    => 'slug',
@@ -558,7 +548,7 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// property kitchen
-		if ((!empty($_REQUEST['property-kitchen'])) && ($_REQUEST['property-kitchen'] != 'any')) {
+		if ( ( ! empty( $_REQUEST['property-kitchen'] ) ) && ( $_REQUEST['property-kitchen'] != 'any' ) ) {
 			$tax_query[] = array(
 				'taxonomy' => 'property-kitchen',
 				'field'    => 'slug',
@@ -567,16 +557,16 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// features
-		if ($features = get_terms(array('taxonomy' => 'property-feature'))) :
+		if ( $features = get_terms( array( 'taxonomy' => 'property-feature' ) ) ) :
 			$all_terms = array();
 
-			foreach ($features as $feature) {
-				if (isset($_POST['feature-' . $feature->slug]) && $_POST['feature-' . $feature->slug] == 'on') {
+			foreach ( $features as $feature ) {
+				if ( isset( $_POST[ 'feature-' . $feature->slug ] ) && $_POST[ 'feature-' . $feature->slug ] == 'on' ) {
 					$all_terms[] = $feature->slug;
 				}
 			}
 
-			if (count($all_terms) > 0) {
+			if ( count( $all_terms ) > 0 ) {
 				$tax_query[] = array(
 					array(
 						'taxonomy' => 'property-feature',
@@ -588,7 +578,7 @@ if (!function_exists('property_filter_function')) {
 		endif;
 
 		// beds
-		if ((!empty($_REQUEST['bedrooms'])) && ($_REQUEST['bedrooms'] != 'any')) {
+		if ( ( ! empty( $_REQUEST['bedrooms'] ) ) && ( $_REQUEST['bedrooms'] != 'any' ) ) {
 			$meta_query[] = array(
 				'key'     => 'beds',
 				'value'   => $_REQUEST['bedrooms'],
@@ -598,7 +588,7 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// baths
-		if ((!empty($_REQUEST['bathrooms'])) && ($_REQUEST['bathrooms'] != 'any')) {
+		if ( ( ! empty( $_REQUEST['bathrooms'] ) ) && ( $_REQUEST['bathrooms'] != 'any' ) ) {
 			$meta_query[] = array(
 				'key'     => 'baths',
 				'value'   => $_REQUEST['bathrooms'],
@@ -608,20 +598,20 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// min max price
-		if (isset($_REQUEST['min-price']) && ($_REQUEST['min-price'] != '') && isset($_REQUEST['max-price']) && ($_REQUEST['max-price'] != '')) {
-			$min_price = doubleval($_REQUEST['min-price']);
-			$max_price = doubleval($_REQUEST['max-price']);
-			if ($min_price >= 0 && $max_price > $min_price) {
+		if ( isset( $_REQUEST['min-price'] ) && ( $_REQUEST['min-price'] != '' ) && isset( $_REQUEST['max-price'] ) && ( $_REQUEST['max-price'] != '' ) ) {
+			$min_price = doubleval( $_REQUEST['min-price'] );
+			$max_price = doubleval( $_REQUEST['max-price'] );
+			if ( $min_price >= 0 && $max_price > $min_price ) {
 				$meta_query[] = array(
 					'key'     => 'price',
-					'value'   => array($min_price, $max_price),
+					'value'   => array( $min_price, $max_price ),
 					'type'    => 'NUMERIC',
 					'compare' => 'BETWEEN',
 				);
 			}
-		} elseif (isset($_REQUEST['min-price']) && ($_REQUEST['min-price'] != '')) {
-			$min_price = doubleval($_REQUEST['min-price']);
-			if ($min_price > 0) {
+		} elseif ( isset( $_REQUEST['min-price'] ) && ( $_REQUEST['min-price'] != '' ) ) {
+			$min_price = doubleval( $_REQUEST['min-price'] );
+			if ( $min_price > 0 ) {
 				$meta_query[] = array(
 					'key'     => 'price',
 					'value'   => $min_price,
@@ -629,9 +619,9 @@ if (!function_exists('property_filter_function')) {
 					'compare' => '>=',
 				);
 			}
-		} elseif (isset($_REQUEST['max-price']) && ($_REQUEST['max-price'] != '')) {
-			$max_price = doubleval($_REQUEST['max-price']);
-			if ($max_price > 0) {
+		} elseif ( isset( $_REQUEST['max-price'] ) && ( $_REQUEST['max-price'] != '' ) ) {
+			$max_price = doubleval( $_REQUEST['max-price'] );
+			if ( $max_price > 0 ) {
 				$meta_query[] = array(
 					'key'     => 'price',
 					'value'   => $max_price,
@@ -642,20 +632,20 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		// min max area
-		if (isset($_REQUEST['min-area']) && ($_REQUEST['min-area'] != '') && isset($_REQUEST['max-area']) && ($_REQUEST['max-area'] != '')) {
-			$min_price = doubleval($_REQUEST['min-area']);
-			$max_price = doubleval($_REQUEST['max-area']);
-			if ($min_price >= 0 && $max_price > $min_price) {
+		if ( isset( $_REQUEST['min-area'] ) && ( $_REQUEST['min-area'] != '' ) && isset( $_REQUEST['max-area'] ) && ( $_REQUEST['max-area'] != '' ) ) {
+			$min_price = doubleval( $_REQUEST['min-area'] );
+			$max_price = doubleval( $_REQUEST['max-area'] );
+			if ( $min_price >= 0 && $max_price > $min_price ) {
 				$meta_query[] = array(
 					'key'     => 'area',
-					'value'   => array($min_price, $max_price),
+					'value'   => array( $min_price, $max_price ),
 					'type'    => 'NUMERIC',
 					'compare' => 'BETWEEN',
 				);
 			}
-		} elseif (isset($_REQUEST['min-area']) && ($_REQUEST['min-area'] != '')) {
-			$min_price = doubleval($_REQUEST['min-area']);
-			if ($min_price > 0) {
+		} elseif ( isset( $_REQUEST['min-area'] ) && ( $_REQUEST['min-area'] != '' ) ) {
+			$min_price = doubleval( $_REQUEST['min-area'] );
+			if ( $min_price > 0 ) {
 				$meta_query[] = array(
 					'key'     => 'area',
 					'value'   => $min_price,
@@ -663,9 +653,9 @@ if (!function_exists('property_filter_function')) {
 					'compare' => '>=',
 				);
 			}
-		} elseif (isset($_REQUEST['max-area']) && ($_REQUEST['max-area'] != '')) {
-			$max_price = doubleval($_REQUEST['max-area']);
-			if ($max_price > 0) {
+		} elseif ( isset( $_REQUEST['max-area'] ) && ( $_REQUEST['max-area'] != '' ) ) {
+			$max_price = doubleval( $_REQUEST['max-area'] );
+			if ( $max_price > 0 ) {
 				$meta_query[] = array(
 					'key'     => 'area',
 					'value'   => $max_price,
@@ -676,29 +666,29 @@ if (!function_exists('property_filter_function')) {
 		}
 
 		/* if more than one taxonomies exist then specify the relation */
-		$tax_count = count($tax_query);
-		if ($tax_count > 1) {
+		$tax_count = count( $tax_query );
+		if ( $tax_count > 1 ) {
 			$tax_query['relation'] = 'AND';
 		}
 
 		/* if more than one meta query elements exist then specify the relation */
-		$meta_count = count($meta_query);
-		if ($meta_count > 1) {
+		$meta_count = count( $meta_query );
+		if ( $meta_count > 1 ) {
 			$meta_query['relation'] = 'AND';
 		}
 
-		if ($tax_count > 0) {
+		if ( $tax_count > 0 ) {
 			$search_args['tax_query'] = $tax_query;
 		}
 
 		/* if meta query has some values then add it to base home page query */
-		if ($meta_count > 0) {
+		if ( $meta_count > 0 ) {
 			$search_args['meta_query'] = $meta_query;
 		}
 		// #$
 
 		// example: date-ASC 
-		$order  = explode('-', $_POST['property_order_by']);
+		$order  = explode( '-', $_POST['property_order_by'] );
 		$params = array(
 			// 's' => $search_args[ 's' ],
 			'taxonomy'       => '',
@@ -711,14 +701,14 @@ if (!function_exists('property_filter_function')) {
 			'tax_query'      => $search_args['tax_query'],
 		);
 
-		$property_filter = new WP_Query($params);
+		$property_filter = new WP_Query( $params );
 
-		if ($property_filter->have_posts()) :
+		if ( $property_filter->have_posts() ) :
 			ob_start(); // start buffering because we do not need to print the posts now
 
-			while ($property_filter->have_posts()) :
+			while ( $property_filter->have_posts() ) :
 				$property_filter->the_post();
-				get_template_part('template-parts/property/item', get_post_format());
+				get_template_part( 'template-parts/property/item', get_post_format() );
 			endwhile;
 
 			$posts_html = ob_get_contents(); // we pass the posts to variable
@@ -726,7 +716,7 @@ if (!function_exists('property_filter_function')) {
 
 		else :
 			ob_start();
-			get_template_part('template-parts/notfound', get_post_format());
+			get_template_part( 'template-parts/notfound', get_post_format() );
 			$posts_html = ob_get_contents();
 			ob_end_clean();
 		endif;
@@ -735,7 +725,7 @@ if (!function_exists('property_filter_function')) {
 
 		echo wp_json_encode(
 			array(
-				'posts'       => wp_json_encode($property_filter->query_vars),
+				'posts'       => wp_json_encode( $property_filter->query_vars ),
 				'max_page'    => $property_filter->max_num_pages,
 				'found_posts' => $property_filter->found_posts,
 				'content'     => $posts_html,
@@ -744,6 +734,6 @@ if (!function_exists('property_filter_function')) {
 
 		die();
 	}
-	add_action('wp_ajax_property__filter', 'property_filter_function');
-	add_action('wp_ajax_nopriv_property__filter', 'property_filter_function');
+	add_action( 'wp_ajax_property__filter', 'property_filter_function' );
+	add_action( 'wp_ajax_nopriv_property__filter', 'property_filter_function' );
 }

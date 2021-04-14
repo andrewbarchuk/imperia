@@ -5,16 +5,15 @@
  * @package ieverly
  */
 
-$ref       = get_post_meta( $post->ID, 'ref', true );
-$price     = get_post_meta( $post->ID, 'price', true );
-$area      = get_post_meta( $post->ID, 'area', true );
-$area_land = get_post_meta( $post->ID, 'area_land', true );
-
-$beds   = get_post_meta( $post->ID, 'beds', true );
-$floors = get_post_meta( $post->ID, 'floors', true );
-
+$ref           = get_post_meta( $post->ID, 'ref', true );
+$price         = get_post_meta( $post->ID, 'price', true );
+$area          = get_post_meta( $post->ID, 'area', true );
+$area_land     = get_post_meta( $post->ID, 'area_land', true );
+$beds          = get_post_meta( $post->ID, 'beds', true );
+$floors        = get_post_meta( $post->ID, 'floors', true );
 $property_type = wp_get_post_terms( $post->ID, 'property-type' );
 
+/* thumbnail */
 if ( has_post_thumbnail() ) {
 	$item__imgurl = get_the_post_thumbnail_url( get_the_ID(), 'medium' );
 } else {
@@ -24,37 +23,37 @@ if ( has_post_thumbnail() ) {
 
 <div class="col-xl-3 col-lg-4 col-md-6">
 	<article <?php post_class( 'property__item' ); ?>>
-		<a rel="bookmark" arial-label="<?php echo get_the_title(); ?>" class="property__item-link" href="<?php echo get_permalink( $post->ID ); ?>"></a>
+		<a rel="bookmark" arial-label="<?php echo esc_attr( get_the_title() ); ?>" class="property__item-link" href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>"></a>
 
 		<header class="property__item-header">
-			<?php if ( get_post_meta( $post->ID, 'reserved', true ) == 'on' or get_post_meta( $post->ID, 'sold_out', true ) == 'on' ) { ?>
+			<?php if ( get_post_meta( $post->ID, 'reserved', true ) == 'on' || get_post_meta( $post->ID, 'sold_out', true ) == 'on' ) { ?>
 				<div class="property__item-badge">
 						<?php 
 						if ( get_post_meta( $post->ID, 'reserved', true ) == 'on' ) {
-							echo '<div class="badge badge__reserved">' . __( 'Reserved', 'ieverly' ) . '</div>';
+							echo '<div class="badge badge__reserved">' . esc_html__( 'Reserved', 'ieverly' ) . '</div>';
 						}
 						if ( get_post_meta( $post->ID, 'sold_out', true ) == 'on' ) {
-							echo '<div class="badge badge__sold-out">' . __( 'Sold out', 'ieverly' ) . '</div>';
+							echo '<div class="badge badge__sold-out">' . esc_html__( 'Sold out', 'ieverly' ) . '</div>';
 						} 
 						?>
 				</div>
 			<?php } ?>
-			<img loading="lazy" src="<?php esc_html_e( $item__imgurl ); ?>" alt="<?php echo get_the_title(); ?>">
+			<img loading="lazy" src="<?php echo esc_url( $item__imgurl ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
 		</header>
 
 		<main>
 			<?php if ( $ref ) { ?>
-				<p class="ref"><b>REF:</b> <?php esc_html_e( $ref ); ?></p>
+				<p class="ref"><b>REF:</b> <?php echo esc_attr( $ref ); ?></p>
 			<?php }; ?>
 			<h4>
 				<?php
 				foreach ( $property_type as $property_type_slug ) {
-					echo $property_type_slug->name . ' ';
+					echo esc_attr( $property_type_slug->name ) . ' ';
 				}
-					echo get_the_title();
+					echo esc_attr( get_the_title() );
 				?>
 			</h4>
-			<p class="property__item-price price-replace"><?php esc_html_e( get_theme_mod( 'currency' ) ); ?><?php esc_html_e( $price ); ?></p>
+			<p class="property__item-price price-replace"><?php echo esc_attr( get_theme_mod( 'currency' ) ); ?><?php echo esc_attr( $price ); ?></p>
 		</main>
 
 		<footer>
@@ -62,28 +61,28 @@ if ( has_post_thumbnail() ) {
 				<?php if ( $floors ) { ?>
 					<div class="property__info-box storeys">
 						<?php ieverly_the_theme_svg( 'storeys', 'ui' ); ?>
-						<span><?php esc_html_e( $floors ); ?></span>
+						<span><?php echo esc_attr( $floors ); ?></span>
 					</div>
 				<?php }; ?>
 
 				<?php if ( $beds ) { ?>
 					<div class="property__info-box beds">
 						<?php ieverly_the_theme_svg( 'beds', 'ui' ); ?>
-						<span><?php esc_html_e( $beds ); ?></span>
+						<span><?php echo esc_attr( $beds ); ?></span>
 					</div>
 				<?php }; ?>
 
 				<?php if ( $area ) { ?>
 					<div class="property__info-box area">
 						<?php ieverly_the_theme_svg( 'area', 'ui' ); ?>
-						<span><?php esc_html_e( $area ); ?><?php esc_html_e( get_theme_mod( 'area' ) ); ?></span>
+						<span><?php echo esc_attr( $area ); ?><?php echo esc_attr( get_theme_mod( 'area' ) ); ?></span>
 					</div>
 				<?php }; ?>
 
 				<?php if ( $area_land ) { ?>
 					<div class="property__info-box area-land">
 						<?php ieverly_the_theme_svg( 'area-land', 'ui' ); ?>
-						<span><?php esc_html_e( $area_land ); ?><?php esc_html_e( get_theme_mod( 'area' ) ); ?></span>
+						<span><?php echo esc_attr( $area_land ); ?><?php echo esc_attr( get_theme_mod( 'area' ) ); ?></span>
 					</div>
 				<?php }; ?>
 			</div>
