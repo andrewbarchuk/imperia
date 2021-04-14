@@ -62,7 +62,7 @@
     "webpack-stream": "6.1.2"
   },
   "scripts": {
-    "bundle": "gulp build && dir-archiver --src . --dest ../ieverly.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor gulp-vendors.json gulpfile.js package-lock.json package.json .travis.yml phpcs.xml.dist assets/src gulp style.css.map"
+    "bundle": "gulp build && dir-archiver --src . --dest ../ieverly.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor gulp-vendors.json gulpfile.js package-lock.json package.json .travis.yml phpcs.xml.dist gulp style.css.map"
   },
   "dependencies": {
     "@splidejs/splide": "^2.4.21",
