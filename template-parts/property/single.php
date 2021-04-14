@@ -233,11 +233,11 @@ $gallery = get_posts(
 				<!-- form -->
 				<div class="property__single-form">
 					<?php if ( ICL_LANGUAGE_CODE == 'en' ) : ?>
-						<?php echo do_shortcode( '[contact-form-7 id="98" title="Контактная форма 1"]' ); ?>
+						<?php echo do_shortcode( '[contact-form-7 id="2417" title="Form (en)"]' ); ?>
 					<?php elseif ( ICL_LANGUAGE_CODE == 'ru' ) : ?>
-						<?php echo do_shortcode( '[contact-form-7 id="98" title="Контактная форма 1"]' ); ?>
+						<?php echo do_shortcode( '[contact-form-7 id="2416" title="Form (ru)"]' ); ?>
 					<?php elseif ( ICL_LANGUAGE_CODE == 'es' ) : ?>
-						<?php echo do_shortcode( '[contact-form-7 id="61" title="Форма (ru)"]' ); ?>
+						<?php echo do_shortcode( '[contact-form-7 id="2418" title="Form (es)"]' ); ?>
 					<?php endif; ?>
 				</div>
 			</div>
