@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2021-04-14T11:28:56+00:00\n"
-"PO-Revision-Date: 2021-04-14 20:32+0000\n"
+"PO-Revision-Date: 2021-04-14 11:59+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: ieverly\n"
 "Language: ru_RU\n"
@@ -102,12 +102,12 @@ msgstr ""
 msgid "Andrew Barchuk"
 msgstr ""
 
-#: inc/template-property.php:274 inc/template-property.php:276
-#: inc/template-property.php:322 inc/template-property.php:324
+#: inc/template-property.php:276 inc/template-property.php:278
+#: inc/template-property.php:325 inc/template-property.php:327
 msgid "Any"
 msgstr "Все"
 
-#: inc/template-customizer.php:262 template-parts/property/filter.php:68
+#: inc/template-customizer.php:262 template-parts/property/filter.php:67
 #: template-parts/property/search.php:64
 msgid "Area"
 msgstr "Площадь"
@@ -116,11 +116,11 @@ msgstr "Площадь"
 msgid "Area house"
 msgstr "Площадь дома"
 
-#: inc/meta-box/meta-property.php:80 template-parts/property/single.php:128
+#: inc/meta-box/meta-property.php:80 template-parts/property/single.php:127
 msgid "Baths"
 msgstr "Ванны"
 
-#: template-parts/property/single.php:104
+#: template-parts/property/single.php:103
 msgid "Bedrooms"
 msgstr "Спальни"
 
@@ -193,15 +193,15 @@ msgstr ""
 msgid "Custom theme"
 msgstr ""
 
-#: template-parts/property/sort.php:34
+#: template-parts/property/sort.php:29
 msgid "date-ASC"
 msgstr "Дата ↑"
 
-#: template-parts/property/sort.php:33
+#: template-parts/property/sort.php:28
 msgid "date-DESC"
 msgstr "Дата ↓"
 
-#: template-parts/property/single.php:217
+#: template-parts/property/single.php:216
 msgid "Description"
 msgstr "Описание"
 
@@ -287,8 +287,8 @@ msgstr ""
 msgid "Enter title"
 msgstr ""
 
-#: template-parts/property/filter.php:138
-#: template-parts/property/single.php:181
+#: template-parts/property/filter.php:137
+#: template-parts/property/single.php:180
 msgid "Features"
 msgstr "Опции"
 
@@ -304,7 +304,7 @@ msgstr "Галерея"
 msgid "Garage"
 msgstr "Гараж"
 
-#: template-parts/property/single.php:196
+#: template-parts/property/single.php:195
 msgid "General state"
 msgstr "Состояние"
 
@@ -315,6 +315,10 @@ msgstr ""
 #: inc/meta-box/meta-home.php:43
 msgid "Hero slider"
 msgstr ""
+
+#: template-parts/property/filter.php:40
+msgid "Hide filter"
+msgstr "Скрыть фильтр"
 
 #: inc/meta-box/meta-home.php:55
 msgid "History image"
@@ -340,7 +344,7 @@ msgstr ""
 msgid "http://andrewbarchuk.com/ieverly"
 msgstr ""
 
-#: template-parts/property/filter.php:49 template-parts/property/search.php:45
+#: template-parts/property/filter.php:48 template-parts/property/search.php:45
 msgid "id"
 msgstr ""
 
@@ -348,7 +352,7 @@ msgstr ""
 msgid "ieverly"
 msgstr ""
 
-#: template-parts/property/single.php:84
+#: template-parts/property/single.php:83
 msgid "in"
 msgstr "в"
 
@@ -366,16 +370,16 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/property/filter.php:114
-#: template-parts/property/single.php:206
+#: template-parts/property/filter.php:113
+#: template-parts/property/single.php:205
 msgid "Kitchen"
 msgstr "Кухня"
 
-#: inc/meta-box/meta-property.php:62 template-parts/property/single.php:120
+#: inc/meta-box/meta-property.php:62 template-parts/property/single.php:119
 msgid "Land area"
 msgstr "Площадь земли"
 
-#: inc/template-functions.php:64
+#: inc/template-functions.php:63
 msgid "Language switcher"
 msgstr ""
 
@@ -383,7 +387,7 @@ msgstr ""
 msgid "listings found"
 msgstr "объектов "
 
-#: template-parts/property/single.php:112
+#: template-parts/property/single.php:111
 msgid "Living area"
 msgstr "Жилая площадь"
 
@@ -395,8 +399,8 @@ msgstr "Загрузить еще"
 msgid "Loading..."
 msgstr "Загрузка..."
 
-#: template-parts/property/filter.php:98 template-parts/property/search.php:78
-#: template-parts/property/single.php:226
+#: template-parts/property/filter.php:97 template-parts/property/search.php:78
+#: template-parts/property/single.php:225
 msgid "Location"
 msgstr "Расположение"
 
@@ -404,27 +408,27 @@ msgstr "Расположение"
 msgid "Map iframe"
 msgstr ""
 
-#: template-parts/property/sort.php:38
+#: template-parts/property/sort.php:33
 msgid "meta_value_num-ASC-area"
 msgstr "Площадь ↑"
 
-#: template-parts/property/sort.php:36
+#: template-parts/property/sort.php:31
 msgid "meta_value_num-ASC-price"
 msgstr "Цена ↑"
 
-#: template-parts/property/sort.php:37
+#: template-parts/property/sort.php:32
 msgid "meta_value_num-DESC-area"
 msgstr "Площадь ↓"
 
-#: template-parts/property/sort.php:35
+#: template-parts/property/sort.php:30
 msgid "meta_value_num-DESC-price"
 msgstr "Цена ↓"
 
-#: template-parts/property/filter.php:130
+#: template-parts/property/filter.php:129
 msgid "Min baths"
 msgstr "Ванны"
 
-#: template-parts/property/filter.php:122 template-parts/property/search.php:86
+#: template-parts/property/filter.php:121 template-parts/property/search.php:86
 msgid "Min beds"
 msgstr "Спальни"
 
@@ -460,7 +464,7 @@ msgstr ""
 msgid "New Property Type Name"
 msgstr ""
 
-#: single.php:25
+#: single.php:26
 msgid "Next Post"
 msgstr ""
 
@@ -472,7 +476,7 @@ msgstr ""
 msgid "No Property found in Trash"
 msgstr ""
 
-#: template-parts/notfound.php:13
+#: template-parts/notfound.php:12
 msgid "Not found"
 msgstr "Не найдено"
 
@@ -499,6 +503,10 @@ msgstr "Только цифры"
 #: 404.php:20
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Ой! Эту страницу нельзя найти."
+
+#: template-parts/property/sort.php:19
+msgid "Order"
+msgstr "Сортировать"
 
 #: template-parts/content-page.php:25
 msgid "Pages:"
@@ -552,9 +560,13 @@ msgstr ""
 msgid "Parent Property Type:"
 msgstr ""
 
-#: template-parts/property/single.php:136
+#: template-parts/property/single.php:135
 msgid "Parking place"
 msgstr "Паркомест"
+
+#: template-parts/property/sort.php:11
+msgid "Per page"
+msgstr "На странице"
 
 #: inc/template-customizer.php:187
 msgid "Phone number"
@@ -588,11 +600,11 @@ msgstr ""
 msgid "Portfolio title"
 msgstr ""
 
-#: single.php:24
+#: single.php:25
 msgid "Preview Post"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:48 template-parts/property/filter.php:54
+#: inc/meta-box/meta-property.php:48 template-parts/property/filter.php:53
 #: template-parts/property/search.php:50
 msgid "Price"
 msgstr "Цена"
@@ -651,21 +663,17 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: inc/meta-box/meta-property.php:23 template-parts/property/filter.php:48
+#: inc/meta-box/meta-property.php:23 template-parts/property/filter.php:47
 #: template-parts/property/search.php:44
 msgid "REF"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:30 template-parts/property/item.php:33
-#: template-parts/property/single.php:61
+#: inc/meta-box/meta-property.php:30 template-parts/property/item.php:34
+#: template-parts/property/single.php:60
 msgid "Reserved"
 msgstr "Зарезервировано"
 
-#: template-parts/property/filter.php:147
-msgid "Reset"
-msgstr "Скинуть"
-
-#: template-parts/property/filter.php:146
+#: template-parts/property/filter.php:145
 msgid "Search"
 msgstr "Поиск"
 
@@ -698,7 +706,7 @@ msgid "Search Property Types"
 msgstr ""
 
 #. translators: %s: search query.
-#: search.php:23
+#: search.php:24
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -706,23 +714,23 @@ msgstr ""
 msgid "Select image"
 msgstr "Выберите изображение"
 
-#: template-parts/property/filter.php:116
+#: template-parts/property/filter.php:115
 msgid "Select kitchen"
 msgstr "Выберите тип кухни"
 
-#: template-parts/property/filter.php:100 template-parts/property/search.php:80
+#: template-parts/property/filter.php:99 template-parts/property/search.php:80
 msgid "Select location"
 msgstr "Выберите город"
 
-#: template-parts/property/filter.php:108
+#: template-parts/property/filter.php:107
 msgid "Select state"
 msgstr "Выберите состояние"
 
-#: template-parts/property/filter.php:84
+#: template-parts/property/filter.php:83
 msgid "Select status"
 msgstr "Выберите статус"
 
-#: template-parts/property/filter.php:92
+#: template-parts/property/filter.php:91
 msgid "Select type"
 msgstr "Выберите тип"
 
@@ -754,7 +762,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Настройки"
 
-#: template-parts/property/filter.php:41 template-parts/property/filter.php:42
+#: template-parts/property/filter.php:41
 msgid "Show filter"
 msgstr "Показать фильтр"
 
@@ -774,8 +782,8 @@ msgstr ""
 msgid "Social networks"
 msgstr ""
 
-#: inc/meta-box/meta-property.php:36 template-parts/property/item.php:36
-#: template-parts/property/single.php:64
+#: inc/meta-box/meta-property.php:36 template-parts/property/item.php:37
+#: template-parts/property/single.php:63
 msgid "Sold out"
 msgstr "Продано"
 
@@ -787,15 +795,15 @@ msgstr ""
 "Извините, но ничего не соответствовало вашим поисковым запросам. Пожалуйста, "
 "попытайтесь снова с другими ключевыми словами."
 
-#: template-parts/property/filter.php:106
+#: template-parts/property/filter.php:105
 msgid "State"
 msgstr "Состояние"
 
-#: template-parts/property/filter.php:82
+#: template-parts/property/filter.php:81
 msgid "Status"
 msgstr "Статус"
 
-#: template-parts/property/single.php:96
+#: template-parts/property/single.php:95
 msgid "Storeys"
 msgstr "Этажность"
 
@@ -803,7 +811,7 @@ msgstr "Этажность"
 msgid "Theme settings"
 msgstr ""
 
-#: template-parts/property/filter.php:90
+#: template-parts/property/filter.php:89
 msgid "Type"
 msgstr "Тип"
 
