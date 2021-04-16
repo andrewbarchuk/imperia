@@ -2421,6 +2421,8 @@ img[loading=lazy] {
  * media
  */
 @media (min-width: 992px) {
+  .menu-item.api {
+    display: none; }
   .site__header-nav-box .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2439,6 +2441,8 @@ img[loading=lazy] {
     padding: 0; } }
 
 @media (max-width: 992px) {
+  .menu-item.web {
+    display: none; }
   .site__header-menu-button {
     display: -webkit-box;
     display: -webkit-flex;

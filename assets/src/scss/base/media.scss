@@ -4,6 +4,12 @@
 
 
 @media (min-width: 992px) {
+    .menu-item {
+        &.api {
+            display: none;
+        }
+    }
+
     .site__header-nav-box {
         .container {
             display: flex;
@@ -17,6 +23,12 @@
 }
 
 @media (max-width: 992px) {
+    .menu-item {
+        &.web {
+            display: none;
+        }
+    }
+    
     .site__header-menu-button {
         display: flex;
         margin: 0 0 0 auto;
