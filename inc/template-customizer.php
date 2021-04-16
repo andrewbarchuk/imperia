@@ -109,54 +109,6 @@ function theme_customize_register( $wp_customize ) {
 		)
 	);
 
-	/* phone 1 */
-	$wp_customize->add_setting(
-		'phone_1',
-		array(
-			'default'    => '',
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'ieverly_theme_phone_1_title',
-			array(
-				'label'       => __( 'Phone number', 'ieverly' ),
-				'description' => __( 'Enter this text', 'ieverly' ),
-				'settings'    => 'phone_1',
-				'priority'    => 10,
-				'section'     => 'ieverly_options',
-				'type'        => 'text',
-			)
-		)
-	);
-
-	/* email */
-	$wp_customize->add_setting(
-		'email',
-		array(
-			'default'    => '',
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'ieverly_theme_email_title',
-			array(
-				'label'       => __( 'E-mail', 'ieverly' ),
-				'description' => __( 'Enter this e-mail', 'ieverly' ),
-				'settings'    => 'email', 
-				'priority'    => 10,
-				'section'     => 'ieverly_options',
-				'type'        => 'text',
-			)
-		)
-	);
-
 	/* currency */
 	$wp_customize->add_setting(
 		'currency',

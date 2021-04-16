@@ -18,7 +18,7 @@ get_header();
 	<main id="primary" class="site-main content">
 		<div class="container">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-xl-10 offset-xl-1">
 					<?php
 					while ( have_posts() ) :
 						the_post();

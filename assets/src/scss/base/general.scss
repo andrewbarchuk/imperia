@@ -86,8 +86,11 @@ h1 {
   h5,
   h6 {
     font-family: $f-title;
-    margin: 40px 0 20px;
     color: $c-title;
+  }
+
+  h2 {
+    margin: 2rem 0;
   }
 
   p {
@@ -122,7 +125,8 @@ select {
 }
 
 select,
-input {
+input,
+textarea {
   display: flex;
   align-items: center;
   background: $c-white;
@@ -1016,16 +1020,25 @@ img[loading=lazy] {
   h4 {
     font-size: 30px;
   }
+}
 
-  .inp {
-    padding: 15px;
-    margin: 20px 0;
-    width: 100%;
-  }
+.inp {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
 
-  .ajax-loader {
-    position: absolute;
-    top: 30px;
-    right: 0;
-  }
+.ajax-loader {
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.wpcf7-not-valid-tip {
+  margin: -15px 0 0;
+  font-size: 12px;
+}
+
+.wp-block-social-links {
+  margin: 0 !important;
 }

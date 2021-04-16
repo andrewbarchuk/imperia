@@ -42,7 +42,7 @@ if ( ! empty( $areas ) ) {
 			<!-- ref -->
 			<div class="filter__item ref">
 				<label><?php esc_html_e( 'REF', 'ieverly' ); ?></label>
-				<input type="text" name="keyword" class="inp inp-keyword" id="keyword-txt" value="<?php echo isset( $_GET['keyword'] ) ? $_GET['keyword'] : ''; ?>" placeholder="<?php esc_attr_e( 'id', 'ieverly' ); ?>" />
+				<input type="text" name="keyword" class="inp-keyword" id="keyword-txt" value="<?php echo isset( $_GET['keyword'] ) ? $_GET['keyword'] : ''; ?>" placeholder="<?php esc_attr_e( 'id', 'ieverly' ); ?>" />
 			</div>
 
 			<!-- price -->
