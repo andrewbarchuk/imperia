@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Ieverly Theme Property single
  *

@@ -116,22 +116,28 @@ const ieverly_property = {
 	filter() {
 		/**
 		 * Price replace
+		 *
+		 * @param {price_replace_init} price_replace_init
 		 */
-		function price_replace() {
-			document.querySelectorAll( '.price-replace' ).forEach( ( event ) => {
-				const price = event.textContent;
-				event.textContent = price.replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,' );
-			} );
+		function price_replace( price_replace_init ) {
+			const price_replace_box = document.querySelectorAll( price_replace_init );
+			if ( price_replace_box ) {
+				price_replace_box.forEach( ( event ) => {
+					const price = event.textContent;
+					event.textContent = price.replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,' );
+				} );
+			} else {
+				console.log( 'check price replace function and class' );
+			}
 		}
 
-		const price_replace_init = document.querySelector( '.price-replace' );
-		if ( price_replace_init ) {
-			price_replace();
-		}
+		price_replace( '.price-replace' );
 
 		/*global posts, current_page, max_page, ajaxurl*/
 
-		// check filter
+		/**
+		 * Property
+		 */
 		const property__filter = document.querySelector( '#property__filter' );
 		if ( property__filter ) {
 			// show loading section
@@ -161,7 +167,7 @@ const ieverly_property = {
 						if ( response ) {
 							document.querySelector( '#property__items' ).innerHTML += response; // append items
 							current_page++; // add current page
-							price_replace(); // price replace
+							price_replace( '.price-replace' ); // price replace
 							loadmore__button.innerHTML = loadmore__text; // reset loadmore button text
 							loadmore__button.classList.remove( 'active' );
 
@@ -179,11 +185,11 @@ const ieverly_property = {
 
 							property__loading(); // loading animation
 							// remove button if last page
-							if ( current_page === max_page ) {
-								document.querySelector( '#property__loadmore' ).style.display = 'none';
+							if ( current_page == max_page ) {
+								loadmore__button.style.display = 'none';
 							}
 						} else {
-							document.querySelector( '#property__loadmore' ).style.display = 'none';
+							loadmore__button.style.display = 'none';
 						}
 					} )
 					.catch( ( error ) => {
@@ -204,7 +210,7 @@ const ieverly_property = {
 			}
 
 			// disable loadmore button
-			if ( current_page === max_page ) {
+			if ( current_page == max_page ) {
 				loadmore__button.style.display = 'none';
 			}
 
@@ -212,8 +218,7 @@ const ieverly_property = {
 			 * Filter
 			 */
 			function property__response() {
-				const form = document.querySelector( '#property__filter' ),
-					data = new FormData( form ),
+				const data = new FormData( property__filter ),
 					url_list = new URLSearchParams( data ).toString();
 
 				fetch( ajaxurl, {
@@ -227,7 +232,7 @@ const ieverly_property = {
 						max_page = response.max_page;
 						document.querySelector( '#property__found-posts' ).innerHTML = response.found_posts; // change count in listing found
 						document.querySelector( '#property__items' ).innerHTML = response.content; // append
-						price_replace(); // price replace
+						price_replace( '.price-replace' ); // price replace
 
 						// url replace
 						const cur_url = document.URL,
@@ -244,9 +249,9 @@ const ieverly_property = {
 
 						property__loading(); // loading animation
 						if ( response.max_page < 2 ) {
-							document.querySelector( '#property__loadmore' ).style.display = 'none';
+							loadmore__button.style.display = 'none';
 						} else {
-							document.querySelector( '#property__loadmore' ).style.display = '';
+							loadmore__button.style.display = '';
 						}
 					} )
 					.catch( ( error ) => {
@@ -271,7 +276,7 @@ const ieverly_property = {
 				button__search.classList.remove( 'light' );
 			} );
 
-			// change sort
+			// change sort and count on page
 			document.querySelector( '.property__sort-items' ).addEventListener( 'change', () => {
 				property__loading();
 				property__response();
@@ -285,12 +290,13 @@ const ieverly_property = {
 
 			/**
 			 * Clear form
+			 *
+			 * @param {clear_form_init} clear_form_init
 			 */
-			const form = document.querySelector( '#property__filter' );
-			function clearForm() {
+			function clear_form( clear_form_init ) {
 				console.log( 'clear filter' );
-				const elements = form.elements;
-				form.reset();
+				const elements = clear_form_init.elements;
+				clear_form_init.reset();
 				for ( let i = 0; i < elements.length; i++ ) {
 					const field_type = elements[ i ].type.toLowerCase();
 					switch ( field_type ) {
@@ -318,7 +324,7 @@ const ieverly_property = {
 
 			// reset
 			document.querySelector( '.button__reset' ).addEventListener( 'click', () => {
-				clearForm( form );
+				clear_form( property__filter );
 				if ( window.matchMedia( '(min-width: 992px)' ).matches ) {
 					property__loading();
 					property__response();

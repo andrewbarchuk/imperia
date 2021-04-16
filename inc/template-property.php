@@ -12,8 +12,8 @@
 if ( ! function_exists( 'property_get_search' ) ) {
 	function property_get_search( $search_args ) {
 
-		$tax_query  = array();   // taxonomy query array
-		$meta_query = array();  // meta query qrray
+		$tax_query  = array();   // Taxonomy query array.
+		$meta_query = array();  // Meta query qrray.
 
 		/* count */
 		if ( ( ! empty( $_GET['property_number_of_results'] ) ) && ( $_GET['property_number_of_results'] != 'any' ) ) {

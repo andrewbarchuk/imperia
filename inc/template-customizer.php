@@ -1,15 +1,21 @@
 <?php
 /**
  * Ieverly customizer
- * Accent colors
  *
+ * Accent colors and theme options
+ * 
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package ieverly
  */
 
+/**
+ * Define template file.
+ * 
+ * @param string $wp_customize Customizer for colors.
+ */
 function theme_customize_register( $wp_customize ) {
-	// Text color
+	/* Text color */
 	$wp_customize->add_setting(
 		'text_color',
 		array(
@@ -24,12 +30,12 @@ function theme_customize_register( $wp_customize ) {
 			'text_color',
 			array(
 				'section' => 'colors',
-				'label'   => esc_html__( 'Text color', 'theme' ),
+				'label'   => esc_html__( 'Text color', 'ieverly' ),
 			)
 		)
 	);
 
-	// Title color
+	/* Title color */
 	$wp_customize->add_setting(
 		'title_color',
 		array(
@@ -44,12 +50,12 @@ function theme_customize_register( $wp_customize ) {
 			'title_color',
 			array(
 				'section' => 'colors',
-				'label'   => esc_html__( 'Title color', 'theme' ),
+				'label'   => esc_html__( 'Title color', 'ieverly' ),
 			)
 		)
 	);
 
-	// Second color
+	/* Second color */
 	$wp_customize->add_setting(
 		'second_color',
 		array(
@@ -64,12 +70,12 @@ function theme_customize_register( $wp_customize ) {
 			'second_color',
 			array(
 				'section' => 'colors',
-				'label'   => esc_html__( 'Second color', 'theme' ),
+				'label'   => esc_html__( 'Second color', 'ieverly' ),
 			)
 		)
 	);
 
-	// Accent color
+	/* Accent color */
 	$wp_customize->add_setting(
 		'accent_color',
 		array(
@@ -85,15 +91,123 @@ function theme_customize_register( $wp_customize ) {
 			'accent_color',
 			array(
 				'section' => 'colors',
-				'label'   => esc_html__( 'Accent color', 'theme' ),
+				'label'   => esc_html__( 'Accent color', 'ieverly' ),
+			)
+		)
+	);
+
+	/**
+	 * Custom settings
+	*/ 
+	$wp_customize->add_section(
+		'ieverly_options',
+		array(
+			'title'       => __( 'Custom settings', 'ieverly' ),
+			'priority'    => 20,
+			'capability'  => 'edit_theme_options',
+			'description' => __( 'Theme settings', 'ieverly' ),
+		)
+	);
+
+	/* phone 1 */
+	$wp_customize->add_setting(
+		'phone_1',
+		array(
+			'default'    => '',
+			'type'       => 'theme_mod',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'ieverly_theme_phone_1_title',
+			array(
+				'label'       => __( 'Phone number', 'ieverly' ),
+				'description' => __( 'Enter this text', 'ieverly' ),
+				'settings'    => 'phone_1',
+				'priority'    => 10,
+				'section'     => 'ieverly_options',
+				'type'        => 'text',
+			)
+		)
+	);
+
+	/* email */
+	$wp_customize->add_setting(
+		'email',
+		array(
+			'default'    => '',
+			'type'       => 'theme_mod',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'ieverly_theme_email_title',
+			array(
+				'label'       => __( 'E-mail', 'ieverly' ),
+				'description' => __( 'Enter this e-mail', 'ieverly' ),
+				'settings'    => 'email', 
+				'priority'    => 10,
+				'section'     => 'ieverly_options',
+				'type'        => 'text',
+			)
+		)
+	);
+
+	/* currency */
+	$wp_customize->add_setting(
+		'currency',
+		array(
+			'default'    => '',
+			'type'       => 'theme_mod',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'ieverly_theme_currency_title',
+			array(
+				'label'       => __( 'Currency', 'ieverly' ),
+				'description' => __( 'Enter this currency', 'ieverly' ),
+				'settings'    => 'currency',
+				'priority'    => 10,
+				'section'     => 'ieverly_options',
+				'type'        => 'text',
+			)
+		)
+	);
+
+	/* area */
+	$wp_customize->add_setting(
+		'area',
+		array(
+			'default'    => '', 
+			'type'       => 'theme_mod',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'ieverly_theme_area_title',
+			array(
+				'label'       => __( 'Area', 'ieverly' ), 
+				'description' => __( 'Enter this area type', 'ieverly' ),
+				'settings'    => 'area', 
+				'priority'    => 10, 
+				'section'     => 'ieverly_options',
+				'type'        => 'text',
 			)
 		)
 	);
 }
 add_action( 'customize_register', 'theme_customize_register' );
 
-
-// custom css
+/** Custom CSS */
 function ieverly_theme_get_customizer_css() {
 	ob_start();
 
@@ -101,7 +215,7 @@ function ieverly_theme_get_customizer_css() {
 	if ( ! empty( $text_color ) ) {
 		?>
 		:root {
-		--c-text: <?php echo $text_color; ?>;
+			--c-text: <?php echo esc_attr( $text_color ); ?>;
 		}
 		<?php
 	}
@@ -110,7 +224,7 @@ function ieverly_theme_get_customizer_css() {
 	if ( ! empty( $text_color ) ) {
 		?>
 		:root {
-		--c-title: <?php echo $title_color; ?>;
+			--c-title: <?php echo esc_attr( $title_color ); ?>;
 		}
 		<?php
 	}
@@ -119,7 +233,7 @@ function ieverly_theme_get_customizer_css() {
 	if ( ! empty( $text_color ) ) {
 		?>
 		:root {
-		--c-second: <?php echo $second_color; ?>;
+			--c-second: <?php echo esc_attr( $second_color ); ?>;
 		}
 		<?php
 	}
@@ -128,17 +242,17 @@ function ieverly_theme_get_customizer_css() {
 	if ( ! empty( $accent_color ) ) {
 		?>
 		:root {
-		--c-accent: <?php echo $accent_color; ?>;
+			--c-accent: <?php echo esc_attr( $accent_color ); ?>;
 		}
 
 		a:hover {
-		color: <?php echo $accent_color; ?>;
-		border-bottom-color: <?php echo $accent_color; ?>;
+			color: <?php echo esc_attr( $accent_color ); ?>;
+			border-bottom-color: <?php echo esc_attr( $accent_color ); ?>;
 		}
 
 		button,
-		input[type="submit"] {
-		background-color: <?php echo $accent_color; ?>;
+			input[type="submit"] {
+			background-color: <?php echo esc_attr( $accent_color ); ?>;
 		}
 		<?php
 	}
@@ -146,127 +260,3 @@ function ieverly_theme_get_customizer_css() {
 	$css = ob_get_clean();
 	return $css;
 }
-
-// Modify our styles registration like so:
-function ieverly_enqueue_styles() {
-	 wp_enqueue_style( 'ieverly-style', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
-	$custom_css = ieverly_theme_get_customizer_css();
-	wp_add_inline_style( 'ieverly-style', $custom_css );
-}
-add_action( 'wp_enqueue_scripts', 'ieverly_enqueue_styles' );
-
-
-
-// theme options
-function ieverly_settings( $wp_customize ) {
-	$wp_customize->add_section(
-		'ieverly_options',
-		array(
-			'title'       => __( 'Custom settings', 'ieverly' ), // Visible title of section
-			'priority'    => 20, // Determines what order this appears in
-			'capability'  => 'edit_theme_options', // Capability needed to tweak
-			'description' => __( 'Theme settings', 'ieverly' ), // Descriptive tooltip
-		)
-	);
-
-	// phone 1
-	$wp_customize->add_setting(
-		'phone_1', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-		array(
-			'default'    => '', // Default setting/value to save
-			'type'       => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
-			'capability' => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
-			// 'transport'  => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, // Pass the $wp_customize object (required)
-			'ieverly_theme_phone_1_title', // Set a unique ID for the control
-			array(
-				'label'       => __( 'Phone number', 'ieverly' ), // Admin-visible name of the control
-				'description' => __( 'Enter this text', 'ieverly' ),
-				'settings'    => 'phone_1', // Which setting to load and manipulate (serialized is okay)
-				'priority'    => 10, // Determines the order this control appears in for the specified section
-				'section'     => 'ieverly_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section)
-				'type'        => 'text',
-			)
-		)
-	);
-
-	// email
-	$wp_customize->add_setting(
-		'email', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-		array(
-			'default'    => '', // Default setting/value to save
-			'type'       => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
-			'capability' => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
-			// 'transport'  => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, // Pass the $wp_customize object (required)
-			'ieverly_theme_email_title', // Set a unique ID for the control
-			array(
-				'label'       => __( 'E-mail', 'ieverly' ), // Admin-visible name of the control
-				'description' => __( 'Enter this e-mail', 'ieverly' ),
-				'settings'    => 'email', // Which setting to load and manipulate (serialized is okay)
-				'priority'    => 10, // Determines the order this control appears in for the specified section
-				'section'     => 'ieverly_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section)
-				'type'        => 'text',
-			)
-		)
-	);
-
-	// currency
-	$wp_customize->add_setting(
-		'currency', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-		array(
-			'default'    => '', // Default setting/value to save
-			'type'       => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
-			'capability' => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
-			// 'transport'  => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, // Pass the $wp_customize object (required)
-			'ieverly_theme_currency_title', // Set a unique ID for the control
-			array(
-				'label'       => __( 'Currency', 'ieverly' ), // Admin-visible name of the control
-				'description' => __( 'Enter this currency', 'ieverly' ),
-				'settings'    => 'currency', // Which setting to load and manipulate (serialized is okay)
-				'priority'    => 10, // Determines the order this control appears in for the specified section
-				'section'     => 'ieverly_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section)
-				'type'        => 'text',
-			)
-		)
-	);
-
-	// area
-	$wp_customize->add_setting(
-		'area', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-		array(
-			'default'    => '', // Default setting/value to save
-			'type'       => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
-			'capability' => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
-			// 'transport'  => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, // Pass the $wp_customize object (required)
-			'ieverly_theme_area_title', // Set a unique ID for the control
-			array(
-				'label'       => __( 'Area', 'ieverly' ), // Admin-visible name of the control
-				'description' => __( 'Enter this area type', 'ieverly' ),
-				'settings'    => 'area', // Which setting to load and manipulate (serialized is okay)
-				'priority'    => 10, // Determines the order this control appears in for the specified section
-				'section'     => 'ieverly_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section)
-				'type'        => 'text',
-			)
-		)
-	);
-}
-add_action( 'customize_register', 'ieverly_settings' );
