@@ -10,13 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2021-04-14T11:28:56+00:00\n"
-"PO-Revision-Date: 2021-04-14 20:32+0000\n"
+"PO-Revision-Date: 2021-04-15 16:42+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: ieverly\n"
 "Language: ru_RU\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
 "n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
-"X-Loco-Version: 2.5.2; wp-5.7"
+"X-Loco-Version: 2.5.2; wp-5.7.1"
 
 #: inc/post-type/post-property.php:13
 msgid "Add New"
@@ -663,7 +663,7 @@ msgstr "Зарезервировано"
 
 #: template-parts/property/filter.php:147
 msgid "Reset"
-msgstr "Скинуть"
+msgstr "Сбросить"
 
 #: template-parts/property/filter.php:146
 msgid "Search"

@@ -1,4 +1,3 @@
-import GLightbox from 'glightbox';
 import Splide from '@splidejs/splide';
 
 const splide_settings = {
@@ -64,7 +63,7 @@ const smooth_scroll = {
 	},
 };
 
-const menu = {
+const menu_button = {
 	/**
 	 * Toggle menu
 	 */
@@ -110,19 +109,6 @@ const menu = {
 	},
 };
 
-const glight = {
-	/**
-	 * Glight gallery
-	 */
-	init() {
-		const lightbox = GLightbox( {
-			touchNavigation: true,
-			loop: false,
-			autoplayVideos: true,
-		} );
-	},
-};
-
 const ieverly_property = {
 	/**
 	 * Filter and Load more
@@ -143,6 +129,8 @@ const ieverly_property = {
 			price_replace();
 		}
 
+		/*global posts, current_page, max_page, ajaxurl*/
+
 		// check filter
 		const property__filter = document.querySelector( '#property__filter' );
 		if ( property__filter ) {
@@ -155,7 +143,9 @@ const ieverly_property = {
 			/**
 			 * Load more
 			 */
-			const loadmore__button = document.querySelector( '#property__loadmore' );
+			const loadmore__button = document.querySelector( '#property__loadmore' ),
+				loadmore__text = loadmore__button.innerHTML;
+
 			function property__loadmore() {
 				const data = new FormData();
 				data.append( 'action', 'loadmorebutton' );
@@ -177,10 +167,11 @@ const ieverly_property = {
 
 							// url replace
 							const cur_url = document.URL;
+							let cur_url_filter;
 							if ( cur_url.indexOf( '?' ) > -1 ) {
-								var cur_url_filter = cur_url.replace( /\/property\S*\?/g, '/property/page/' + current_page + '/?' );
+								cur_url_filter = cur_url.replace( /\/property\S*\?/g, '/property/page/' + current_page + '/?' );
 							} else {
-								var cur_url_filter = cur_url.replace( /\/property\S*/, '/property/page/' + current_page + '/' );
+								cur_url_filter = cur_url.replace( /\/property\S*/, '/property/page/' + current_page + '/' );
 							}
 							history.pushState( null, null, cur_url_filter );
 
@@ -188,7 +179,7 @@ const ieverly_property = {
 
 							property__loading(); // loading animation
 							// remove button if last page
-							if ( current_page == max_page ) {
+							if ( current_page === max_page ) {
 								document.querySelector( '#property__loadmore' ).style.display = 'none';
 							}
 						} else {
@@ -202,9 +193,7 @@ const ieverly_property = {
 			}
 
 			if ( loadmore__button ) {
-				var loadmore__text = loadmore__button.innerHTML,
-					loadmore__loading = loadmore__button.dataset.loading;
-
+				const loadmore__loading = loadmore__button.dataset.loading;
 				// click loadmore
 				loadmore__button.addEventListener( 'click', () => {
 					loadmore__button.innerHTML = loadmore__loading;
@@ -215,7 +204,7 @@ const ieverly_property = {
 			}
 
 			// disable loadmore button
-			if ( current_page == max_page ) {
+			if ( current_page === max_page ) {
 				loadmore__button.style.display = 'none';
 			}
 
@@ -243,11 +232,11 @@ const ieverly_property = {
 						// url replace
 						const cur_url = document.URL,
 							url_list_filter = '?' + url_list.replace( /&action=property__filter\S*/gi, '' );
-
+						let cur_url_filter;
 						if ( cur_url.indexOf( 'page' ) > -1 ) {
-							var cur_url_filter = cur_url.replace( /\/property\/page\/*\S/g, '/property/' + url_list_filter );
+							cur_url_filter = cur_url.replace( /\/property\/page\/*\S/g, '/property/' + url_list_filter );
 						} else {
-							var cur_url_filter = url_list_filter;
+							cur_url_filter = url_list_filter;
 						}
 						history.pushState( null, null, cur_url_filter );
 
@@ -298,7 +287,7 @@ const ieverly_property = {
 			 * Clear form
 			 */
 			const form = document.querySelector( '#property__filter' );
-			function clearForm( form ) {
+			function clearForm() {
 				console.log( 'clear filter' );
 				const elements = form.elements;
 				form.reset();
@@ -368,8 +357,7 @@ const ieverly_property = {
 
 document.addEventListener( 'DOMContentLoaded', () => {
 	smooth_scroll.init();
-	menu.init();
-	glight.init();
+	menu_button.init();
 	ieverly_property.filter();
 	splide_settings.init();
 } );
