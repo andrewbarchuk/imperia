@@ -230,6 +230,7 @@ require get_template_directory() . '/inc/meta-box/meta-property.php';
  * Add post-type
  */
 require get_template_directory() . '/inc/post-type/post-property.php';
+require get_template_directory() . '/inc/post-type/post-blog.php';
 
 /**
  * Add Property support

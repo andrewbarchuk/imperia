@@ -15,6 +15,7 @@
 get_header();
 get_template_part( '/template-parts/home/property-search' );
 get_template_part( '/template-parts/content-clean' ); 
+get_template_part( '/template-parts/home/blog-latest' ); 
 get_footer();
 
 

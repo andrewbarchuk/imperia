@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2021-04-14T11:28:56+00:00\n"
-"PO-Revision-Date: 2021-04-15 16:42+0000\n"
+"PO-Revision-Date: 2021-05-09 20:57+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: ieverly\n"
 "Language: ru_RU\n"
@@ -18,9 +18,21 @@ msgstr ""
 "n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Loco-Version: 2.5.2; wp-5.7.1"
 
+#: inc/template-customizer.php:94
+msgid "Accent color"
+msgstr ""
+
+#: inc/post-type/post-blog.php:14
+msgid "Add item"
+msgstr ""
+
 #: inc/post-type/post-property.php:13
 msgid "Add New"
 msgstr "Добавить"
+
+#: inc/post-type/post-blog.php:15
+msgid "Add new item"
+msgstr ""
 
 #: inc/post-type/post-property.php:14
 msgid "Add New Property"
@@ -74,6 +86,14 @@ msgstr ""
 msgid "Add or remove Property Types"
 msgstr ""
 
+#: inc/post-type/post-blog.php:18
+msgid "All items"
+msgstr ""
+
+#: template-parts/home/blog-latest.php:34
+msgid "All posts"
+msgstr "Архив блога"
+
 #: inc/post-type/post-property.php:121
 msgid "All Property Cities"
 msgstr ""
@@ -107,7 +127,7 @@ msgstr ""
 msgid "Any"
 msgstr "Все"
 
-#: inc/template-customizer.php:262 template-parts/property/filter.php:68
+#: inc/template-customizer.php:150 template-parts/property/filter.php:68
 #: template-parts/property/search.php:64
 msgid "Area"
 msgstr "Площадь"
@@ -116,17 +136,25 @@ msgstr "Площадь"
 msgid "Area house"
 msgstr "Площадь дома"
 
-#: inc/meta-box/meta-property.php:80 template-parts/property/single.php:128
+#: inc/meta-box/meta-property.php:80 template-parts/property/single.php:127
 msgid "Baths"
 msgstr "Ванны"
 
-#: template-parts/property/single.php:104
+#: template-parts/property/single.php:103
 msgid "Bedrooms"
 msgstr "Спальни"
 
 #: inc/meta-box/meta-property.php:74
 msgid "Beds"
 msgstr "Спальни"
+
+#: inc/post-type/post-blog.php:12 inc/post-type/post-blog.php:23
+msgid "Blog"
+msgstr ""
+
+#: inc/post-type/post-blog.php:13
+msgid "Blog item"
+msgstr ""
 
 #: inc/meta-box/meta-property.php:31
 msgid "Check if reserved"
@@ -181,11 +209,11 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: inc/template-customizer.php:237
+#: inc/template-customizer.php:126
 msgid "Currency"
 msgstr "Валюта"
 
-#: inc/template-customizer.php:165
+#: inc/template-customizer.php:105
 msgid "Custom settings"
 msgstr ""
 
@@ -201,17 +229,17 @@ msgstr "Дата ↑"
 msgid "date-DESC"
 msgstr "Дата ↓"
 
-#: template-parts/property/single.php:217
+#: template-parts/property/single.php:216
 msgid "Description"
 msgstr "Описание"
-
-#: inc/template-customizer.php:212
-msgid "E-mail"
-msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: template-parts/content-page.php:39
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/post-type/post-blog.php:16
+msgid "Edit item"
 msgstr ""
 
 #: inc/post-type/post-property.php:15
@@ -259,16 +287,12 @@ msgstr ""
 msgid "Enter text"
 msgstr ""
 
-#: inc/template-customizer.php:263
+#: inc/template-customizer.php:151
 msgid "Enter this area type"
 msgstr ""
 
-#: inc/template-customizer.php:238
+#: inc/template-customizer.php:127
 msgid "Enter this currency"
-msgstr ""
-
-#: inc/template-customizer.php:213
-msgid "Enter this e-mail"
 msgstr ""
 
 #: inc/meta-box/meta-property.php:93
@@ -279,16 +303,12 @@ msgstr ""
 msgid "Enter this ref code"
 msgstr ""
 
-#: inc/template-customizer.php:188
-msgid "Enter this text"
-msgstr ""
-
 #: inc/meta-box/meta-home.php:50
 msgid "Enter title"
 msgstr ""
 
 #: template-parts/property/filter.php:138
-#: template-parts/property/single.php:181
+#: template-parts/property/single.php:180
 msgid "Features"
 msgstr "Опции"
 
@@ -304,7 +324,7 @@ msgstr "Галерея"
 msgid "Garage"
 msgstr "Гараж"
 
-#: template-parts/property/single.php:196
+#: template-parts/property/single.php:195
 msgid "General state"
 msgstr "Состояние"
 
@@ -348,9 +368,13 @@ msgstr ""
 msgid "ieverly"
 msgstr ""
 
-#: template-parts/property/single.php:84
+#: template-parts/property/single.php:83
 msgid "in"
 msgstr "в"
+
+#: inc/post-type/post-blog.php:22
+msgid "In trash not found item"
+msgstr ""
 
 #: inc/meta-box/meta-home.php:73
 msgid "Instagram"
@@ -367,11 +391,11 @@ msgid ""
 msgstr ""
 
 #: template-parts/property/filter.php:114
-#: template-parts/property/single.php:206
+#: template-parts/property/single.php:205
 msgid "Kitchen"
 msgstr "Кухня"
 
-#: inc/meta-box/meta-property.php:62 template-parts/property/single.php:120
+#: inc/meta-box/meta-property.php:62 template-parts/property/single.php:119
 msgid "Land area"
 msgstr "Площадь земли"
 
@@ -383,7 +407,7 @@ msgstr ""
 msgid "listings found"
 msgstr "объектов "
 
-#: template-parts/property/single.php:112
+#: template-parts/property/single.php:111
 msgid "Living area"
 msgstr "Жилая площадь"
 
@@ -396,7 +420,7 @@ msgid "Loading..."
 msgstr "Загрузка..."
 
 #: template-parts/property/filter.php:98 template-parts/property/search.php:78
-#: template-parts/property/single.php:226
+#: template-parts/property/single.php:225
 msgid "Location"
 msgstr "Расположение"
 
@@ -431,6 +455,10 @@ msgstr "Спальни"
 #: inc/meta-box/meta-home.php:25
 msgid "Name"
 msgstr "Имя"
+
+#: inc/post-type/post-blog.php:17
+msgid "New item"
+msgstr ""
 
 #: inc/post-type/post-property.php:16
 msgid "New Property"
@@ -475,6 +503,10 @@ msgstr ""
 #: template-parts/notfound.php:13
 msgid "Not found"
 msgstr "Не найдено"
+
+#: inc/post-type/post-blog.php:21
+msgid "Not found item"
+msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
@@ -552,13 +584,9 @@ msgstr ""
 msgid "Parent Property Type:"
 msgstr ""
 
-#: template-parts/property/single.php:136
+#: template-parts/property/single.php:135
 msgid "Parking place"
 msgstr "Паркомест"
-
-#: inc/template-customizer.php:187
-msgid "Phone number"
-msgstr "Номер телефона"
 
 #: inc/post-type/post-property.php:120
 msgid "Popular Property Cities"
@@ -657,7 +685,7 @@ msgid "REF"
 msgstr ""
 
 #: inc/meta-box/meta-property.php:30 template-parts/property/item.php:33
-#: template-parts/property/single.php:61
+#: template-parts/property/single.php:60
 msgid "Reserved"
 msgstr "Зарезервировано"
 
@@ -668,6 +696,10 @@ msgstr "Сбросить"
 #: template-parts/property/filter.php:146
 msgid "Search"
 msgstr "Поиск"
+
+#: inc/post-type/post-blog.php:20
+msgid "Search item"
+msgstr ""
 
 #: inc/post-type/post-property.php:18
 msgid "Search Property"
@@ -700,6 +732,10 @@ msgstr ""
 #. translators: %s: search query.
 #: search.php:23
 msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/template-customizer.php:73
+msgid "Second color"
 msgstr ""
 
 #: inc/meta-box/meta-home.php:56
@@ -775,7 +811,7 @@ msgid "Social networks"
 msgstr ""
 
 #: inc/meta-box/meta-property.php:36 template-parts/property/item.php:36
-#: template-parts/property/single.php:64
+#: template-parts/property/single.php:63
 msgid "Sold out"
 msgstr "Продано"
 
@@ -795,12 +831,20 @@ msgstr "Состояние"
 msgid "Status"
 msgstr "Статус"
 
-#: template-parts/property/single.php:96
+#: template-parts/property/single.php:95
 msgid "Storeys"
 msgstr "Этажность"
 
-#: inc/template-customizer.php:168
+#: inc/template-customizer.php:33
+msgid "Text color"
+msgstr ""
+
+#: inc/template-customizer.php:108
 msgid "Theme settings"
+msgstr ""
+
+#: inc/template-customizer.php:53
+msgid "Title color"
 msgstr ""
 
 #: template-parts/property/filter.php:90
@@ -829,6 +873,10 @@ msgstr ""
 
 #: inc/post-type/post-property.php:90
 msgid "Update Property Type"
+msgstr ""
+
+#: inc/post-type/post-blog.php:19
+msgid "View front"
 msgstr ""
 
 #: inc/post-type/post-property.php:17
