@@ -173,6 +173,7 @@ textarea {
     width: 100%;
     object-fit: cover;
     pointer-events: none;
+    transition: all ease-out $transition_fast;
   }
 }
 
@@ -263,13 +264,19 @@ img[loading=lazy] {
         display: block;
         top: 45px;
         background: $c-accent;
-        z-index: 2;
+        z-index: 3;
         padding: 1rem;
         transform: translate(0, -10%);
         transition: all ease-out $transition_fast;
 
         li {
           padding: 10px 0;
+        }
+
+        li.current-menu-item {
+          a {
+            color: $c-white;
+          }
         }
 
         a {
@@ -1121,7 +1128,7 @@ img[loading=lazy] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0.93deg, rgba(232, 240, 244, 0.9) 18.37%, rgba(255, 255, 255, 0) 99.67%);
+    background: linear-gradient(0.93deg, rgba(24, 31, 35, 0.35) 18.37%, rgba(30, 38, 43, 0) 61.74%);
     z-index: 1;
   }
 
@@ -1133,6 +1140,7 @@ img[loading=lazy] {
 
   h4 {
     font-size: 1.25rem;
+    color: #fff;
   }
 }
 
@@ -1209,6 +1217,7 @@ img[loading=lazy] {
 
     &:hover {
       background: $c-accent;
+      color: #fff;
     }
   }
 
@@ -1218,7 +1227,7 @@ img[loading=lazy] {
     padding: 0.6rem 0.8rem;
     color: $c-second;
     border-radius: $r-radius;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -1245,7 +1254,7 @@ img[loading=lazy] {
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(0.93deg, rgba(232, 240, 244, 0.9) 18.37%, rgba(255, 255, 255, 0) 99.67%);
+      background: linear-gradient(0.93deg, rgba(24, 31, 35, 0.35) 18.37%, rgba(30, 38, 43, 0) 61.74%);
       z-index: 1;
     }
 
@@ -1261,7 +1270,7 @@ img[loading=lazy] {
 
       h4 {
         font-size: 3.375rem;
-        color: $c-accent;
+        color: #fff;
       }
     }
   }

@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2021-04-14T11:28:56+00:00\n"
-"PO-Revision-Date: 2021-05-09 20:57+0000\n"
+"PO-Revision-Date: 2021-05-09 21:21+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: ieverly\n"
 "Language: ru_RU\n"
@@ -150,11 +150,11 @@ msgstr "Спальни"
 
 #: inc/post-type/post-blog.php:12 inc/post-type/post-blog.php:23
 msgid "Blog"
-msgstr ""
+msgstr "Блог"
 
 #: inc/post-type/post-blog.php:13
 msgid "Blog item"
-msgstr ""
+msgstr "Запись блога"
 
 #: inc/meta-box/meta-property.php:31
 msgid "Check if reserved"
